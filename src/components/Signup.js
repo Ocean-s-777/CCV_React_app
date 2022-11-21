@@ -14,8 +14,6 @@ function Signup() {
                 <div>
                     <label>Password</label>
                     <input type="password" placeholder="Password" />
-                    <label>Re-Enter Password</label>
-                    <input type="password" placeholder="Confirm Password" />
                 </div>
                 <button type="submit" className=''>Sign Up</button>
             </div>
