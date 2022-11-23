@@ -82,7 +82,7 @@ const VisualizationV4 = () => {
     if (!data) {
       fetchData();
     }
-  }, []);
+  }, [data]);
 
   //console.log(data)
   if (!data) return null;

@@ -18,7 +18,7 @@ let isDev = currentURL.includes("localhost");
 let fetchURL = isDev
   ? "http://localhost:3002" // You need to have the server's .env PORT set as 3002
   : "https://oceans777.herokuapp.com";
-//fetchURL = "https://oceans777.herokuapp.com"  // Uncomment this to use the hosted server instead
+fetchURL = "https://oceans777.herokuapp.com"  // Disable this line to benefit from the code above
 
 // Function to build datasets (from json) for a Line
 const buildDataset = (label, data, color, x, y, hidden) => ({
@@ -68,7 +68,7 @@ const VisualizationV6 = () => {
     if (!data) {
       fetchData();
     }
-  }, []);
+  }, [data]);
 
   //console.log(data)
   if (!data) return null;

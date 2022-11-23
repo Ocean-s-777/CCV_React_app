@@ -68,7 +68,7 @@ const VisualizationV3 = () => {
     if (!data) {
       fetchData();
     }
-  }, []);
+  }, [data]);
 
   //console.log(data)
   if (!data) return null;

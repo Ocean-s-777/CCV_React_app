@@ -6,11 +6,6 @@ import { Line } from "react-chartjs-2";
 import { Chart } from "chart.js/auto"; // We need this unless/until we do some bundle optimization
 import { useState, useEffect } from "react";
 
-// The dummy data. This will be replaced with the API call.
-/* const dataset_1 = require("../../dummy_data/test-1.json");
-const dataset_2 = require("../../dummy_data/test-2.json");
-const dataset_3 = require("../../dummy_data/test-3.json"); */
-
 // Common attributes of graphs/lines/plots
 const BORDERWIDTH = 2;
 const POINTRADIUS = 0;
@@ -111,7 +106,7 @@ const VisualizationV1 = () => {
     if (!data) {
       fetchData();
     }
-  }, []);
+  }, [data]);
 
   //console.log(data)
   if (!data) return null;
