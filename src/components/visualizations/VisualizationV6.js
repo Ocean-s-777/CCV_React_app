@@ -1,4 +1,5 @@
 // Line Chart V6
+
 import React from "react";
 import "chartjs-adapter-luxon";
 import { Line } from "react-chartjs-2";

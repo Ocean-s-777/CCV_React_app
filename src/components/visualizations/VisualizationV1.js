@@ -1,4 +1,5 @@
 // Line Chart V1 + V2
+
 import React from "react";
 import "chartjs-adapter-luxon";
 import { Line } from "react-chartjs-2";
