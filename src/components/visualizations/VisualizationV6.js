@@ -1,4 +1,4 @@
-// Line Chart V1 + V2
+// Line Chart V6
 import React from "react";
 import "chartjs-adapter-luxon";
 import { Line } from "react-chartjs-2";
@@ -6,18 +6,11 @@ import { Line } from "react-chartjs-2";
 import { Chart } from "chart.js/auto"; // We need this unless/until we do some bundle optimization
 import { useState, useEffect } from "react";
 
-// The dummy data. This will be replaced with the API call.
-/* const dataset_1 = require("../../dummy_data/test-1.json");
-const dataset_2 = require("../../dummy_data/test-2.json");
-const dataset_3 = require("../../dummy_data/test-3.json"); */
-
 // Common attributes of graphs/lines/plots
 const BORDERWIDTH = 2;
 const POINTRADIUS = 0;
 const COLOR1 = "black";
 const COLOR2 = "blue";
-const COLOR3 = "red";
-const COLOR4 = "orange";
 
 // If run on localhost, asume localhost server is also used
 let currentURL = window.location.href;
@@ -45,64 +38,28 @@ const buildDataset = (label, data, color, x, y, hidden) => ({
   hidden,
 });
 
-const VisualizationV1 = () => {
+const VisualizationV6 = () => {
   const [data, setData] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(fetchURL + "/v1-2");
+      const response = await fetch(fetchURL + "/v3");
       const json = await response.json();
       //console.log(json)
       let dataObject = {
         datasets: [
           buildDataset(
-            "Global monthly",
-            json.v1_g_m,
+            "co2_ppm",
+            json.v6,
             COLOR1,
-            "Time",
-            "Anomaly (deg C)"
+            "age_gas_calBP",
+            "co2_ppm"
           ),
           buildDataset(
-            "Global annual",
-            json.v1_g_a,
-            COLOR1,
-            "Time",
-            "Anomaly (deg C)"
-          ),
-          buildDataset(
-            "Northern monthly",
-            json.v1_n_m,
+            "co2_1s_ppm",
+            json.v6,
             COLOR2,
-            "Time",
-            "Anomaly (deg C)"
-          ),
-          buildDataset(
-            "Northern annual",
-            json.v1_n_a,
-            COLOR2,
-            "Time",
-            "Anomaly (deg C)"
-          ),
-          buildDataset(
-            "Southern monthly",
-            json.v1_s_m,
-            COLOR3,
-            "Time",
-            "Anomaly (deg C)"
-          ),
-          buildDataset(
-            "Southern annual",
-            json.v1_s_a,
-            COLOR3,
-            "Time",
-            "Anomaly (deg C)"
-          ),
-          buildDataset(
-            "2000 year temperatures",
-            json.v2_n_h_2000,
-            COLOR4,
-            "Year",
-            "T",
-            true
+            "age_gas_calBP",
+            "co2_1s_ppm"
           ),
         ],
       };
@@ -124,7 +81,7 @@ const VisualizationV1 = () => {
       },
       title: {
         display: true,
-        text: "Global historical surface temperature anomalies from January 1850 onwards",
+        text: "Ice core 800k year composite study CO2 measurements",
         font: {
           size: 24,
           family: '"Times New Roman", Times, serif',
@@ -153,28 +110,27 @@ const VisualizationV1 = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a orci
           nec nisi egestas vestibulum. Curabitur ut eros elit. Aenean fermentum
           neque odio, scelerisque efficitur justo egestas at. Etiam vulputate
-          risus eget faucibus porttitor. Cras blandit, ex quis molestie
-          ultrices, elit augue dapibus tortor, eget gravida magna metus quis
-          erat. Duis fringilla luctus orci, sit amet rhoncus ipsum commodo et.
-          Aenean eget laoreet nunc. Aenean vel libero magna.
+          risus eget faucibus porttitor.
         </p>
+
         <a
-          href="https://www.metoffice.gov.uk/hadobs/hadcrut5/"
+          href="https://www.ncei.noaa.gov/access/paleo-search/study/17975"
           target="_blank"
           rel="noreferrer"
         >
-          Surface temperature anomalies
+          data description
         </a>
+
         <a
-          href="https://www.nature.com/articles/nature03265"
+          href="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/antarctica2015co2composite.txt"
           target="_blank"
           rel="noreferrer"
         >
-          Northern Hemisphere 2,000-year temperature reconstruction
+          data source
         </a>
       </div>
     </div>
   );
 };
 
-export default VisualizationV1;
+export default VisualizationV6;
