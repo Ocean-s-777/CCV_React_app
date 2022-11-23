@@ -22,7 +22,6 @@ function App() {
 
     <VisualizationV1 />
     <VisualizationV1 />
-    <VisualizationV1 />
     
   </>
   );
