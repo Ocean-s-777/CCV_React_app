@@ -1,3 +1,19 @@
 .App {
   text-align: center;
 }
+
+body {
+  background-color:rgb(228, 220, 220);
+}
+
+.graph-box {
+  padding: '30px';
+  margin: '20px';
+  background-color:rgb(255, 255, 255);
+}
+
+.graph-text-box {
+  background-color: #c7d39e;
+  padding: 10px;
+  margin: 20px;
+}
