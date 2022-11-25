@@ -7,6 +7,15 @@ body {
   margin: 0;
   font-family: Verdana, "Geneva", Tahoma, sans-serif;
 }
+hr{
+  color: #003798;
+  height: 3px;
+  background: #003798;
+  opacity: 1;
+  top: -100px;
+  margin: 0;
+  margin-bottom: 16px;
+}
 
 .graph-box {
   padding: '30px';
@@ -15,12 +24,14 @@ body {
 }
 
 .graph-text-box {
-  background-color: #c7d39e;
   padding: 10px;
   margin: 20px;
 }
+.graph-text-box>a{
+  display: block;
+}
 .title-cont>img{
-  height: 39px;
+  height: 30px;
 }
 .container-fluid{
   display: inline-block;
@@ -45,6 +56,7 @@ canvas{
 .root>.container{
   width: 100vw;
   margin: 0;
+  min-width: 100vw;
 }
 .nav-light{
   color: #c7d39e;
@@ -74,4 +86,14 @@ canvas{
 .icons>img{
   padding: 10px;
   height: 49px;
+}
+.visualizations{
+  margin: 0;
+  background-color: white;
+  width: auto;
+}
+@media (min-width: 992px){
+.container, .container-lg, .container-md, .container-sm {
+    max-width: 100vw;
+}
 }

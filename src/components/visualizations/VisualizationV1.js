@@ -169,7 +169,9 @@ const VisualizationV1 = () => {
           Northern Hemisphere 2,000-year temperature reconstruction
         </a>
       </div>
+      <hr/>
     </div>
+    
   );
 };
 

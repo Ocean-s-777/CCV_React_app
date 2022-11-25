@@ -15,6 +15,7 @@ function App() {
     <>
     <Header />
     <PageSelect />
+    <hr/>
     <div className='container'>
       <Routes>
         <Route path="/" element = {<Home />} />
