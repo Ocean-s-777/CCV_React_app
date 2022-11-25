@@ -10,10 +10,10 @@ import { useState, useEffect } from "react";
 // Common attributes of graphs/lines/plots
 const BORDERWIDTH = 2;
 const POINTRADIUS = 0;
-const COLOR1 = "black";
-const COLOR2 = "blue";
-const COLOR3 = "red";
-const COLOR4 = "orange";
+const COLOR1 = "#0054E6dd";
+const COLOR2 = "#dd8282dd";
+const COLOR3 = "#228C1Bdd";
+const COLOR4 = "#FFC05B60";
 
 // If run on localhost, asume localhost server is also used
 let currentURL = window.location.href;
