@@ -13,8 +13,8 @@ hr{
   background: #003798;
   opacity: 1;
   top: -100px;
-  margin: 0;
-  margin-bottom: 16px;
+  margin: 0;/* 
+  margin-bottom: 16px; */
 }
 
 .graph-box {
@@ -31,7 +31,7 @@ hr{
   display: block;
 }
 .title-cont>img{
-  height: 30px;
+  height: 35px;
 }
 .container-fluid{
   display: inline-block;
@@ -48,15 +48,19 @@ hr{
 }
 .navbar-brand{
   display: block;
-  font-size: 30px;
+  font-size: 39px;
+}
+.navbar-head{
+  background-color: #003798;
 }
 canvas{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.root>.container{
+#root>.container{
   width: 100vw;
   margin: 0;
   min-width: 100vw;
+  background-color: white;
 }
 .nav-light{
   color: #c7d39e;
@@ -66,6 +70,7 @@ canvas{
   left: 140px;
   padding-left: 40px;
   margin: 0;
+  color: white;
   width: min-content;
 }
 .title-cont>a{
@@ -85,7 +90,7 @@ canvas{
 }
 .icons>img{
   padding: 10px;
-  height: 49px;
+  height: 54px;
 }
 .visualizations{
   margin: 0;

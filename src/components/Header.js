@@ -5,7 +5,7 @@ import userGrn from './images/userGreen.svg'
 
 export default function Header() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-head">
   <div className="container-fluid head">
     <div className="title-cont">
       <img src={logo} alt={"logo"} href="/"/>
