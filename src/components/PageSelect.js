@@ -8,7 +8,7 @@ export default function PageSelect() {
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0 page-nav">
         <li className="nav-item">
           <a className="nav-link active plink" aria-current="page" href="/CO2">Atmospheric CO2 and Temperatures</a>
         </li>

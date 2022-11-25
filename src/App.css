@@ -4,6 +4,7 @@
 
 body {
   background-color:rgb(228, 220, 220);
+  margin: 0;
   font-family: Verdana, "Geneva", Tahoma, sans-serif;
 }
 
@@ -18,11 +19,21 @@ body {
   padding: 10px;
   margin: 20px;
 }
-.container-fluid>img{
+.title-cont>img{
   height: 49px;
 }
 .container-fluid{
-  display: grid;
+  display: inline-block;
+}
+.page-nav{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.page-nav>li{
+  width: 100%;
+  text-align: center;
 }
 .navbar-brand{
   display: block;
@@ -31,16 +42,34 @@ body {
 canvas{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+.root>.container{
+  width: 100vw;
+  margin: 0;
+}
 .nav-light{
   color: #c7d39e;
 }
 .title{
-  left: 90px;
+  left: 120px;
+  margin: 0;
+  width: min-content;
+}
+.title-cont>a{
+  display: inline;
 }
 .head{
-  width: 600px;
   margin: 0;
 }
 .plink{
   font-size: x-large;
+}
+.title-cont{
+  width: 1000px;
+}
+.icons{
+  width: 150px;
+}
+.icons>img{
+  padding: 10px;
+  height: 49px;
 }

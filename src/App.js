@@ -4,10 +4,11 @@ import {Routes, Route} from 'react-router-dom';
 
 import Header from './components/Header';
 import PageSelect from './components/PageSelect';
-import Home from './components/Home';
+import Home from './components/pages/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import VisualizationV1 from './components/visualizations/VisualizationV1'
+import Sources from './components/pages/Sources';
+import CO2 from './components/pages/CO2';
 
 function App() {
   return (
@@ -19,12 +20,10 @@ function App() {
         <Route path="/" element = {<Home />} />
         <Route path="/Login" element = {<Login />} />
         <Route path="/Signup" element = {<Signup />} />
+        <Route path="/Sources" element = {<Sources />} />
+        <Route path="/CO2" element = {<CO2 />} />
       </Routes>
     </div>
-
-    <VisualizationV1 />
-    <VisualizationV1 />
-    
   </>
   );
 }
