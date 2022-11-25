@@ -4,6 +4,7 @@
 
 body {
   background-color:rgb(228, 220, 220);
+  font-family: Verdana, "Geneva", Tahoma, sans-serif;
 }
 
 .graph-box {
@@ -16,4 +17,30 @@ body {
   background-color: #c7d39e;
   padding: 10px;
   margin: 20px;
+}
+.container-fluid>img{
+  height: 49px;
+}
+.container-fluid{
+  display: grid;
+}
+.navbar-brand{
+  display: block;
+  font-size: 30px;
+}
+canvas{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.nav-light{
+  color: #c7d39e;
+}
+.title{
+  left: 90px;
+}
+.head{
+  width: 600px;
+  margin: 0;
+}
+.plink{
+  font-size: x-large;
 }

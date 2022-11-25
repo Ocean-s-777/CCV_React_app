@@ -4,12 +4,12 @@ function Signup() {
     return (
         <div>
             <div className="">
-                <h1>SIGN UP YOUR ACCOUNT</h1>
+                <h1>CREATE ACCOUNT</h1>
             </div>
             <div className="">
                 <div>
-                    <label>User Name</label>
-                    <input type="text" placeholder="User Name" />
+                    <label>Username</label>
+                    <input type="text" placeholder="Username" />
                 </div>
                 <div>
                     <label>Password</label>
