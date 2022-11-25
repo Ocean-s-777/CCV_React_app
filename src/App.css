@@ -50,7 +50,9 @@ canvas{
   color: #c7d39e;
 }
 .title{
-  left: 120px;
+  vertical-align: middle;
+  left: 140px;
+  padding-left: 40px;
   margin: 0;
   width: min-content;
 }
