@@ -10,8 +10,10 @@ import { useState, useEffect } from "react";
 // Common attributes of graphs/lines/plots
 const BORDERWIDTH = 2;
 const POINTRADIUS = 0;
-const COLOR1 = "black";
+const COLOR1 = "red";
 const COLOR2 = "blue";
+const COLOR3 = "brown";
+const COLOR4 = "black";
 
 // If run on localhost, asume localhost server is also used
 let currentURL = window.location.href;
@@ -19,7 +21,7 @@ let isDev = currentURL.includes("localhost");
 let fetchURL = isDev
   ? "http://localhost:3002" // You need to have the server's .env PORT set as 3002
   : "https://oceans777.herokuapp.com";
-fetchURL = "https://oceans777.herokuapp.com"  // Disable this line to benefit from the code above
+fetchURL = "https://oceans777.herokuapp.com"; // Disable this line to benefit from the code above
 
 // Function to build datasets (from json) for a Line
 const buildDataset = (label, data, color, x, y, hidden) => ({
@@ -43,36 +45,36 @@ const VisualizationV4 = () => {
   const [data, setData] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(fetchURL + "/v3");
+      const response = await fetch(fetchURL + "/v4");
       const json = await response.json();
       //console.log(json)
       let dataObject = {
         datasets: [
           buildDataset(
             "DE08",
-            json.v4,
+            json.v4_de08,
             COLOR1,
-            "Analysis Date",
-            "DE08"
+            "Mean Air Age year AD",
+            "CO2 Mixing Ratio ppm"
           ),
           buildDataset(
             "DE08-2",
-            json.v4,
-            COLOR1,
-            "Analysis Date",
-            "DE08-2"
+            json["v4_de08-2"],
+            COLOR2,
+            "Mean Air Age year AD",
+            "CO2 Mixing Ratio ppm"
           ),
           buildDataset(
             "DSS",
-            json.v4,
-            COLOR1,
-            "Analysis Date",
-            "DSS"
+            json.v4_dss,
+            COLOR3,
+            "Mean Air Age year AD",
+            "CO2 Mixing Ratio ppm"
           ),
           buildDataset(
             "Mauna Loa CO2 annual mean data",
             json.v3_a,
-            COLOR2,
+            COLOR4,
             "year",
             "mean"
           ),
@@ -122,10 +124,8 @@ const VisualizationV4 = () => {
 
       <div className="graph-text-box">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a orci
-          nec nisi egestas vestibulum. Curabitur ut eros elit. Aenean fermentum
-          neque odio, scelerisque efficitur justo egestas at. Etiam vulputate
-          risus eget faucibus porttitor.
+          This chart combines the Ice core measurements DE08, DE08-02 and DSS to
+          Mauna Loa CO2 annual mean data.
         </p>
 
         <a
@@ -133,7 +133,32 @@ const VisualizationV4 = () => {
           target="_blank"
           rel="noreferrer"
         >
-          Historical CO2 Records from the Law Dome DE08, DE08-2, and DSS Ice Cores
+          Historical CO2 Records from the Law Dome DE08, DE08-2, and DSS Ice
+          Cores
+        </a>
+
+        <a
+          href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/lawdome.combined.dat"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Data source
+        </a>
+
+        <a
+          href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Mauna Loa CO2 measurements
+        </a>
+
+        <a
+          href="https://gml.noaa.gov/ccgg/trends/data.html"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Data source
         </a>
       </div>
     </div>

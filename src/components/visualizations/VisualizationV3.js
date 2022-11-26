@@ -19,7 +19,7 @@ let isDev = currentURL.includes("localhost");
 let fetchURL = isDev
   ? "http://localhost:3002" // You need to have the server's .env PORT set as 3002
   : "https://oceans777.herokuapp.com";
-fetchURL = "https://oceans777.herokuapp.com"  // Disable this line to benefit from the code above
+fetchURL = "https://oceans777.herokuapp.com"; // Disable this line to benefit from the code above
 
 // Function to build datasets (from json) for a Line
 const buildDataset = (label, data, color, x, y, hidden) => ({
@@ -108,10 +108,8 @@ const VisualizationV3 = () => {
 
       <div className="graph-text-box">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a orci
-          nec nisi egestas vestibulum. Curabitur ut eros elit. Aenean fermentum
-          neque odio, scelerisque efficitur justo egestas at. Etiam vulputate
-          risus eget faucibus porttitor.
+          Monthly and annual mean carbon dioxide measured at Mauna Loa
+          Observatory, Hawaii.
         </p>
 
         <a
@@ -119,7 +117,15 @@ const VisualizationV3 = () => {
           target="_blank"
           rel="noreferrer"
         >
-          data measurement description
+          Detailed description
+        </a>
+
+        <a
+          href="https://gml.noaa.gov/ccgg/trends/data.html"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Data source
         </a>
       </div>
     </div>
