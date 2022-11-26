@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import VisualizationV1 from '../visualizations/VisualizationV1'
+//import VisualizationV1 from '../visualizations/VisualizationV1'
 //#479042
 //#003798
 export default class Sources extends Component {
