@@ -1,4 +1,5 @@
 // Line Chart V3
+// Atmospheric CO2 concentrations from Mauna Loa measurements starting 1958
 
 import React from "react";
 import "chartjs-adapter-luxon";

@@ -1,4 +1,5 @@
 // Line Chart V1 + V2
+// Global historical surface temperature anomalies from January 1850 onwards
 
 import React from "react";
 import "chartjs-adapter-luxon";
