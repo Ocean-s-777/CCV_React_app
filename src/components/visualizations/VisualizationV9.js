@@ -11,10 +11,10 @@ import { useState, useEffect } from "react";
 // Common attributes of graphs/lines/plots
 //const BORDERWIDTH = 2;
 //const POINTRADIUS = 0;
-const COLOR1 = "red";
-const COLOR2 = "blue";
-const COLOR3 = "green";
-const COLOR4 = "orange";
+const COLOR1 = "#E60000";
+const COLOR2 = "#0000E6";
+const COLOR3 = "#007300";
+const COLOR4 = "#E69500";
 
 // If run on localhost, asume localhost server is also used
 let currentURL = window.location.href;
@@ -47,25 +47,20 @@ const VisualizationV9 = () => {
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v3"); // Change to /v9 once the route exists
+      // eslint-disable-next-line
       const json = await response.json();
-      console.log(json) // Just for testing
+      //console.log(json)
       let dataObject = {
         labels: [
-            "Energy",
-            "Industrial processes",
-            "Waste",
-            "Agriculture, Forestry & Land Use",
-          ],
+          "Energy",
+          "Industrial processes",
+          "Waste",
+          "Agriculture, Forestry & Land Use",
+        ],
         datasets: [
           {
-            label: "testisektori",
             data: [73.2, 5.2, 3.2, 18.4],
-            backgroundColor: [
-              COLOR1,
-              COLOR2,
-              COLOR3,
-              COLOR4,
-            ],
+            backgroundColor: [COLOR1, COLOR2, COLOR3, COLOR4],
             hoverOffset: 4,
           },
         ],
@@ -95,12 +90,33 @@ const VisualizationV9 = () => {
         },
       },
     },
+    onClick: function (evt, element) {
+      if (element.length > 0) {
+        //console.log(element[0]);
+        switch (element[0].index) {
+          case 0:
+            console.log("RED");
+            break;
+          case 1:
+            console.log("BLUE");
+            break;
+          case 2:
+            console.log("GREEN");
+            break;
+          case 3:
+            console.log("YELLOW");
+            break;
+          default:
+            break;
+        }
+      }
+    },
   };
 
   return (
     <div className="graph-box">
       <br />
-      <div style={{width: '50vw'}} className="dougnut-chart-container">
+      <div style={{ width: "50vw" }} className="dougnut-chart-container">
         <Doughnut options={options} data={data} />
       </div>
 
