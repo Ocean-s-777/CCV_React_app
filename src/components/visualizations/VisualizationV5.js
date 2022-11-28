@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 // Common attributes of graphs/lines/plots
 const BORDERWIDTH = 2;
 const POINTRADIUS = 0;
-const COLOR1 = "red";
+const COLOR1 = "#228C1Bdd";
 
 // If run on localhost, asume localhost server is also used
 let currentURL = window.location.href;

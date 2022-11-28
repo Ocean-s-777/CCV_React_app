@@ -11,8 +11,8 @@ import { useState, useEffect } from "react";
 // Common attributes of graphs/lines/plots
 const BORDERWIDTH = 2;
 const POINTRADIUS = 0;
-const COLOR1 = "black";
-const COLOR2 = "blue";
+const COLOR1 = "#dd8282dd";
+const COLOR2 = "#0054E6dd";
 
 // If run on localhost, asume localhost server is also used
 let currentURL = window.location.href;
@@ -85,8 +85,8 @@ const VisualizationV3 = () => {
         display: true,
         text: "Atmospheric CO2 concentrations from Mauna Loa measurements starting 1958",
         font: {
-          size: 24,
-          family: '"Times New Roman", Times, serif',
+          size: 20,
+          family: 'Arial,"Times New Roman", Times, serif',
         },
       },
     },
@@ -122,6 +122,7 @@ const VisualizationV3 = () => {
 
   return (
     <div className="graph-box">
+      <br/>
       <Line options={options} data={data} width={600} height={200} />
 
       <div className="graph-text-box">
