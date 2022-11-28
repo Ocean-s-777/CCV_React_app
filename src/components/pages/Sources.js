@@ -4,6 +4,7 @@ import React, { Component } from "react";
 //#003798
 
 import VisualizationV8 from "../visualizations/VisualizationV8";
+import VisualizationV9 from "../visualizations/VisualizationV9";
 
 export default class Sources extends Component {
   render() {
@@ -15,6 +16,7 @@ export default class Sources extends Component {
         </div>
         <div className="visualizations">
           <VisualizationV8 />
+          <VisualizationV9 />
         </div>
       </>
     );
