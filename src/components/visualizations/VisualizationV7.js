@@ -26,7 +26,7 @@ fetchURL = "https://oceans777.herokuapp.com"; // Disable this line to benefit fr
 const buildDataset = (label, data, color, x, y, hidden, yAxis) => ({
   label,
   data: data.map((d) => ({
-    time: d[x],
+    time: Math.round((d[x])/1000),
     value: d[y],
   })),
   borderColor: color,
@@ -38,7 +38,7 @@ const buildDataset = (label, data, color, x, y, hidden, yAxis) => ({
   borderWidth: BORDERWIDTH,
   pointRadius: POINTRADIUS,
   hidden,
-  yAxisID: yAxis
+  yAxisID: yAxis,
 });
 
 const VisualizationV7 = () => {
@@ -99,42 +99,48 @@ const VisualizationV7 = () => {
       x: {
         type: "linear",
         ticks: {
-          stepSize: 10000
-        }
+          stepSize: 100,
+        },
+        title: {
+          display: true,
+          text: "Thousands of years before present",
+          color: "black",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
       y: {
         type: "linear",
         display: true,
-        position: 'left',
+        position: "left",
         title: {
           display: true,
-          text: 'co2 ppm',
+          text: "co2 ppm",
           color: COLOR1,
           font: {
             size: 16,
-            family: '"Times New Roman", Times, serif'
+            family: '"Times New Roman", Times, serif',
           },
-          reverse: true
-        }
+        },
       },
       y2: {
         type: "linear",
         display: true,
-        position: 'right',
+        position: "right",
         grid: {
           drawOnChartArea: false,
         },
-        suggestedMin: -1,
-        suggestedMax: 1,
         title: {
           display: true,
-          text: 'surface temperature change',
+          text: "surface temperature change",
           color: COLOR2,
           font: {
             size: 16,
-            family: '"Times New Roman", Times, serif'
-          }
-        }
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
     },
   };
@@ -145,7 +151,9 @@ const VisualizationV7 = () => {
 
       <div className="graph-text-box">
         <p>
-          This chart is all wrong... Currently it just shows how the multiaxis line chart will look
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
+          libero quis magna vehicula consequat vel in enim. Maecenas condimentum
+          justo magna, vel iaculis elit scelerisque a.
         </p>
 
         <a

@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 // Common attributes of graphs/lines/plots
 const BORDERWIDTH = 2;
 const POINTRADIUS = 0;
-const COLOR1 = "purple";
+const COLOR1 = "blue";
 
 // If run on localhost, asume localhost server is also used
 let currentURL = window.location.href;
@@ -25,7 +25,7 @@ fetchURL = "https://oceans777.herokuapp.com"; // Disable this line to benefit fr
 const buildDataset = (label, data, color, x, y, hidden) => ({
   label,
   data: data.map((d) => ({
-    time: Math.round((d[x])/1000), // Thousands of years, Math.round((d[x])/1000), !!!
+    time: d[x], // Thousands of years, Math.round((d[x])/1000), !!!
     value: d[y],
   })),
   borderColor: color,
@@ -78,14 +78,19 @@ const VisualizationV6 = () => {
     },
     scales: {
       x: {
-        type: "time",
-        time: {
-          unit: "year",
-        },
+        type: "linear",
         ticks: {
-          // forces step size to be 50 units
-          stepSize: 1000
-        }
+          stepSize: 2000,
+        },
+        title: {
+          display: true,
+          text: "Years before present",
+          color: "black",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
       yAxis: {
         type: "linear",
