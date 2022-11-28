@@ -122,7 +122,7 @@ const VisualizationV3 = () => {
 
   return (
     <div className="graph-box">
-      <br/>
+      <br />
       <Line options={options} data={data} width={600} height={200} />
 
       <div className="graph-text-box">
@@ -131,21 +131,23 @@ const VisualizationV3 = () => {
           Observatory, Hawaii.
         </p>
 
-        <a
-          href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Detailed description
-        </a>
-
-        <a
-          href="https://gml.noaa.gov/ccgg/trends/data.html"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Data source
-        </a>
+        <p>
+          <a
+            href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Detailed description
+          </a>
+          &nbsp; & &nbsp;
+          <a
+            href="https://gml.noaa.gov/ccgg/trends/data.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Data source
+          </a>
+        </p>
       </div>
     </div>
   );
