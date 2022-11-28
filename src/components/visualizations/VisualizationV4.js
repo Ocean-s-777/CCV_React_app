@@ -112,9 +112,26 @@ const VisualizationV4 = () => {
         time: {
           unit: "year",
         },
+        title: {
+          display: true,
+          text: "Years",
+          color: "black",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
       yAxis: {
         type: "linear",
+        title: {
+          display: true,
+          text: "CO2 Mixing Ratio (ppm)",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
     },
   };

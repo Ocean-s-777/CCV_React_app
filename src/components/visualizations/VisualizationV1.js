@@ -134,9 +134,26 @@ const VisualizationV1 = () => {
         time: {
           unit: "year",
         },
+        title: {
+          display: true,
+          text: "Year",
+          color: "black",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
       yAxis: {
         type: "linear",
+        title: {
+          display: true,
+          text: "Temperature anomaly / deg C",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
     },
   };

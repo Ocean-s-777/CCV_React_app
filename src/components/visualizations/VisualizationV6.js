@@ -84,7 +84,7 @@ const VisualizationV6 = () => {
         },
         title: {
           display: true,
-          text: "Years before present",
+          text: "Year",
           color: "black",
           font: {
             size: 16,
@@ -94,6 +94,14 @@ const VisualizationV6 = () => {
       },
       yAxis: {
         type: "linear",
+        title: {
+          display: true,
+          text: "CO2 (ppm)",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
     },
   };

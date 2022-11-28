@@ -103,7 +103,7 @@ const VisualizationV7 = () => {
         },
         title: {
           display: true,
-          text: "Thousands of years before present",
+          text: "Thousands of years",
           color: "black",
           font: {
             size: 16,
@@ -117,7 +117,7 @@ const VisualizationV7 = () => {
         position: "left",
         title: {
           display: true,
-          text: "co2 ppm",
+          text: "co2 (ppm)",
           color: COLOR1,
           font: {
             size: 16,
@@ -134,7 +134,7 @@ const VisualizationV7 = () => {
         },
         title: {
           display: true,
-          text: "surface temperature change",
+          text: "surface temperature change (C)",
           color: COLOR2,
           font: {
             size: 16,

@@ -25,7 +25,7 @@ fetchURL = "https://oceans777.herokuapp.com"; // Disable this line to benefit fr
 const buildDataset = (label, data, color, x, y, hidden) => ({
   label,
   data: data.map((d) => ({
-    time: (2022 - d[x]), // yr BP = years before present, !!!
+    time: (d[x]*(-1)), // yr BP = years before present, !!!
     value: d[y],
   })),
   borderColor: color,
@@ -84,13 +84,30 @@ const VisualizationV5 = () => {
     },
     scales: {
       x: {
-        type: "time",
-        time: {
-          unit: "year",
+        type: "linear",
+        ticks: {
+          stepSize: 2000,
+        },
+        title: {
+          display: true,
+          text: "Year",
+          color: "black",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
         },
       },
       yAxis: {
         type: "linear",
+        title: {
+          display: true,
+          text: "CO2 concentration (ppmv)",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
     },
   };
