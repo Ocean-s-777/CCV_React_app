@@ -148,7 +148,7 @@ const VisualizationV1 = () => {
         type: "linear",
         title: {
           display: true,
-          text: "Temperature anomaly / deg C",
+          text: "Temperature anomaly (deg C)",
           font: {
             size: 16,
             family: '"Times New Roman", Times, serif',

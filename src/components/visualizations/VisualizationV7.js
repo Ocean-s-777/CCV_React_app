@@ -117,7 +117,7 @@ const VisualizationV7 = () => {
         position: "left",
         title: {
           display: true,
-          text: "co2 (ppm)",
+          text: "CO2 (ppm)",
           color: COLOR1,
           font: {
             size: 16,
@@ -134,7 +134,7 @@ const VisualizationV7 = () => {
         },
         title: {
           display: true,
-          text: "surface temperature change (C)",
+          text: "Surface temperature (deg C)",
           color: COLOR2,
           font: {
             size: 16,

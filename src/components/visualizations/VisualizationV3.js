@@ -110,7 +110,7 @@ const VisualizationV3 = () => {
         type: "linear",
         title: {
           display: true,
-          text: "temperature anomaly (K)",
+          text: "CO2",
           font: {
             size: 16,
             family: '"Times New Roman", Times, serif',
