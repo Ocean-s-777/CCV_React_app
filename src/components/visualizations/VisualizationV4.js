@@ -11,10 +11,12 @@ import { useState, useEffect } from "react";
 // Common attributes of graphs/lines/plots
 const BORDERWIDTH = 2;
 const POINTRADIUS = 0;
-const COLOR1 = "red";
-const COLOR2 = "blue";
-const COLOR3 = "brown";
-const COLOR4 = "black";
+
+
+const COLOR3 = "#FFC05B";
+const COLOR2 = "#0054E6dd";
+const COLOR1 = "#dd8282dd";
+const COLOR4 = "#228C1Bdd";
 
 // If run on localhost, asume localhost server is also used
 let currentURL = window.location.href;
@@ -99,10 +101,10 @@ const VisualizationV4 = () => {
       },
       title: {
         display: true,
-        text: "Antarctic Ice Core records of atmospheric CO2 ratios combined with Mauna Loa measurement",
+        text: "\nAntarctic Ice Core records of atmospheric CO2 ratios combined with Mauna Loa measurement",
         font: {
-          size: 24,
-          family: '"Times New Roman", Times, serif',
+          size: 20,
+          family: 'Arial, "Times New Roman", Times, serif',
         },
       },
     },
@@ -121,6 +123,7 @@ const VisualizationV4 = () => {
 
   return (
     <div className="graph-box">
+      <br/>
       <Line options={options} data={data} width={600} height={200} />
 
       <div className="graph-text-box">

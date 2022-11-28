@@ -123,8 +123,8 @@ const VisualizationV1 = () => {
         display: true,
         text: "Global historical surface temperature anomalies from January 1850 onwards",
         font: {
-          size: 24,
-          family: '"Times New Roman", Times, serif',
+          size: 20,
+          family: 'Arial, "Times New Roman", Times, serif',
         },
       },
     },
@@ -143,6 +143,7 @@ const VisualizationV1 = () => {
 
   return (
     <div className="graph-box">
+      <br/>
       <Line options={options} data={data} width={600} height={200} />
 
       <div className="graph-text-box">
