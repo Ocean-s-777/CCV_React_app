@@ -145,10 +145,11 @@ const VisualizationV3 = () => {
             target="_blank"
             rel="noreferrer"
           >
-            Data source
+            the data used
           </a>
         </p>
       </div>
+      <hr />
     </div>
   );
 };

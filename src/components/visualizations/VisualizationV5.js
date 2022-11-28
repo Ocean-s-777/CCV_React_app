@@ -25,7 +25,7 @@ fetchURL = "https://oceans777.herokuapp.com"; // Disable this line to benefit fr
 const buildDataset = (label, data, color, x, y, hidden) => ({
   label,
   data: data.map((d) => ({
-    time: (d[x]*(-1)), // yr BP = years before present, !!!
+    time: d[x] * -1, // yr BP = years before present, !!!
     value: d[y],
   })),
   borderColor: color,
@@ -114,6 +114,7 @@ const VisualizationV5 = () => {
 
   return (
     <div className="graph-box">
+      <br />
       <Line options={options} data={data} width={600} height={200} />
 
       <div className="graph-text-box">
@@ -135,6 +136,7 @@ const VisualizationV5 = () => {
           Data source
         </a>
       </div>
+      <hr />
     </div>
   );
 };

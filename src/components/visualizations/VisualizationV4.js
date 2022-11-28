@@ -115,7 +115,7 @@ const VisualizationV4 = () => {
         },
         title: {
           display: true,
-          text: "Years",
+          text: "Year",
           color: "black",
           font: {
             size: 16,
@@ -155,7 +155,7 @@ const VisualizationV4 = () => {
             rel="noreferrer"
           >
             Historical CO2 Records from the Law Dome DE08, DE08-2, and DSS Ice
-            Cores
+            Cores description
           </a>
           &nbsp; & &nbsp;
           <a
@@ -163,7 +163,7 @@ const VisualizationV4 = () => {
             target="_blank"
             rel="noreferrer"
           >
-            Data source
+            the data used
           </a>
         </p>
 
@@ -173,7 +173,7 @@ const VisualizationV4 = () => {
             target="_blank"
             rel="noreferrer"
           >
-            Mauna Loa CO2 measurements
+            Mauna Loa CO2 measurements description
           </a>
           &nbsp; & &nbsp;
           <a
@@ -181,10 +181,11 @@ const VisualizationV4 = () => {
             target="_blank"
             rel="noreferrer"
           >
-            Data source
+            the data used
           </a>
         </p>
       </div>
+      <hr />
     </div>
   );
 };

@@ -108,6 +108,7 @@ const VisualizationV6 = () => {
 
   return (
     <div className="graph-box">
+      <br />
       <Line options={options} data={data} width={600} height={200} />
 
       <div className="graph-text-box">
@@ -134,6 +135,7 @@ const VisualizationV6 = () => {
           data source
         </a>
       </div>
+      <hr />
     </div>
   );
 };

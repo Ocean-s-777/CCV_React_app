@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 // Common attributes of graphs/lines/plots
 const BORDERWIDTH = 2;
 const POINTRADIUS = 0;
-const COLOR1 =  "#0054E6dd";
+const COLOR1 = "#0054E6dd";
 const COLOR2 = "#FFC05B";
 
 // If run on localhost, asume localhost server is also used
@@ -26,7 +26,7 @@ fetchURL = "https://oceans777.herokuapp.com"; // Disable this line to benefit fr
 const buildDataset = (label, data, color, x, y, hidden, yAxis) => ({
   label,
   data: data.map((d) => ({
-    time: Math.round((d[x])/1000),
+    time: Math.round(d[x] / 1000),
     value: d[y],
   })),
   borderColor: color,
@@ -147,6 +147,7 @@ const VisualizationV7 = () => {
 
   return (
     <div className="graph-box">
+      <br />
       <Line options={options} data={data} width={600} height={200} />
 
       <div className="graph-text-box">
@@ -172,6 +173,7 @@ const VisualizationV7 = () => {
           Data source
         </a>
       </div>
+      <hr />
     </div>
   );
 };
