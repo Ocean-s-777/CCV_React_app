@@ -90,6 +90,7 @@ const VisualizationV8 = () => {
 
   const options = {
     responsive: true,
+    aspectRatio: 1.6,
     plugins: {
       legend: {
         position: "top",
