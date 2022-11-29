@@ -93,6 +93,11 @@ const VisualizationV8 = () => {
     plugins: {
       legend: {
         position: "top",
+        labels: {
+          usePointStyle: true,
+          pointStyle: "rect",
+          pointStyleWidth: 10,
+        },
       },
       title: {
         display: true,
