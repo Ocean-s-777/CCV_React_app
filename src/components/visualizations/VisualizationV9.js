@@ -15,6 +15,8 @@ const COLOR1 = "#E60000";
 const COLOR2 = "#0000E6";
 const COLOR3 = "#007300";
 const COLOR4 = "#E69500";
+let dataVersion = 0; // Used by the function to change the displayed data
+let newData = {}; // Used by the function to change the displayed data
 
 // If run on localhost, asume localhost server is also used
 let currentURL = window.location.href;
@@ -55,7 +57,7 @@ const VisualizationV9 = () => {
           "Energy",
           "Industrial processes",
           "Waste",
-          "Agriculture, Forestry & Land Use",
+          "Argiculture, Forestry & Land Use",
         ],
         datasets: [
           {
@@ -79,7 +81,8 @@ const VisualizationV9 = () => {
     responsive: true,
     plugins: {
       legend: {
-        position: "top",
+        display: true,
+        position: "bottom",
       },
       title: {
         display: true,
@@ -93,24 +96,108 @@ const VisualizationV9 = () => {
     onClick: function (evt, element) {
       if (element.length > 0) {
         //console.log(element[0]);
-        switch (element[0].index) {
-          case 0:
-            console.log("RED");
-            break;
-          case 1:
-            console.log("BLUE");
-            break;
-          case 2:
-            console.log("GREEN");
-            break;
-          case 3:
-            console.log("YELLOW");
-            break;
-          default:
-            break;
-        }
+        toggleData();
       }
     },
+  };
+
+  // Function to change the displayed data
+  let toggleData = () => {
+    if (dataVersion === 0) {
+      dataVersion = 1;
+      newData = {
+        labels: [
+          "Road",
+          "Aviation",
+          "Rail",
+          "Pipeline",
+          "Ship",
+          "Residential",
+          "Commercial",
+          "Iron & Steel",
+          "Non-ferous metals",
+          "Machinery",
+          "Food and tobacco",
+          "Paper, pulp & printing",
+          "Chemical & petrochemical (energy)",
+          "Other industry",
+          "Energy in Agri & Fishing",
+          "Unallocated fuel combustion",
+          "Coal",
+          "Oil & Natural Gas",
+          "Cement",
+          "Chemical & petrochemical (industrial)",
+          "Landfills",
+          "Wastewater",
+          "Livestock & Manure",
+          "Rice Cultivation",
+          "Agricultural Soils",
+          "Crop Burning",
+          "Forest Land",
+          "Cropland",
+          "Grassland",
+        ],
+        datasets: [
+          {
+            data: [
+              11.9, 1.9, 0.4, 0.3, 1.7, 10.9, 6.6, 7.2, 0.7, 0.5, 1, 0.6, 3.6,
+              10.6, 1.7, 7.8, 1.9, 3.9, 3, 2.2, 1.9, 1.3, 5.8, 1.3, 4.1, 3.5,
+              2.2, 1.4, 0.1,
+            ],
+            backgroundColor: [
+              COLOR1,
+              COLOR1,
+              COLOR1,
+              COLOR1,
+              COLOR1,
+              COLOR1,
+              COLOR1,
+              COLOR1,
+              COLOR1,
+              COLOR1,
+              COLOR1,
+              COLOR1,
+              COLOR1,
+              COLOR1,
+              COLOR1,
+              COLOR1,
+              COLOR1,
+              COLOR1,
+              COLOR2,
+              COLOR2,
+              COLOR3,
+              COLOR3,
+              COLOR4,
+              COLOR4,
+              COLOR4,
+              COLOR4,
+              COLOR4,
+              COLOR4,
+              COLOR4,
+            ],
+            hoverOffset: 4,
+          },
+        ],
+      };
+    } else {
+      dataVersion = 0;
+      newData = {
+        labels: [
+          "Energy",
+          "Industrial processes",
+          "Waste",
+          "Argiculture, Forestry & Land Use",
+        ],
+        datasets: [
+          {
+            data: [73.2, 5.2, 3.2, 18.4],
+            backgroundColor: [COLOR1, COLOR2, COLOR3, COLOR4],
+            hoverOffset: 4,
+          },
+        ],
+      };
+    }
+    setData(newData);
   };
 
   return (
