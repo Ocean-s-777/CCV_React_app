@@ -48,7 +48,7 @@ const VisualizationV5 = () => {
       let dataObject = {
         datasets: [
           buildDataset(
-            "DE08",
+            "CO2 concentration",
             json.v5_vostok,
             COLOR1,
             "Mean age of the air (yr BP)",

@@ -53,7 +53,7 @@ const VisualizationV8 = () => {
           let country = Object.keys(dataSource[0])[i + 2];
 
           // Generate color for each country
-          let red = 50 + i * 11;
+          let red = 0 + i * 11;
           let green = 0 + i * 33;
           let blue = 100 + i * 22;
           while (red > 255) red -= 255;
@@ -87,7 +87,7 @@ const VisualizationV8 = () => {
         labels: {
           usePointStyle: true,
           pointStyle: "rect",
-          pointStyleWidth: 10,
+          pointStyleWidth: 11,
         },
       },
       title: {
