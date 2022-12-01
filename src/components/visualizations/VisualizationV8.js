@@ -47,25 +47,21 @@ const VisualizationV8 = () => {
         pointRadius: POINTRADIUS,
       });
 
-      // Colors for the lines
-      let red = 0;
-      let green = 100;
-      let blue = 200;
-
       // Loop to build all the data sets
       const buildAllV8DataSets = () => {
         let allV8DataSets = [];
         for (let i = 0; i < Object.keys(dataSource[0]).length - 2; i++) {
           let country = Object.keys(dataSource[0])[i + 2];
-          red += i * 11;
-          green += i * 22;
-          blue += i * 33;
 
+          // Generate color for each country
+          let red = 50 + i * 11;
+          let green = 0 + i * 33;
+          let blue = 100 + i * 22;
           while (red > 255) red -= 255;
           while (green > 255) green -= 255;
           while (blue > 255) blue -= 255;
-
           let color = "rgb(" + red + ", " + green + ", " + blue + ")";
+          
           //console.log(country)
           allV8DataSets.push(buildDatasetForV8(country, color));
         }
@@ -126,6 +122,7 @@ const VisualizationV8 = () => {
         },
       },
       yAxis: {
+        max: 40000,
         stacked: true,
         type: "linear",
         title: {

@@ -86,7 +86,7 @@ const VisualizationV9 = () => {
       },
       title: {
         display: true,
-        text: "CO2 emissions by sectors",
+        text: "CO2 emissions by sectors (%)",
         font: {
           size: 20,
           family: 'Arial,"Times New Roman", Times, serif',
