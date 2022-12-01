@@ -49,7 +49,6 @@ const VisualizationV4 = () => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v4");
       const json = await response.json();
-      //console.log(json)
       let dataObject = {
         datasets: [
           buildDataset(
@@ -89,7 +88,6 @@ const VisualizationV4 = () => {
     }
   }, [data]);
 
-  //console.log(data)
   if (!data) return null;
 
   const options = {

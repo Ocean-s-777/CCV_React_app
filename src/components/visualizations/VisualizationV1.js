@@ -48,7 +48,6 @@ const VisualizationV1 = () => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v1-2");
       const json = await response.json();
-      //console.log(json)
       let dataObject = {
         datasets: [
           buildDataset(
@@ -110,7 +109,6 @@ const VisualizationV1 = () => {
     }
   }, [data]);
 
-  //console.log(data)
   if (!data) return null;
 
   const options = {
@@ -160,7 +158,7 @@ const VisualizationV1 = () => {
 
   return (
     <div className="graph-box">
-      <br/>
+      <br />
       <Line options={options} data={data} width={600} height={200} />
 
       <div className="graph-text-box">

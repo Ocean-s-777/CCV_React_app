@@ -20,9 +20,8 @@ const VisualizationV8 = () => {
   const [data, setData] = useState();
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(fetchURL + "/v8_1"); // Change to /v8 once the route exists
+      const response = await fetch(fetchURL + "/v8_1");
       const json = await response.json();
-      //console.log(json)
 
       // Common variables
       const dataSource = json.v8_ebc_v1;
@@ -61,15 +60,11 @@ const VisualizationV8 = () => {
           while (green > 255) green -= 255;
           while (blue > 255) blue -= 255;
           let color = "rgb(" + red + ", " + green + ", " + blue + ")";
-          
-          //console.log(country)
+
           allV8DataSets.push(buildDatasetForV8(country, color));
         }
-        //console.log(allV8DataSets);
         return allV8DataSets;
       };
-
-      //console.log(Object.keys(dataSource[0])[2]);
 
       let dataObject = {
         datasets: buildAllV8DataSets(),
@@ -81,7 +76,6 @@ const VisualizationV8 = () => {
     }
   }, [data]);
 
-  //console.log(data)
   if (!data) return null;
 
   const options = {

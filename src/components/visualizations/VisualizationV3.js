@@ -46,7 +46,6 @@ const VisualizationV3 = () => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v3");
       const json = await response.json();
-      //console.log(json)
       let dataObject = {
         datasets: [
           buildDataset(
@@ -72,7 +71,6 @@ const VisualizationV3 = () => {
     }
   }, [data]);
 
-  //console.log(data)
   if (!data) return null;
 
   const options = {

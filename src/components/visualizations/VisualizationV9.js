@@ -9,8 +9,6 @@ import { Chart } from "chart.js/auto"; // We need this unless/until we do some b
 import { useState, useEffect } from "react";
 
 // Common attributes of graphs/lines/plots
-//const BORDERWIDTH = 2;
-//const POINTRADIUS = 0;
 const COLOR1 = "#E60000";
 const COLOR2 = "#0000E6";
 const COLOR3 = "#007300";
@@ -51,7 +49,7 @@ const VisualizationV9 = () => {
       const response = await fetch(fetchURL + "/v3"); // Change to /v9 once the route exists
       // eslint-disable-next-line
       const json = await response.json();
-      //console.log(json)
+
       let dataObject = {
         labels: [
           "Energy",
@@ -74,7 +72,6 @@ const VisualizationV9 = () => {
     }
   }, [data]);
 
-  //console.log(data)
   if (!data) return null;
 
   const options = {
@@ -95,7 +92,6 @@ const VisualizationV9 = () => {
     },
     onClick: function (evt, element) {
       if (element.length > 0) {
-        //console.log(element[0]);
         toggleData();
       }
     },
