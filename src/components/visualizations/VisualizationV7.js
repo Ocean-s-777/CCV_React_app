@@ -90,8 +90,8 @@ const VisualizationV7 = () => {
         display: true,
         text: "Evolution of global temperature over the past two million years",
         font: {
-          size: 24,
-          family: '"Times New Roman", Times, serif',
+          size: 20,
+          family: 'Arial,"Times New Roman", Times, serif',
         },
       },
     },

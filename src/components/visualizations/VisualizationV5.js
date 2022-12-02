@@ -77,8 +77,8 @@ const VisualizationV5 = () => {
         display: true,
         text: "Vostok Ice Core CO2 measurements, 417160 - 2342 years",
         font: {
-          size: 24,
-          family: '"Times New Roman", Times, serif',
+          size: 20,
+          family: 'Arial, "Times New Roman", Times, serif',
         },
       },
     },

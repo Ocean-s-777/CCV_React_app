@@ -11,7 +11,7 @@ export default function Header() {
       <img src={logo} alt={"logo"} href="/"/>
       <a className="navbar-brand title" href="/">Climate Change Visualiser</a></div>
     <div className="icons">
-      <img src={createGrn} alt={"add"} href="/User"/>
+      <img src={createGrn} alt={"add"} href="/Add"/>
       <img src={userGrn} alt={"user"} href="/User"/></div>
   </div>
 </nav>

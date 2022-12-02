@@ -71,8 +71,8 @@ const VisualizationV6 = () => {
         display: true,
         text: "Ice core 800k year composite study CO2 measurements",
         font: {
-          size: 24,
-          family: '"Times New Roman", Times, serif',
+          size: 20,
+          family: 'Arial, "Times New Roman", Times, serif',
         },
       },
     },

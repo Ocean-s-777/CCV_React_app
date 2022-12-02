@@ -1,11 +1,13 @@
 import React from 'react'
 
-function Signup() {
+function SignupContent() {
     return (
+        <>
         <div>
             <div className="">
                 <h1>CREATE ACCOUNT</h1>
             </div>
+            <form onSubmit={ handleSignupSubmit }>
             <div className="">
                 <div>
                     <label>Username</label>
@@ -15,12 +17,14 @@ function Signup() {
                     <label>Password</label>
                     <input type="password" placeholder="Password" />
                 </div>
-                <button type="submit" className=''>Sign Up</button>
-            </div>
-            <a href="./Login">
-                <p>Log In</p>
-            </a>
+                <div>
+                    { signupUIControls }
+                </div>
         </div>
+        </form>
+        </div>
+
+    </>
     )
 }
-export default Signup;
+export default SignupContent;

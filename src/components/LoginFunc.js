@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Login() {
+function LoginFunc() {
     return (
         <div className="">
             <h1>Sign into Your Account</h1>
@@ -21,4 +21,4 @@ function Login() {
         </div>
     )
 }
-export default Login;
+export default LoginFunc;
