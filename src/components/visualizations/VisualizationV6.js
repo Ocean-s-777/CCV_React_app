@@ -45,7 +45,6 @@ const VisualizationV6 = () => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v6");
       const json = await response.json();
-      //console.log(json)
       let dataObject = {
         datasets: [
           buildDataset("co2_ppm", json.v6_800k, COLOR1, "Time", "co2_ppm"),
@@ -58,7 +57,6 @@ const VisualizationV6 = () => {
     }
   }, [data]);
 
-  //console.log(data)
   if (!data) return null;
 
   const options = {
@@ -84,7 +82,7 @@ const VisualizationV6 = () => {
         },
         title: {
           display: true,
-          text: "Years before present",
+          text: "Year",
           color: "black",
           font: {
             size: 16,
@@ -94,12 +92,21 @@ const VisualizationV6 = () => {
       },
       yAxis: {
         type: "linear",
+        title: {
+          display: true,
+          text: "CO2 (ppm)",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
     },
   };
 
   return (
     <div className="graph-box">
+      <br />
       <Line options={options} data={data} width={600} height={200} />
 
       <div className="graph-text-box">
@@ -126,6 +133,7 @@ const VisualizationV6 = () => {
           data source
         </a>
       </div>
+      <hr />
     </div>
   );
 };

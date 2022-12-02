@@ -12,7 +12,6 @@ import { useState, useEffect } from "react";
 const BORDERWIDTH = 2;
 const POINTRADIUS = 0;
 
-
 const COLOR3 = "#FFC05B";
 const COLOR2 = "#0054E6dd";
 const COLOR1 = "#dd8282dd";
@@ -50,7 +49,6 @@ const VisualizationV4 = () => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v4");
       const json = await response.json();
-      //console.log(json)
       let dataObject = {
         datasets: [
           buildDataset(
@@ -90,7 +88,6 @@ const VisualizationV4 = () => {
     }
   }, [data]);
 
-  //console.log(data)
   if (!data) return null;
 
   const options = {
@@ -114,16 +111,33 @@ const VisualizationV4 = () => {
         time: {
           unit: "year",
         },
+        title: {
+          display: true,
+          text: "Year",
+          color: "black",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
       yAxis: {
         type: "linear",
+        title: {
+          display: true,
+          text: "CO2 Mixing Ratio (ppm)",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
     },
   };
 
   return (
     <div className="graph-box">
-      <br/>
+      <br />
       <Line options={options} data={data} width={600} height={200} />
 
       <div className="graph-text-box">
@@ -132,39 +146,44 @@ const VisualizationV4 = () => {
           Mauna Loa CO2 annual mean data.
         </p>
 
-        <a
-          href="https://cdiac.ess-dive.lbl.gov/trends/co2/lawdome.html"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Historical CO2 Records from the Law Dome DE08, DE08-2, and DSS Ice
-          Cores
-        </a>
+        <p>
+          <a
+            href="https://cdiac.ess-dive.lbl.gov/trends/co2/lawdome.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Historical CO2 Records from the Law Dome DE08, DE08-2, and DSS Ice
+            Cores description
+          </a>
+          &nbsp; & &nbsp;
+          <a
+            href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/lawdome.combined.dat"
+            target="_blank"
+            rel="noreferrer"
+          >
+            the data used
+          </a>
+        </p>
 
-        <a
-          href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/lawdome.combined.dat"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Data source
-        </a>
-
-        <a
-          href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Mauna Loa CO2 measurements
-        </a>
-
-        <a
-          href="https://gml.noaa.gov/ccgg/trends/data.html"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Data source
-        </a>
+        <p>
+          <a
+            href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Mauna Loa CO2 measurements description
+          </a>
+          &nbsp; & &nbsp;
+          <a
+            href="https://gml.noaa.gov/ccgg/trends/data.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            the data used
+          </a>
+        </p>
       </div>
+      <hr />
     </div>
   );
 };

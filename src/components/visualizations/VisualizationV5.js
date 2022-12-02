@@ -25,7 +25,7 @@ fetchURL = "https://oceans777.herokuapp.com"; // Disable this line to benefit fr
 const buildDataset = (label, data, color, x, y, hidden) => ({
   label,
   data: data.map((d) => ({
-    time: (2022 - d[x]), // yr BP = years before present, !!!
+    time: d[x] * -1, // yr BP = years before present, !!!
     value: d[y],
   })),
   borderColor: color,
@@ -45,11 +45,10 @@ const VisualizationV5 = () => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v5");
       const json = await response.json();
-      //console.log(json)
       let dataObject = {
         datasets: [
           buildDataset(
-            "DE08",
+            "CO2 concentration",
             json.v5_vostok,
             COLOR1,
             "Mean age of the air (yr BP)",
@@ -64,7 +63,6 @@ const VisualizationV5 = () => {
     }
   }, [data]);
 
-  //console.log(data)
   if (!data) return null;
 
   const options = {
@@ -84,19 +82,37 @@ const VisualizationV5 = () => {
     },
     scales: {
       x: {
-        type: "time",
-        time: {
-          unit: "year",
+        type: "linear",
+        ticks: {
+          stepSize: 2000,
+        },
+        title: {
+          display: true,
+          text: "Year",
+          color: "black",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
         },
       },
       yAxis: {
         type: "linear",
+        title: {
+          display: true,
+          text: "CO2 concentration (ppmv)",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
     },
   };
 
   return (
     <div className="graph-box">
+      <br />
       <Line options={options} data={data} width={600} height={200} />
 
       <div className="graph-text-box">
@@ -118,6 +134,7 @@ const VisualizationV5 = () => {
           Data source
         </a>
       </div>
+      <hr />
     </div>
   );
 };

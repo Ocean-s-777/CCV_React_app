@@ -46,7 +46,6 @@ const VisualizationV3 = () => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v3");
       const json = await response.json();
-      //console.log(json)
       let dataObject = {
         datasets: [
           buildDataset(
@@ -72,7 +71,6 @@ const VisualizationV3 = () => {
     }
   }, [data]);
 
-  //console.log(data)
   if (!data) return null;
 
   const options = {
@@ -96,16 +94,33 @@ const VisualizationV3 = () => {
         time: {
           unit: "year",
         },
+        title: {
+          display: true,
+          text: "Year",
+          color: "black",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
       yAxis: {
         type: "linear",
+        title: {
+          display: true,
+          text: "CO2",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
     },
   };
 
   return (
     <div className="graph-box">
-      <br/>
+      <br />
       <Line options={options} data={data} width={600} height={200} />
 
       <div className="graph-text-box">
@@ -114,22 +129,25 @@ const VisualizationV3 = () => {
           Observatory, Hawaii.
         </p>
 
-        <a
-          href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Detailed description
-        </a>
-
-        <a
-          href="https://gml.noaa.gov/ccgg/trends/data.html"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Data source
-        </a>
+        <p>
+          <a
+            href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Detailed description
+          </a>
+          &nbsp; & &nbsp;
+          <a
+            href="https://gml.noaa.gov/ccgg/trends/data.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            the data used
+          </a>
+        </p>
       </div>
+      <hr />
     </div>
   );
 };

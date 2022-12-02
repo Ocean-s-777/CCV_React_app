@@ -11,7 +11,7 @@ import { useState, useEffect } from "react";
 // Common attributes of graphs/lines/plots
 const BORDERWIDTH = 2;
 const POINTRADIUS = 0;
-const COLOR1 =  "#0054E6dd";
+const COLOR1 = "#0054E6dd";
 const COLOR2 = "#FFC05B";
 
 // If run on localhost, asume localhost server is also used
@@ -26,7 +26,7 @@ fetchURL = "https://oceans777.herokuapp.com"; // Disable this line to benefit fr
 const buildDataset = (label, data, color, x, y, hidden, yAxis) => ({
   label,
   data: data.map((d) => ({
-    time: Math.round((d[x])/1000),
+    time: Math.round(d[x] / 1000),
     value: d[y],
   })),
   borderColor: color,
@@ -47,7 +47,6 @@ const VisualizationV7 = () => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v7");
       const json = await response.json();
-      //console.log(json)
       let dataObject = {
         datasets: [
           buildDataset(
@@ -77,7 +76,6 @@ const VisualizationV7 = () => {
     }
   }, [data]);
 
-  //console.log(data)
   if (!data) return null;
 
   const options = {
@@ -103,7 +101,7 @@ const VisualizationV7 = () => {
         },
         title: {
           display: true,
-          text: "Thousands of years before present",
+          text: "Thousands of years",
           color: "black",
           font: {
             size: 16,
@@ -117,7 +115,7 @@ const VisualizationV7 = () => {
         position: "left",
         title: {
           display: true,
-          text: "co2 ppm",
+          text: "CO2 (ppm)",
           color: COLOR1,
           font: {
             size: 16,
@@ -134,7 +132,7 @@ const VisualizationV7 = () => {
         },
         title: {
           display: true,
-          text: "surface temperature change",
+          text: "Surface temperature (deg C)",
           color: COLOR2,
           font: {
             size: 16,
@@ -147,6 +145,7 @@ const VisualizationV7 = () => {
 
   return (
     <div className="graph-box">
+      <br />
       <Line options={options} data={data} width={600} height={200} />
 
       <div className="graph-text-box">
@@ -172,6 +171,7 @@ const VisualizationV7 = () => {
           Data source
         </a>
       </div>
+      <hr />
     </div>
   );
 };

@@ -48,7 +48,6 @@ const VisualizationV1 = () => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v1-2");
       const json = await response.json();
-      //console.log(json)
       let dataObject = {
         datasets: [
           buildDataset(
@@ -110,7 +109,6 @@ const VisualizationV1 = () => {
     }
   }, [data]);
 
-  //console.log(data)
   if (!data) return null;
 
   const options = {
@@ -134,16 +132,33 @@ const VisualizationV1 = () => {
         time: {
           unit: "year",
         },
+        title: {
+          display: true,
+          text: "Year",
+          color: "black",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
       yAxis: {
         type: "linear",
+        title: {
+          display: true,
+          text: "Temperature anomaly (deg C)",
+          font: {
+            size: 16,
+            family: '"Times New Roman", Times, serif',
+          },
+        },
       },
     },
   };
 
   return (
     <div className="graph-box">
-      <br/>
+      <br />
       <Line options={options} data={data} width={600} height={200} />
 
       <div className="graph-text-box">
