@@ -1,11 +1,11 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Constants from './Constants.json';
-import {UserAuthContext} from './Contexts'
+
+
 
 export default function LoginView(props) {
-
+  const UserAuthContext = React.createContext()
   const UserAuthContextValue = useContext(UserAuthContext);
   let navigate = useNavigate();
   const [ loginProcessState, setLoginProcessState ] = useState("idle");

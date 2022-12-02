@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
-import Constants from './Constants.json';
 import { useNavigate } from "react-router-dom";
 import SignupContent from '../SignupContent';
 //import VisualizationV1 from '../visualizations/VisualizationV1'
@@ -57,7 +56,7 @@ export default function SignupView() {
   }
 }
 
-export default class Sources extends Component {
+/* export default class Sources extends Component {
   render() {
     return (
         <>
@@ -67,3 +66,4 @@ export default class Sources extends Component {
     )
   }
 }
+ */

@@ -2,7 +2,6 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { UserAuthContext } from './Contexts';
 
 import Header from './components/Header';
 import PageSelect from './components/PageSelect';
@@ -16,6 +15,7 @@ import CO2 from './components/pages/CO2';
 const jwtFromStorage = window.localStorage.getItem('appAuthData');
 
 function App() {
+  const UserAuthContext = React.createContext()
   return (
     <>
     {/* <UserAuthContext.Provider value={ userAuthData }>
