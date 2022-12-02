@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
+/* import axios from 'axios'; */
 import { useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import SignupContent from '../SignupContent';
 //import VisualizationV1 from '../visualizations/VisualizationV1'
 //#479042
 //#003798
 
-export default function SignupView() {
+/* export default function SignupView() {
   let navigate = useNavigate();
   const [ signupProcessState, setSignupProcessState ] = useState("idle");
 
@@ -54,9 +54,8 @@ export default function SignupView() {
     default:
       signupUIControls = <button type="submit">Sign up</button>
   }
-}
-
-/* export default class Sources extends Component {
+} */
+ export default class Sources extends Component {
   render() {
     return (
         <>
@@ -66,4 +65,3 @@ export default function SignupView() {
     )
   }
 }
- */

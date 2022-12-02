@@ -14,7 +14,7 @@ export default function LoginView(props) {
     event.preventDefault();
     setLoginProcessState("processing");
     try {
-      const result = await axios.post(Constants.API_ADDRESS + '/loginForJWT', null, {
+      const result = await axios.post(2000 + '/loginForJWT', null, {
         auth: {
           username: event.target.username.value,
           password: event.target.password.value
