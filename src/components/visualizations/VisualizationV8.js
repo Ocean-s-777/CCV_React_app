@@ -8,13 +8,7 @@ import { Line } from "react-chartjs-2";
 import { Chart } from "chart.js/auto"; // We need this unless/until we do some bundle optimization
 import { useState, useEffect } from "react";
 
-// If run on localhost, asume localhost server is also used
-let currentURL = window.location.href;
-let isDev = currentURL.includes("localhost");
-let fetchURL = isDev
-  ? "http://localhost:3002" // You need to have the server's .env PORT set as 3002
-  : "https://oceans777.herokuapp.com";
-fetchURL = "https://oceans777.herokuapp.com"; // Disable this line to benefit from the code above
+const fetchURL = "https://oceans777.herokuapp.com";
 
 const VisualizationV8 = () => {
   const [data, setData] = useState();
@@ -23,12 +17,10 @@ const VisualizationV8 = () => {
       const response = await fetch(fetchURL + "/v8_1");
       const json = await response.json();
 
-      // Common variables
       const dataSource = json.v8_ebc_v1;
       const BORDERWIDTH = 2;
       const POINTRADIUS = 0;
 
-      // Function to build datasets (from json) for a V8
       const buildDatasetForV8 = (country, color) => ({
         label: country,
         data: dataSource.map((d) => ({
@@ -46,7 +38,6 @@ const VisualizationV8 = () => {
         pointRadius: POINTRADIUS,
       });
 
-      // Loop to build all the data sets
       const buildAllV8DataSets = () => {
         let allV8DataSets = [];
         for (let i = 0; i < Object.keys(dataSource[0]).length - 2; i++) {
@@ -137,7 +128,7 @@ const VisualizationV8 = () => {
       <Line options={options} data={data} width={600} height={200} />
 
       <div className="graph-text-box">
-        <p>WIP</p>
+        <p>Here should be some text</p>
 
         <p>
           <a

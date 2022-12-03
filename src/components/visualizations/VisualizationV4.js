@@ -8,24 +8,14 @@ import { Line } from "react-chartjs-2";
 import { Chart } from "chart.js/auto"; // We need this unless/until we do some bundle optimization
 import { useState, useEffect } from "react";
 
-// Common attributes of graphs/lines/plots
 const BORDERWIDTH = 2;
 const POINTRADIUS = 0;
-
 const COLOR3 = "#FFC05B";
 const COLOR2 = "#0054E6dd";
 const COLOR1 = "#dd8282dd";
 const COLOR4 = "#228C1Bdd";
+const fetchURL = "https://oceans777.herokuapp.com";
 
-// If run on localhost, asume localhost server is also used
-let currentURL = window.location.href;
-let isDev = currentURL.includes("localhost");
-let fetchURL = isDev
-  ? "http://localhost:3002" // You need to have the server's .env PORT set as 3002
-  : "https://oceans777.herokuapp.com";
-fetchURL = "https://oceans777.herokuapp.com"; // Disable this line to benefit from the code above
-
-// Function to build datasets (from json) for a Line
 const buildDataset = (label, data, color, x, y, hidden) => ({
   label,
   data: data.map((d) => ({
