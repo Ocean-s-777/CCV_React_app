@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-/* import axios from 'axios'; */
+import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import SignupContent from '../SignupContent';
@@ -7,7 +7,7 @@ import SignupContent from '../SignupContent';
 //#479042
 //#003798
 
-/* export default function SignupView() {
+export default function SignupView() {
   let navigate = useNavigate();
   const [ signupProcessState, setSignupProcessState ] = useState("idle");
 
@@ -15,7 +15,7 @@ import SignupContent from '../SignupContent';
     event.preventDefault();
     setSignupProcessState("processing");
     try {
-      const result = await axios.post(Constants.API_ADDRESS + '/registerBasic', {
+      const result = await axios.post(2000 + '/registerBasic', {
         username: event.target.username.value,
         email: event.target.email.value,
         password: event.target.password.value
@@ -54,14 +54,8 @@ import SignupContent from '../SignupContent';
     default:
       signupUIControls = <button type="submit">Sign up</button>
   }
-} */
- export default class Sources extends Component {
-  render() {
-    return (
-        <>
-        <SignupContent/>
-        <div>(/Signup)</div>
-        </>
-    )
-  }
+  
+return (
+    <SignupContent/>
+  )
 }
