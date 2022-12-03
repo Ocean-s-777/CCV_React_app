@@ -199,7 +199,7 @@ const VisualizationV9 = () => {
   return (
     <div className="graph-box">
       <br />
-      <div style={{ width: "80vw" }} className="doughnut-chart-container">
+      <div style={{ width: "75vw" }} className="doughnut-chart-container">
         <Doughnut options={options} data={data} />
       </div>
 
