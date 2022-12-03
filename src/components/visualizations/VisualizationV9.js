@@ -8,98 +8,17 @@ import { Doughnut } from "react-chartjs-2";
 import { Chart } from "chart.js/auto"; // We need this unless/until we do some bundle optimization
 import { useState, useEffect } from "react";
 
-// Common attributes of graphs/lines/plots
-/* const COLOR1 = "#E60000";
-const COLOR2 = "#0000E6";
-const COLOR3 = "#007300";
-const COLOR4 = "#E69500"; */
 const COLOR1 = "#0054E6dd";
 const COLOR2 = "#dd8282dd";
 const COLOR4 = "#228C1Bdd";
 const COLOR3 = "#FFC05B";
-let dataVersion = 0; // Used by the function to change the displayed data
-let newData = {}; // Used by the function to change the displayed data
-
-// If run on localhost, asume localhost server is also used
-let currentURL = window.location.href;
-let isDev = currentURL.includes("localhost");
-let fetchURL = isDev
-  ? "http://localhost:3002" // You need to have the server's .env PORT set as 3002
-  : "https://oceans777.herokuapp.com";
-fetchURL = "https://oceans777.herokuapp.com"; // Disable this line to benefit from the code above
-
-// Function to build datasets (from json) for a Line
-/* const buildDataset = (label, data, color, x, y, hidden) => ({
-  label,
-  data: data.map((d) => ({
-    time: d[x],
-    value: d[y],
-  })),
-  borderColor: color,
-  backgroundColor: color,
-  parsing: {
-    xAxisKey: "time",
-    yAxisKey: "value",
-  },
-  borderWidth: BORDERWIDTH,
-  pointRadius: POINTRADIUS,
-  hidden,
-}); */
+let dataVersion = 0; // Used by toggleData()
+let newData = {}; // Used by toggleData()
+let json = {};
+const fetchURL = "https://oceans777.herokuapp.com";
 
 const VisualizationV9 = () => {
   const [data, setData] = useState();
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await fetch(fetchURL + "/v3"); // Change to /v9 once the route exists
-      // eslint-disable-next-line
-      const json = await response.json();
-
-      let dataObject = {
-        labels: [
-          "Energy",
-          "Industrial processes",
-          "Waste",
-          "Argiculture, Forestry & Land Use",
-        ],
-        datasets: [
-          {
-            data: [73.2, 5.2, 3.2, 18.4],
-            backgroundColor: [COLOR1, COLOR2, COLOR3, COLOR4],
-            hoverOffset: 4,
-          },
-        ],
-      };
-      setData(dataObject);
-    };
-    if (!data) {
-      fetchData();
-    }
-  }, [data]);
-
-  if (!data) return null;
-
-  const options = {
-    responsive: true,
-    plugins: {
-      legend: {
-        display: true,
-        position: "bottom",
-      },
-      title: {
-        display: true,
-        text: "CO2 emissions by sectors (%)",
-        font: {
-          size: 20,
-          family: 'Arial,"Times New Roman", Times, serif',
-        },
-      },
-    },
-    onClick: function (evt, element) {
-      if (element.length > 0) {
-        toggleData();
-      }
-    },
-  };
 
   // Function to change the displayed data
   let toggleData = () => {
@@ -140,9 +59,35 @@ const VisualizationV9 = () => {
         datasets: [
           {
             data: [
-              11.9, 1.9, 0.4, 0.3, 1.7, 10.9, 6.6, 7.2, 0.7, 0.5, 1, 0.6, 3.6,
-              10.6, 1.7, 7.8, 1.9, 3.9, 3, 2.2, 1.9, 1.3, 5.8, 1.3, 4.1, 3.5,
-              2.2, 1.4, 0.1,
+              json.v9_b[0]["Road"],
+              json.v9_b[0]["Aviation"],
+              json.v9_b[0]["Rail"],
+              json.v9_b[0]["Pipeline"],
+              json.v9_b[0]["Ship"],
+              json.v9_b[0]["Residential"],
+              json.v9_b[0]["Commercial"],
+              json.v9_b[0]["Iron & Steel"],
+              json.v9_b[0]["Non-ferous metals"],
+              json.v9_b[0]["Machinery"],
+              json.v9_b[0]["Food and tobacco"],
+              json.v9_b[0]["Paper, pulp & printing"],
+              json.v9_b[0]["Chemical & petrochemical (energy)"],
+              json.v9_b[0]["Other industry"],
+              json.v9_b[0]["Energy in Agri & Fishing"],
+              json.v9_b[0]["Unallocated fuel combustion"],
+              json.v9_b[0]["Coal"],
+              json.v9_b[0]["Oil & Natural Gas"],
+              json.v9_b[0]["Cement"],
+              json.v9_b[0]["Chemical & petrochemical (industrial)"],
+              json.v9_b[0]["Landfills"],
+              json.v9_b[0]["Wastewater"],
+              json.v9_b[0]["Livestock & Manure"],
+              json.v9_b[0]["Rice Cultivation"],
+              json.v9_b[0]["Agricultural Soils"],
+              json.v9_b[0]["Crop Burning"],
+              json.v9_b[0]["Forest Land"],
+              json.v9_b[0]["Cropland"],
+              json.v9_b[0]["Grassland"],
             ],
             backgroundColor: [
               COLOR1,
@@ -190,7 +135,12 @@ const VisualizationV9 = () => {
         ],
         datasets: [
           {
-            data: [73.2, 5.2, 3.2, 18.4],
+            data: [
+              json.v9_f[0]["Energy"],
+              json.v9_f[0]["Industrial processes"],
+              json.v9_f[0]["Waste"],
+              json.v9_f[0]["Agriculture, Forestry & Land Use (AFOLU)"],
+            ],
             backgroundColor: [COLOR1, COLOR2, COLOR3, COLOR4],
             hoverOffset: 4,
           },
@@ -198,6 +148,42 @@ const VisualizationV9 = () => {
       };
     }
     setData(newData);
+  };
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(fetchURL + "/v9");
+      json = await response.json();
+      toggleData();
+    };
+    if (!data) {
+      fetchData();
+    }
+  }, [data]);
+
+  if (!data) return null;
+
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        display: true,
+        position: "bottom",
+      },
+      title: {
+        display: true,
+        text: "CO2 emissions by sectors (%)",
+        font: {
+          size: 20,
+          family: 'Arial,"Times New Roman", Times, serif',
+        },
+      },
+    },
+    onClick: function (evt, element) {
+      if (element.length > 0) {
+        toggleData();
+      }
+    },
   };
 
   return (
@@ -208,7 +194,7 @@ const VisualizationV9 = () => {
       </div>
 
       <div className="graph-text-box">
-        <p>The current graph is just a placehoder!</p>
+        <p>Here should be some text</p>
 
         <p>
           <a
