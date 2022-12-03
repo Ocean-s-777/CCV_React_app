@@ -83,7 +83,7 @@ const VisualizationV9 = () => {
     plugins: {
       legend: {
         display: true,
-        position: "right",
+        position: "bottom",
       },
       title: {
         display: true,
@@ -208,7 +208,7 @@ const VisualizationV9 = () => {
       </div>
 
       <div className="graph-text-box">
-        <p>The current graph is just a placeholder!</p>
+        <p>The current graph is just a placehoder!</p>
 
         <p>
           <a
