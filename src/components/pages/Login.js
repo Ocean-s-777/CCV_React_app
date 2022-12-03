@@ -59,19 +59,39 @@ export default function LoginView(props) {
 
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={ onSubmit }>
-        <div>
-          Username <input type="text" name="username"/>
-        </div>
-        <div>
-          Password <input type="password" name="password"/>
-        </div>
-        <div>
-          { loginUIControls }
-        </div>
-      </form>
+    <div className="login_container">
+    <h1>SIGN IN</h1>
+    <div className="login_form">
+        <form action="#" method="post">
+            <div>
+                {/* need to insert icon */}
+                <label>Email Address</label><br/>
+                <input type="text" name="user" placeholder="Email Address" className="input-email" required />
+            </div>
+            <div>
+                <label>Password</label><br/>
+                <input type="password" name="password" id="" placeholder="Password" className="input-password" required/>
+            </div>
+            <a href="./">
+                <p>Forgot Password?</p>
+            </a>
+            <button id="loginbutton" type="submit">Log In</button>
+        </form>
     </div>
+</div>
+    // <div>
+    //   <h1>Login</h1>
+    //   <form onSubmit={ onSubmit }>
+    //     <div>
+    //       Username <input type="text" name="username"/>
+    //     </div>
+    //     <div>
+    //       Password <input type="password" name="password"/>
+    //     </div>
+    //     <div>
+    //       { loginUIControls }
+    //     </div>
+    //   </form>
+    // </div>
   )
 }
