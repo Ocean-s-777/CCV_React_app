@@ -16,7 +16,6 @@ export default function SignupView() {
     try {
       const result = await axios.post(2000 + '/registerBasic', {
         username: event.target.username.value,
-        email: event.target.email.value,
         password: event.target.password.value
       })
       console.log(result);
