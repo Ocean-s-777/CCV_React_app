@@ -9,10 +9,14 @@ import { Chart } from "chart.js/auto"; // We need this unless/until we do some b
 import { useState, useEffect } from "react";
 
 // Common attributes of graphs/lines/plots
-const COLOR1 = "#E60000";
+/* const COLOR1 = "#E60000";
 const COLOR2 = "#0000E6";
 const COLOR3 = "#007300";
-const COLOR4 = "#E69500";
+const COLOR4 = "#E69500"; */
+const COLOR1 = "#0054E6dd";
+const COLOR2 = "#dd8282dd";
+const COLOR3 = "#228C1Bdd";
+const COLOR4 = "#FFC05B";
 let dataVersion = 0; // Used by the function to change the displayed data
 let newData = {}; // Used by the function to change the displayed data
 
