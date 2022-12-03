@@ -96,6 +96,69 @@ canvas{
   background-color: white;
   width: auto;
 }
+
+
+.login_container{
+  font-family: sans-serif;
+  color: white;
+  height: auto;
+  width: auto;
+  margin: 0px 0px 5px 0px;
+
+}
+.login_container h1{
+  width: 300px;
+  height: 60px;
+  background-color: #246898;
+  font-family: serif;
+  color: white;
+  font-weight: bold;
+  padding: 8px 0px 0px 77px;
+  margin: 0px;
+  border-radius: 28px 28px 0px 0px;
+}
+
+.login_container .login_form{
+  width: 300px;
+  border-radius: 0px 0px 28px 28px;
+  padding: 26px 42px 19px;
+  background-color: #4682B4;
+}
+
+.login_container .login_form input{
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.login_container .login_form input:hover{
+ border: 3px solid #00ACD1;
+}
+
+.login_container .login_form a p:hover {
+  color: #39D9AB;
+}
+.login_container .login_form a p{
+     /* #7CFC00; */
+     color: gold;
+     padding: 14px 0px 0px 78px;
+    width: 100%;
+ }
+
+#loginbutton{
+  height: 40px;
+  width: 109px;
+  background-color: #246898;
+  color: white;
+  border-radius: 14px;
+  margin: 5px 0px 0px 52px;
+}
+
+#loginbutton:hover{
+  font-weight: bold;
+  color:gold;
+}
+
+
 @media (min-width: 992px){
 .container, .container-lg, .container-md, .container-sm {
     max-width: 100vw;
