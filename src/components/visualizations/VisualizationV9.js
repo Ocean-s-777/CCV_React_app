@@ -79,7 +79,7 @@ const VisualizationV9 = () => {
     plugins: {
       legend: {
         display: true,
-        position: "bottom",
+        position: "right",
       },
       title: {
         display: true,
@@ -199,12 +199,12 @@ const VisualizationV9 = () => {
   return (
     <div className="graph-box">
       <br />
-      <div style={{ width: "50vw" }} className="dougnut-chart-container">
+      <div style={{ width: "50vw" }} className="doughnut-chart-container">
         <Doughnut options={options} data={data} />
       </div>
 
       <div className="graph-text-box">
-        <p>The current graph is just a placehoder!</p>
+        <p>The current graph is just a placeholder!</p>
 
         <p>
           <a
