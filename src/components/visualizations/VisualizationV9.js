@@ -168,7 +168,7 @@ const VisualizationV9 = () => {
     plugins: {
       legend: {
         display: true,
-        position: "bottom",
+        position: "right",
       },
       title: {
         display: true,
@@ -189,7 +189,7 @@ const VisualizationV9 = () => {
   return (
     <div className="graph-box">
       <br />
-      <div style={{ width: "75vw" }} className="doughnut-chart-container">
+      <div style={{ height: "70vw" }} className="doughnut-chart-container">
         <Doughnut options={options} data={data} />
       </div>
 
