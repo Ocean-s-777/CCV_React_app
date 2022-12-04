@@ -150,7 +150,7 @@ const VisualizationV1 = () => {
   return (
     <div className="graph-box">
       <br />
-      <Line options={options} data={data} width={600} height={200} />
+      <Line options={options} data={data} /* width={600} height={200} */ />
 
       <div className="graph-text-box">
         <p>
