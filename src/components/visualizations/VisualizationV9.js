@@ -12,7 +12,7 @@ const COLOR1 = "#0054E6dd";
 const COLOR2 = "#dd8282dd";
 const COLOR4 = "#228C1Bdd";
 const COLOR3 = "#FFC05B";
-let dataVersion = 0; // Used by toggleData()
+let dataVersion = 1; // Used by toggleData()
 let newData = {}; // Used by toggleData()
 let json = {};
 const fetchURL = "https://oceans777.herokuapp.com";
@@ -170,6 +170,14 @@ const VisualizationV9 = () => {
         onClick: null,
         display: true,
         position: "right",
+        labels: {
+          generateLabels: (chart) => {
+            return chart.data.datasets[0].data.map((data, i) => ({
+              text: `${chart.data.labels[i]}: ${data}%`,
+              fillStyle: chart.data.datasets[0].backgroundColor[i],
+            }));
+          },
+        },
       },
       title: {
         display: true,
