@@ -17,6 +17,10 @@ hr{
   margin-bottom: 16px; */
 }
 
+.doughnut-box {
+  width: 50%;
+}
+
 .graph-box {
   padding: '30px';
   margin: '20px';
