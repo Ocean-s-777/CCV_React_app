@@ -16,6 +16,51 @@ const COLOR1 = "#dd8282dd";
 const COLOR4 = "#228C1Bdd";
 const fetchURL = "https://oceans777.herokuapp.com";
 
+// This will be removed once we get the real data
+const dummyValue = 350
+const dummyData = [
+  {
+    time: "1346",
+    value: 300,
+    text: "bubonic plague caused by the Black Death bacillus Yersinia pestis kills a third of the human population across much of Europe, 1346-53"
+  },
+  {
+    time: "1542",
+    value: 300,
+    text: "global population of humans passes 500 million; annual energy use per person averages 9,800 kWh, 14x the resting metabolism"
+  },
+  {
+    time: "1886",
+    value: 300,
+    text: "first car with gasoline-powered internal combustion engine (Karl Benz, Germany, 1886) -> 97 million motor vehicles produced globally per year by 2017: peak production?"
+  },
+  {
+    time: "1900",
+    value: 300,
+    text: "global average life expectancy equals 32 years by 1900 -> doubling over the next 75 years, exposing diseases of ageing"
+  },
+  {
+    time: "1918",
+    value: 300,
+    text: "Spanish flu pandemic (1918-20): H1N1 influenza virus infects a third of the global population and kills 50-100 million, mostly in the 2nd wave"
+  },
+  {
+    time: "1973",
+    value: 300,
+    text: "global average life expectancy exceeds 60 years by 1973 -> 70 years by 2008 and rising for all countries; strengthening link to affluence, which drives down natural capital"
+  },
+  {
+    time: "1986",
+    value: 300,
+    text: "global population of humans passes 5 billion; annual energy use per person averages 18300 kWh, 26x the resting metabolism"
+  },
+  {
+    time: "2017",
+    value: 300,
+    text: "first national legislation for a mid-century target of net-zero emissions (Sweden, 2017) -> Suriname and Bhutan CO2-negative by 2019"
+  },
+]
+
 const buildDataset = (label, data, color, x, y, hidden) => ({
   label,
   data: data.map((d) => ({
@@ -69,6 +114,54 @@ const VisualizationV4 = () => {
             "year",
             "mean"
           ),
+
+          {
+            label: "Human Evolution and Activities",
+            data: [
+              {
+                time: "1346",
+                value: 280,
+              },
+              {
+                time: "1542",
+                value: 280,
+              },
+              {
+                time: "1886",
+                value: 290,
+              },
+              {
+                time: "1900",
+                value: 300,
+              },
+              {
+                time: "1918",
+                value: 300,
+              },
+              {
+                time: "1973",
+                value: 330,
+              },
+              {
+                time: "1986",
+                value: dummyValue,
+              },
+              {
+                time: "2017",
+                value: 394,
+              },
+            ],
+            borderColor: "#a89d1b",
+            backgroundColor: "#c74714",
+            parsing: {
+              xAxisKey: "time",
+              yAxisKey: "value",
+            },
+            borderWidth: BORDERWIDTH,
+            pointRadius: 10,
+            hidden: false,
+            showLine: false,
+          },
         ],
       };
       setData(dataObject);
@@ -83,6 +176,24 @@ const VisualizationV4 = () => {
   const options = {
     responsive: true,
     plugins: {
+      tooltip: {
+        callbacks: {
+          title: (contex) => {
+            //console.log(contex);
+            return contex[0].raw.time;
+          },
+          label: (tooltipItem) => {
+            //console.log(tooltipItem)
+            //console.log(data.datasets[3].data[tooltipItem.dataIndex].value)
+            if (tooltipItem.datasetIndex === 4) {
+              //return data.datasets[3].data[tooltipItem.dataIndex].value;
+              return dummyData[tooltipItem.dataIndex].text;
+            } else {
+              return tooltipItem.raw.value + " ppm";
+            }
+          },
+        },
+      },
       legend: {
         position: "top",
       },
@@ -170,6 +281,16 @@ const VisualizationV4 = () => {
             rel="noreferrer"
           >
             the data used
+          </a>
+        </p>
+
+        <p>
+          <a
+            href="https://www.southampton.ac.uk/~cpd/history.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Human Evolution and Activities description & data
           </a>
         </p>
       </div>
