@@ -8,7 +8,7 @@ export default function LoginView(props) {
   const UserAuthContext = React.createContext()
   const UserAuthContextValue = useContext(UserAuthContext);
   let navigate = useNavigate();
-  const [ loginProcessState, setLoginProcessState ] = useState("idle");
+  const [loginProcessState, setLoginProcessState] = useState("idle");
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -36,21 +36,21 @@ export default function LoginView(props) {
   }
 
   let loginUIControls = null;
-  switch(loginProcessState) {
+  switch (loginProcessState) {
     case "idle":
       loginUIControls = <button type="submit">Login</button>
       break;
 
     case "processing":
-      loginUIControls = <span style={{color: 'blue'}}>Processing login...</span>
+      loginUIControls = <span style={{ color: 'blue' }}>Processing login...</span>
       break;
 
     case "success":
-      loginUIControls = <span style={{color: 'green'}}>Login successful</span>
+      loginUIControls = <span style={{ color: 'green' }}>Login successful</span>
       break;
 
     case "error":
-      loginUIControls = <span style={{color: 'red'}}>Error</span>
+      loginUIControls = <span style={{ color: 'red' }}>Error</span>
       break;
 
     default:
@@ -60,15 +60,16 @@ export default function LoginView(props) {
 
   return (
     <div className="login_container">
+    <img src={require('../images/placeholder.png')} alt="signupimage"></img>
     <h1>SIGN IN</h1>
     <div className="login_form">
         <form action="#" method="post">
-            <div>
+            <div className='login_user_label'>
                 {/* need to insert icon */}
-                <label>Email Address</label><br/>
+                <label>Username</label><br/>
                 <input type="text" name="user" placeholder="Email Address" className="input-email" required />
             </div>
-            <div>
+            <div className='login_user_password'>
                 <label>Password</label><br/>
                 <input type="password" name="password" id="" placeholder="Password" className="input-password" required/>
             </div>
