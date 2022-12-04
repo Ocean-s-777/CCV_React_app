@@ -86,13 +86,24 @@ const VisualizationV7 = () => {
     },
     scales: {
       x: {
+        offset: true,
+        max: 2,
         type: "linear",
         ticks: {
           stepSize: 100,
+          callback: (value, index, ticks) => {
+            if (value === 0) {
+              return value
+            } else if (value < 0) {
+              return (value * -1) + " kyr BC"
+            } else {
+              return value * 1000;
+            }
+          },
         },
         title: {
           display: true,
-          text: "Thousands of years",
+          text: "Year",
           color: "black",
           font: {
             size: 16,

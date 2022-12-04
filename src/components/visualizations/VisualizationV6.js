@@ -67,9 +67,18 @@ const VisualizationV6 = () => {
     },
     scales: {
       x: {
+        offset: true,
+        max: 2001,
+        min: -803718,
         type: "linear",
         ticks: {
-          stepSize: 2000,
+          callback: (value, index, ticks) => {
+            if (value < 0) {
+              return (value * -1) + " BC"
+            } else {
+              return value;
+            }
+          },
         },
         title: {
           display: true,

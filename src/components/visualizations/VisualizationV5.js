@@ -16,7 +16,7 @@ const fetchURL = "https://oceans777.herokuapp.com";
 const buildDataset = (label, data, color, x, y, hidden) => ({
   label,
   data: data.map((d) => ({
-    time: d[x] * -1, // yr BP = years before present, !!!
+    time: (d[x] -2001), // yr BP = years before present, !!!
     value: d[y],
   })),
   borderColor: color,
@@ -74,8 +74,13 @@ const VisualizationV5 = () => {
     scales: {
       x: {
         type: "linear",
+        max: 415159,
+        min: 341,
+        reverse: true,
         ticks: {
-          stepSize: 2000,
+          callback: (value, index, ticks) => {
+            return value + " BC";
+          },
         },
         title: {
           display: true,
