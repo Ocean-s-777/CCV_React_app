@@ -179,6 +179,59 @@ canvas{
 }
 
 
+.signup_container{
+  font-family: sans-serif;
+  background-color: white;
+  width: 100%;
+  max-height: auto;
+  position: relative;
+  display: inline-block;
+}
+.signup_container h1{
+  background-color: #5CDEAA;
+  color:#F9F871;
+  width: 500px;
+  height: 60px;
+  position: relative;
+  display: inline-block;
+  left: 550px;
+  bottom: 319px;
+  padding: 7px 0px 4px 164px;
+}
+.signup_container img{
+  max-width: 550px;
+  max-height: 500px;
+  /* position: absolute; */
+  display: inline-block;
+
+}
+.signup_container form{
+  background-color: #8EEA95;
+  color: #324B4C;
+  width: 500px;
+  height: 259px;
+  position: absolute;
+  display: inline-block;
+  left: 550px;
+  top: 60px;
+  /* margin: -1px 0px 0px 0px; */
+  padding: 35px 0px 0px 136px;
+}
+
+
+.signup_container form input:hover{
+  border: 3px solid #00ACD1;
+}
+
+.signup_container form button:hover{
+  background-color: #005837;
+  color: white;
+} 
+
+.signup_container form button{
+  background-color: #F9F871;
+}
+
 @media (min-width: 992px){
 .container, .container-lg, .container-md, .container-sm {
     max-width: 100vw;

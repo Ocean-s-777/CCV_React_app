@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function SignupView() {
   let navigate = useNavigate();
-  const [ signupProcessState, setSignupProcessState ] = useState("idle");
+  const [signupProcessState, setSignupProcessState] = useState("idle");
 
   const handleSignupSubmit = async (event) => {
     event.preventDefault();
@@ -32,47 +32,51 @@ export default function SignupView() {
   };
 
   let signupUIControls = null;
-  switch(signupProcessState) {
+  switch (signupProcessState) {
     case "idle":
-      signupUIControls = <button type="submit">Sign up</button>
+      signupUIControls = <button type="submit">Add Account</button>
       break;
 
     case "processing":
-      signupUIControls = <span style={{color: 'blue'}}>Processing signup...</span>
+      signupUIControls = <span style={{ color: 'blue' }}>Processing signup...</span>
       break;
 
     case "success":
-      signupUIControls = <span style={{color: 'green'}}>User created</span>
+      signupUIControls = <span style={{ color: 'green' }}>User created</span>
       break;
 
     case "error":
-      signupUIControls = <span style={{color: 'red'}}>Error</span>
+      signupUIControls = <span style={{ color: 'red' }}>Error</span>
       break;
 
     default:
-      signupUIControls = <button type="submit">Sign up</button>
+      signupUIControls = <button type="submit">Add Account</button>
   }
-  
-return (
-    <div>
-            <div className="">
-                <h1>CREATE ACCOUNT</h1>
-            </div>
-            <form onSubmit={ handleSignupSubmit }>
-            <div className="">
-                <div>
-                    <label>Username</label>
-                    <input type="text" placeholder="Username" />
-                </div>
-                <div>
-                    <label>Password</label>
-                    <input type="password" placeholder="Password" />
-                </div>
-                <div>
-                    { signupUIControls }
-                </div>
+
+  return (
+    <div className='signup_container'>
+      <div className="signup_container_image">
+        <img src={require('../images/signup.jpg')} alt="signupimage"></img>
+      </div>
+      <h1>SIGN UP</h1>
+
+      <form onSubmit={handleSignupSubmit}>
+        <div className="">
+          <div>
+            <label>Username</label><br/>
+            <input type="text" placeholder="User Name" required/>
+          </div>
+          <br/>
+          <div>
+            <label>Password</label><br/>
+            <input type="password" placeholder="Password"  required/>
+          </div>
+          <br/>
+          <div>
+            {signupUIControls}
+          </div>
         </div>
-        </form>
-        </div>
+      </form>
+    </div>
   )
 }
