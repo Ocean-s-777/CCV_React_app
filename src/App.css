@@ -103,28 +103,48 @@ canvas{
   color: white;
   height: auto;
   width: auto;
-  margin: 0px 0px 5px 0px;
+  /* margin: 0 5px 10px 500px; */
+
+}
+.login_container img{
+  max-width: auto;
+  max-height: 600px;
+  margin: -27px 0px 0px 0px;
+  position: relative;
 
 }
 .login_container h1{
-  width: 300px;
+  width: 500px;
   height: 60px;
   background-color: #246898;
   font-family: serif;
   color: white;
   font-weight: bold;
-  padding: 8px 0px 0px 77px;
-  margin: 0px;
-  border-radius: 28px 28px 0px 0px;
+  padding: 8px 0px 0px 170px;
+  margin: 10px 0px 0px 0px;
+  border-radius: 0px 0px 0px;
+  display: inline-block;
+  position: absolute;
 }
 
 .login_container .login_form{
-  width: 300px;
-  border-radius: 0px 0px 28px 28px;
-  padding: 26px 42px 19px;
+  width: 500px;
+  height: 470px;
+  /* border-radius: 0px 0px 28px 28px; */
+  padding: 26px 16px 19px 146px;
+  margin: 49px 0px 0px 0px;
   background-color: #4682B4;
+  display: inline-block;
+  position: inherit;
+}
+/* .login_container .login_form form{
+  margin: 0px 0px 0px 0px;
+
 }
 
+.login_container .login_form form .login_user_label {
+  margin: 5px 0px 0px 0px;
+} */
 .login_container .login_form input{
   border-radius: 8px;
   padding: 5px;
