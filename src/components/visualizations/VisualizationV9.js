@@ -167,6 +167,7 @@ const VisualizationV9 = () => {
     responsive: true,
     plugins: {
       legend: {
+        onClick: null,
         display: true,
         position: "right",
       },
