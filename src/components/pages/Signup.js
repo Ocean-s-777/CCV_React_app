@@ -61,17 +61,15 @@ export default function SignupView() {
       <h1>SIGN UP</h1>
 
       <form onSubmit={handleSignupSubmit}>
-        <div className="">
-          <div>
+        <div>
+          <div className="signup_label">
             <label>Username</label><br/>
             <input type="text" placeholder="User Name" required/>
           </div>
-          <br/>
-          <div>
+          <div className='signup_password'>
             <label>Password</label><br/>
             <input type="password" placeholder="Password"  required/>
           </div>
-          <br/>
           <div>
             {signupUIControls}
           </div>
