@@ -8,10 +8,10 @@ import { Doughnut } from "react-chartjs-2";
 import { Chart } from "chart.js/auto"; // We need this unless/until we do some bundle optimization
 import { useState, useEffect } from "react";
 
-const COLOR1 = [0, 84, 230];    //"#0054E6dd";
+const COLOR1 = [0, 84, 230]; //"#0054E6dd";
 const COLOR2 = [221, 130, 130]; //"#dd8282dd";
-const COLOR3 = [255, 192, 91];  //"#FFC05B";
-const COLOR4 = [34, 140, 27];   //"#228C1Bdd";
+const COLOR3 = [255, 192, 91]; //"#FFC05B";
+const COLOR4 = [34, 140, 27]; //"#228C1Bdd";
 let dataVersion = 1; // Used by toggleData()
 let newData = {}; // Used by toggleData()
 let json = {};
@@ -115,7 +115,7 @@ const VisualizationV9 = () => {
               json.v9_b[0]["Grassland"],
             ],
             backgroundColor: createColors("sub"),
-            hoverOffset: 4,
+            hoverOffset: 16,
           },
         ],
       };
@@ -137,7 +137,7 @@ const VisualizationV9 = () => {
               json.v9_f[0]["Agriculture, Forestry & Land Use (AFOLU)"],
             ],
             backgroundColor: createColors("main"),
-            hoverOffset: 4,
+            hoverOffset: 13,
           },
         ],
       };
