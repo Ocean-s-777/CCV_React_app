@@ -34,6 +34,7 @@ const buildDataset = (label, data, color, x, y, hidden, yAxis) => ({
 
 const VisualizationV7 = () => {
   const [data, setData] = useState();
+  const fonts = 'Arial, "Times New Roman", Times, serif'
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v7");
@@ -80,7 +81,7 @@ const VisualizationV7 = () => {
         text: "Evolution of global temperature over the past two million years",
         font: {
           size: 20,
-          family: 'Arial,"Times New Roman", Times, serif',
+          family: fonts,
         },
       },
     },
@@ -107,7 +108,7 @@ const VisualizationV7 = () => {
           color: "black",
           font: {
             size: 16,
-            family: '"Times New Roman", Times, serif',
+            family: fonts,
           },
         },
       },
@@ -121,7 +122,7 @@ const VisualizationV7 = () => {
           color: COLOR1,
           font: {
             size: 16,
-            family: '"Times New Roman", Times, serif',
+            family: fonts,
           },
         },
       },
@@ -138,7 +139,7 @@ const VisualizationV7 = () => {
           color: COLOR2,
           font: {
             size: 16,
-            family: '"Times New Roman", Times, serif',
+            family: fonts,
           },
         },
       },
@@ -148,7 +149,7 @@ const VisualizationV7 = () => {
   return (
     <div className="graph-box">
       <br />
-      <Line options={options} data={data} width={600} height={200} />
+      <Line options={options} data={data} /* width={600} height={200} */ />
 
       <div className="graph-text-box">
         <p>

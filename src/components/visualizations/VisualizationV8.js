@@ -12,6 +12,7 @@ const fetchURL = "https://oceans777.herokuapp.com";
 
 const VisualizationV8 = () => {
   const [data, setData] = useState();
+  const fonts = 'Arial, "Times New Roman", Times, serif'
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v8_1");
@@ -86,7 +87,7 @@ const VisualizationV8 = () => {
         text: "CO2 emissions by country",
         font: {
           size: 20,
-          family: 'Arial,"Times New Roman", Times, serif',
+          family: fonts,
         },
       },
     },
@@ -102,7 +103,7 @@ const VisualizationV8 = () => {
           color: "black",
           font: {
             size: 16,
-            family: '"Times New Roman", Times, serif',
+            family: fonts,
           },
         },
       },
@@ -115,7 +116,7 @@ const VisualizationV8 = () => {
           text: "Million tonnes of CO2",
           font: {
             size: 16,
-            family: '"Times New Roman", Times, serif',
+            family: fonts,
           },
         },
       },
@@ -125,7 +126,7 @@ const VisualizationV8 = () => {
   return (
     <div className="graph-box">
       <br />
-      <Line options={options} data={data} width={600} height={200} />
+      <Line options={options} data={data} w/* idth={600} height={200} */ />
 
       <div className="graph-text-box">
         <p>Here should be some text</p>

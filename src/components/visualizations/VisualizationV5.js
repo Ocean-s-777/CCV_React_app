@@ -32,6 +32,7 @@ const buildDataset = (label, data, color, x, y, hidden) => ({
 
 const VisualizationV5 = () => {
   const [data, setData] = useState();
+  const fonts = 'Arial, "Times New Roman", Times, serif'
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v5");
@@ -67,7 +68,7 @@ const VisualizationV5 = () => {
         text: "Vostok Ice Core CO2 measurements, 417160 - 2342 years",
         font: {
           size: 20,
-          family: 'Arial, "Times New Roman", Times, serif',
+          family: fonts,
         },
       },
     },
@@ -88,7 +89,7 @@ const VisualizationV5 = () => {
           color: "black",
           font: {
             size: 16,
-            family: '"Times New Roman", Times, serif',
+            family: fonts,
           },
         },
       },
@@ -99,7 +100,7 @@ const VisualizationV5 = () => {
           text: "CO2 concentration (ppmv)",
           font: {
             size: 16,
-            family: '"Times New Roman", Times, serif',
+            family: fonts,
           },
         },
       },
@@ -109,7 +110,7 @@ const VisualizationV5 = () => {
   return (
     <div className="graph-box">
       <br />
-      <Line options={options} data={data} width={600} height={200} />
+      <Line options={options} data={data} /* width={600} height={200} */ />
 
       <div className="graph-text-box">
         <p>Historical Carbon Dioxide Record from the Vostok Ice Core</p>

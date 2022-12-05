@@ -33,6 +33,7 @@ const buildDataset = (label, data, color, x, y, hidden) => ({
 
 const VisualizationV3 = () => {
   const [data, setData] = useState();
+  const fonts = 'Arial, "Times New Roman", Times, serif'
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v3");
@@ -75,7 +76,7 @@ const VisualizationV3 = () => {
         text: "Atmospheric CO2 concentrations from Mauna Loa measurements starting 1958",
         font: {
           size: 20,
-          family: 'Arial,"Times New Roman", Times, serif',
+          family: fonts,
         },
       },
     },
@@ -91,7 +92,7 @@ const VisualizationV3 = () => {
           color: "black",
           font: {
             size: 16,
-            family: '"Times New Roman", Times, serif',
+            family: fonts,
           },
         },
       },
@@ -102,7 +103,7 @@ const VisualizationV3 = () => {
           text: "CO2",
           font: {
             size: 16,
-            family: '"Times New Roman", Times, serif',
+            family: fonts,
           },
         },
       },
@@ -112,7 +113,7 @@ const VisualizationV3 = () => {
   return (
     <div className="graph-box">
       <br />
-      <Line options={options} data={data} width={600} height={200} />
+      <Line options={options} data={data} /* width={600} height={200} */ />
 
       <div className="graph-text-box">
         <p>

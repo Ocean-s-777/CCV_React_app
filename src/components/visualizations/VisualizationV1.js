@@ -35,6 +35,7 @@ const buildDataset = (label, data, color, x, y, hidden) => ({
 
 const VisualizationV1 = () => {
   const [data, setData] = useState();
+  const fonts = 'Arial, "Times New Roman", Times, serif'
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v1-2");
@@ -113,7 +114,7 @@ const VisualizationV1 = () => {
         text: "Global historical surface temperature anomalies from January 1850 onwards",
         font: {
           size: 20,
-          family: 'Arial, "Times New Roman", Times, serif',
+          family: fonts,
         },
       },
     },
@@ -129,7 +130,7 @@ const VisualizationV1 = () => {
           color: "black",
           font: {
             size: 16,
-            family: '"Times New Roman", Times, serif',
+            family: fonts,
           },
         },
       },
@@ -140,7 +141,7 @@ const VisualizationV1 = () => {
           text: "Temperature anomaly (deg C)",
           font: {
             size: 16,
-            family: '"Times New Roman", Times, serif',
+            family: fonts,
           },
         },
       },

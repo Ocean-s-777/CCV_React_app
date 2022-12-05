@@ -19,6 +19,7 @@ const fetchURL = "https://oceans777.herokuapp.com";
 
 const VisualizationV9 = () => {
   const [data, setData] = useState();
+  const fonts = 'Arial, "Times New Roman", Times, serif'
 
   // Function to change the displayed data
   let toggleData = () => {
@@ -175,7 +176,7 @@ const VisualizationV9 = () => {
         text: "CO2 emissions by sectors (%)",
         font: {
           size: 20,
-          family: 'Arial,"Times New Roman", Times, serif',
+          family: fonts,
         },
       },
     },

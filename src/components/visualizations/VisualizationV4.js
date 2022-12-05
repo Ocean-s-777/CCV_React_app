@@ -22,7 +22,7 @@ const dummyData = [
   {
     time: "1346",
     value: 300,
-    text: "bubonic plague caused by the Black Death bacillus Yersinia pestis kills a third of the human population"
+    text: "bubonic plague kills a third of the human population"
   },
   {
     time: "1542",
@@ -80,6 +80,7 @@ const buildDataset = (label, data, color, x, y, hidden) => ({
 
 const VisualizationV4 = () => {
   const [data, setData] = useState();
+  const fonts = 'Arial, "Times New Roman", Times, serif'
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v4");
@@ -202,7 +203,7 @@ const VisualizationV4 = () => {
         text: "\nAntarctic Ice Core records of atmospheric CO2 ratios combined with Mauna Loa measurement",
         font: {
           size: 20,
-          family: 'Arial, "Times New Roman", Times, serif',
+          family: fonts,
         },
       },
     },
@@ -218,7 +219,7 @@ const VisualizationV4 = () => {
           color: "black",
           font: {
             size: 16,
-            family: '"Times New Roman", Times, serif',
+            family: fonts,
           },
         },
       },
@@ -229,7 +230,7 @@ const VisualizationV4 = () => {
           text: "CO2 Mixing Ratio (ppm)",
           font: {
             size: 16,
-            family: '"Times New Roman", Times, serif',
+            family: fonts,
           },
         },
       },
@@ -239,7 +240,7 @@ const VisualizationV4 = () => {
   return (
     <div className="graph-box">
       <br />
-      <Line options={options} data={data} width={600} height={200} />
+      <Line options={options} data={data}/*  width={600} height={200}  *//>
 
       <div className="graph-text-box">
         <p>
