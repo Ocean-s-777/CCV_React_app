@@ -17,6 +17,26 @@ hr{
   margin-bottom: 16px; */
 }
 
+.line-box {
+  min-height: 600px;
+  max-height: 600px;
+  margin: 0 auto;
+}
+
+.line-box-V8{
+  min-height: 800px;
+  /* max-height: 1200px; */
+  margin: 0 auto;
+}
+
+.doughnut-box {
+  min-width: 600px;
+  min-height: 700px;
+  max-width: 1000px;
+  max-height: 1000px;
+  margin: 0 auto;
+}
+
 .graph-box {
   padding: '30px';
   margin: '20px';
@@ -101,14 +121,14 @@ canvas{
 .login_container{
   font-family: sans-serif;
   color: white;
-  height: 400px;
+  height: 43vw;
   width: auto;
   background-color: white;
   position: relative;
 
 }
 .login_container img{
-  width: 360px;
+  width: 336px;
   height: 350px;
   border: 2px solid black;
   position: absolute;
@@ -117,40 +137,45 @@ canvas{
 
 }
 .login_container h1{
-  width: 500px;
+  width: 336px;
   height: 60px;
   background-color: #246898;
   font-family: serif;
   color: white;
   font-weight: bold;
-  padding: 8px 0px 0px 170px;
+  padding: 8px 0px 0px 105px;
   border-radius: 0px 0px 0px;
   display: inline-block;
   position: absolute;
   top: 27px;
-  left: 422px;
-  position: 500px 20px 30px 60px;
+  left: 398px;
 }
 
 .login_container .login_form{
-  width: 500px;
+  width: 336px;
   height: 290px;
-  padding: 26px 16px 19px 146px;
+  padding: 15px 0px 0px 36px;
   background-color: #4682B4;
   display: inline-block;
   position: absolute;
   top: 87px;
-  left: 422px;
-}
-/* .login_container .login_form form{
-  margin: 0px 0px 0px 0px;
-
+  left: 398px;
 }
 
-.login_container .login_form form .login_user_label {
+.login_container .login_form .login_username_label {
+  margin: 10px 0px 15px 0px;
+}
+.login_container .login_form .login_username_label label{
+  margin: 5px 0px 15px 0px;
+}
+.login_password{
   margin: 5px 0px 0px 0px;
-} */
+}
+.login_password label{
+  margin: 5px 0px 17px 0px;
+}
 .login_container .login_form input{
+  width: 270px;
   border-radius: 8px;
   padding: 5px;
 }
@@ -170,12 +195,13 @@ canvas{
  }
 
 #loginbutton{
-  height: 40px;
-  width: 109px;
-  background-color: #246898;
+  height: 57px;
+  width: 673px;
+  font-size: 24px;
+  background-color: #4682B4;
   color: white;
-  border-radius: 14px;
-  margin: 5px 0px 0px 52px;
+  margin: 32px 0px 0px -373px;
+  border: 1px solid #CA595F;
 }
 
 #loginbutton:hover{
@@ -188,42 +214,57 @@ canvas{
   font-family: sans-serif;
   background-color: white;
   width: 100%;
-  max-height: auto;
+  height: 360px;
   position: relative;
   display: inline-block;
 }
 .signup_container h1{
   background-color: #5CDEAA;
-  color:#F9F871;
-  width: 500px;
+  color: #F9F871;
+  width: 385px;
   height: 60px;
   position: relative;
   display: inline-block;
-  left: 550px;
-  bottom: 319px;
-  padding: 7px 0px 4px 164px;
+  left: 385px;
+  padding: 7px 0px 4px 111px;
 }
 .signup_container img{
-  max-width: 550px;
-  max-height: 500px;
-  /* position: absolute; */
+  max-width: 385px;
+  height: 330px;
+  position: absolute;
   display: inline-block;
 
 }
 .signup_container form{
   background-color: #8EEA95;
   color: #324B4C;
-  width: 500px;
-  height: 259px;
+  width: 385px;
+  height: 270px;
   position: absolute;
   display: inline-block;
-  left: 550px;
+  left: 385px;
   top: 60px;
   /* margin: -1px 0px 0px 0px; */
-  padding: 35px 0px 0px 136px;
+  padding: 35px 0px 0px 68px;
+
 }
 
-
+.signup_label label{
+  padding: 0px 0px 10px 0px;
+}
+.signup_label input{
+  height: 40px;
+  width: 240px;
+  margin: 0px 0px 10px 0px;
+}
+.signup_password label{
+  margin: 0px 0px 10px 0px;
+}
+.signup_password input{
+  height: 40px;
+  width: 240px;
+  margin: 0px 0px 10px 0px;
+}
 .signup_container form input:hover{
   border: 3px solid #00ACD1;
 }
@@ -235,6 +276,8 @@ canvas{
 
 .signup_container form button{
   background-color: #F9F871;
+  height: 40px;
+  margin: 10px 0px 0px 68px;
 }
 
 @media (min-width: 992px){

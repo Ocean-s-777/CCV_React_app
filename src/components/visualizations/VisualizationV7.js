@@ -72,6 +72,7 @@ const VisualizationV7 = () => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "top",
@@ -94,9 +95,9 @@ const VisualizationV7 = () => {
           stepSize: 100,
           callback: (value, index, ticks) => {
             if (value === 0) {
-              return value
+              return value;
             } else if (value < 0) {
-              return (value * -1) + " kyr BC"
+              return value * -1 + " kyr BC";
             } else {
               return value * 1000;
             }
@@ -149,7 +150,13 @@ const VisualizationV7 = () => {
   return (
     <div className="graph-box">
       <br />
+<<<<<<< HEAD
       <Line options={options} data={data} /* width={600} height={200} */ />
+=======
+      <div className="line-box">
+        <Line options={options} data={data} />
+      </div>
+>>>>>>> 2f329a813a1b4ade272bd613dddfdf80f2f85015
 
       <div className="graph-text-box">
         <p>

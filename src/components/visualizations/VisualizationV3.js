@@ -67,6 +67,7 @@ const VisualizationV3 = () => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "top",
@@ -113,7 +114,13 @@ const VisualizationV3 = () => {
   return (
     <div className="graph-box">
       <br />
+<<<<<<< HEAD
       <Line options={options} data={data} /* width={600} height={200} */ />
+=======
+      <div className="line-box">
+        <Line options={options} data={data} />
+      </div>
+>>>>>>> 2f329a813a1b4ade272bd613dddfdf80f2f85015
 
       <div className="graph-text-box">
         <p>

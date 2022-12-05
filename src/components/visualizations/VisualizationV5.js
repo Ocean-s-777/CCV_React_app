@@ -16,7 +16,7 @@ const fetchURL = "https://oceans777.herokuapp.com";
 const buildDataset = (label, data, color, x, y, hidden) => ({
   label,
   data: data.map((d) => ({
-    time: (d[x] -2001), // yr BP = years before present, !!!
+    time: d[x] - 2001, // yr BP = years before present, !!!
     value: d[y],
   })),
   borderColor: color,
@@ -59,6 +59,7 @@ const VisualizationV5 = () => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "top",
@@ -110,7 +111,13 @@ const VisualizationV5 = () => {
   return (
     <div className="graph-box">
       <br />
+<<<<<<< HEAD
       <Line options={options} data={data} /* width={600} height={200} */ />
+=======
+      <div className="line-box">
+        <Line options={options} data={data} />
+      </div>
+>>>>>>> 2f329a813a1b4ade272bd613dddfdf80f2f85015
 
       <div className="graph-text-box">
         <p>Historical Carbon Dioxide Record from the Vostok Ice Core</p>

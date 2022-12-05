@@ -61,21 +61,21 @@ export default function LoginView(props) {
   return (
     <div className="login_container">
     <img src={require('../images/placeholder.png')} alt="signupimage"></img>
-    <h1>SIGN IN</h1>
+    <h1>LOG IN</h1>
     <div className="login_form">
         <form action="#" method="post">
-            <div className='login_user_label'>
+            <div className='login_username_label'>
                 {/* need to insert icon */}
                 <label>Username</label><br/>
-                <input type="text" name="user" placeholder="Email Address" className="input-email" required />
+                <input type="text" name="user" placeholder="Username" className="input-username" required />
             </div>
-            <div className='login_user_password'>
+            <div className='login_password'>
                 <label>Password</label><br/>
                 <input type="password" name="password" id="" placeholder="Password" className="input-password" required/>
             </div>
-            <a href="./">
+            {/* <a href="./">
                 <p>Forgot Password?</p>
-            </a>
+            </a> */}
             <button id="loginbutton" type="submit">Log In</button>
         </form>
     </div>

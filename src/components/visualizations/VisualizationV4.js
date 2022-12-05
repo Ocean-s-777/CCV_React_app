@@ -16,6 +16,7 @@ const COLOR1 = "#dd8282dd";
 const COLOR4 = "#228C1Bdd";
 const fetchURL = "https://oceans777.herokuapp.com";
 
+<<<<<<< HEAD
 // This will be removed once we get the real data
 const dummyValue = 350
 const dummyData = [
@@ -61,6 +62,8 @@ const dummyData = [
   },
 ]
 
+=======
+>>>>>>> 2f329a813a1b4ade272bd613dddfdf80f2f85015
 const buildDataset = (label, data, color, x, y, hidden) => ({
   label,
   data: data.map((d) => ({
@@ -115,43 +118,13 @@ const VisualizationV4 = () => {
             "year",
             "mean"
           ),
-
           {
             label: "Human Evolution and Activities",
-            data: [
-              {
-                time: "1346",
-                value: 280,
-              },
-              {
-                time: "1542",
-                value: 280,
-              },
-              {
-                time: "1886",
-                value: 290,
-              },
-              {
-                time: "1900",
-                value: 300,
-              },
-              {
-                time: "1918",
-                value: 300,
-              },
-              {
-                time: "1973",
-                value: 330,
-              },
-              {
-                time: "1986",
-                value: dummyValue,
-              },
-              {
-                time: "2017",
-                value: 394,
-              },
-            ],
+            data: json.v10_v4.map((d) => ({
+              time: d["Time"],
+              value: 300,
+              event: d["Event"],
+            })),
             borderColor: "#a89d1b",
             backgroundColor: "#c74714",
             parsing: {
@@ -176,6 +149,7 @@ const VisualizationV4 = () => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       tooltip: {
         callbacks: {
@@ -185,10 +159,9 @@ const VisualizationV4 = () => {
           },
           label: (tooltipItem) => {
             //console.log(tooltipItem)
-            //console.log(data.datasets[3].data[tooltipItem.dataIndex].value)
+            //console.log(data.datasets[tooltipItem.datasetIndex].data[tooltipItem.dataIndex])
             if (tooltipItem.datasetIndex === 4) {
-              //return data.datasets[3].data[tooltipItem.dataIndex].value;
-              return dummyData[tooltipItem.dataIndex].text;
+              return data.datasets[4].data[tooltipItem.dataIndex]["event"];
             } else {
               return tooltipItem.raw.value + " ppm";
             }
@@ -240,7 +213,13 @@ const VisualizationV4 = () => {
   return (
     <div className="graph-box">
       <br />
+<<<<<<< HEAD
       <Line options={options} data={data}/*  width={600} height={200}  *//>
+=======
+      <div className="line-box">
+        <Line options={options} data={data} />
+      </div>
+>>>>>>> 2f329a813a1b4ade272bd613dddfdf80f2f85015
 
       <div className="graph-text-box">
         <p>

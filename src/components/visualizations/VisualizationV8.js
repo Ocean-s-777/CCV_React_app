@@ -72,6 +72,7 @@ const VisualizationV8 = () => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     aspectRatio: 1.6,
     plugins: {
       legend: {
@@ -126,7 +127,13 @@ const VisualizationV8 = () => {
   return (
     <div className="graph-box">
       <br />
+<<<<<<< HEAD
       <Line options={options} data={data} w/* idth={600} height={200} */ />
+=======
+      <div className="line-box-V8">
+        <Line options={options} data={data} />
+      </div>
+>>>>>>> 2f329a813a1b4ade272bd613dddfdf80f2f85015
 
       <div className="graph-text-box">
         <p>Here should be some text</p>
