@@ -34,7 +34,7 @@ const buildDataset = (label, data, color, x, y, hidden, yAxis) => ({
 
 const VisualizationV7 = () => {
   const [data, setData] = useState();
-  const fonts = 'Arial, "Times New Roman", Times, serif'
+  const fonts = 'Arial, "Times New Roman", Times, serif';
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v7");
@@ -59,6 +59,24 @@ const VisualizationV7 = () => {
             false,
             "y2"
           ),
+          {
+            label: "Human Evolution and Activities",
+            data: json.v10_v7.map((d) => ({
+              time: Math.round(d["Time"] / 1000),
+              value: 175,
+              event: d["Event"],
+            })),
+            borderColor: "#a89d1b",
+            backgroundColor: "#c74714",
+            parsing: {
+              xAxisKey: "time",
+              yAxisKey: "value",
+            },
+            borderWidth: BORDERWIDTH,
+            pointRadius: 10,
+            hidden: false,
+            showLine: false,
+          },
         ],
       };
       setData(dataObject);
@@ -74,6 +92,27 @@ const VisualizationV7 = () => {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
+      tooltip: {
+        callbacks: {
+          title: (contex) => {
+            let value = contex[0].raw.time;
+            if (value === 0) {
+              return value;
+            } else if (value < 0) {
+              return value * -1 + " kyr BC";
+            } else {
+              return value * 1000;
+            }
+          },
+          label: (tooltipItem) => {
+            if (tooltipItem.datasetIndex === 2) {
+              return data.datasets[2].data[tooltipItem.dataIndex]["event"];
+            } else {
+              return tooltipItem.raw.value;
+            }
+          },
+        },
+      },
       legend: {
         position: "top",
       },
