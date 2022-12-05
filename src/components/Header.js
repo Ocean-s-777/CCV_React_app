@@ -1,7 +1,10 @@
 import React from 'react'
 import logo from './images/logo.png'
+import { Link } from 'react-router-dom'
 import createGrn from './images/createGreen.svg'
 import userGrn from './images/userGreen.svg'
+import LoginView from './pages/Login'
+import signupView from './pages/Signup'
 
 export default function Header() {
   return (
@@ -11,8 +14,11 @@ export default function Header() {
       <img src={logo} alt={"logo"} href="/"/>
       <a className="navbar-brand title" href="/">Climate Change Visualiser</a></div>
     <div className="icons">
-      <img src={createGrn} alt={"add"} href="/Add"/>
-      <img src={userGrn} alt={"user"} href="/User"/></div>
+       <img src={createGrn} alt={"add"} href="/Login"/>
+       <img src={userGrn} alt={"user"} href="/User"/>
+      {/* <img src={createGrn} alt={"add"} href="/Login"/>
+      <img src={userGrn} alt={"user"} href="/User"/> */}
+      </div>
   </div>
 </nav>
   )

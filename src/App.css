@@ -109,14 +109,14 @@ canvas{
 .login_container{
   font-family: sans-serif;
   color: white;
-  height: 400px;
+  height: 43vw;
   width: auto;
   background-color: white;
   position: relative;
 
 }
 .login_container img{
-  width: 360px;
+  width: 336px;
   height: 350px;
   border: 2px solid black;
   position: absolute;
@@ -125,40 +125,45 @@ canvas{
 
 }
 .login_container h1{
-  width: 500px;
+  width: 336px;
   height: 60px;
   background-color: #246898;
   font-family: serif;
   color: white;
   font-weight: bold;
-  padding: 8px 0px 0px 170px;
+  padding: 8px 0px 0px 105px;
   border-radius: 0px 0px 0px;
   display: inline-block;
   position: absolute;
   top: 27px;
-  left: 422px;
-  position: 500px 20px 30px 60px;
+  left: 398px;
 }
 
 .login_container .login_form{
-  width: 500px;
+  width: 336px;
   height: 290px;
-  padding: 26px 16px 19px 146px;
+  padding: 15px 0px 0px 36px;
   background-color: #4682B4;
   display: inline-block;
   position: absolute;
   top: 87px;
-  left: 422px;
-}
-/* .login_container .login_form form{
-  margin: 0px 0px 0px 0px;
-
+  left: 398px;
 }
 
-.login_container .login_form form .login_user_label {
+.login_container .login_form .login_username_label {
+  margin: 10px 0px 15px 0px;
+}
+.login_container .login_form .login_username_label label{
+  margin: 5px 0px 15px 0px;
+}
+.login_password{
   margin: 5px 0px 0px 0px;
-} */
+}
+.login_password label{
+  margin: 5px 0px 17px 0px;
+}
 .login_container .login_form input{
+  width: 270px;
   border-radius: 8px;
   padding: 5px;
 }
@@ -178,12 +183,13 @@ canvas{
  }
 
 #loginbutton{
-  height: 40px;
-  width: 109px;
-  background-color: #246898;
+  height: 57px;
+  width: 673px;
+  font-size: 24px;
+  background-color: #4682B4;
   color: white;
-  border-radius: 14px;
-  margin: 5px 0px 0px 52px;
+  margin: 32px 0px 0px -373px;
+  border: 1px solid #CA595F;
 }
 
 #loginbutton:hover{
