@@ -16,51 +16,6 @@ const COLOR1 = "#dd8282dd";
 const COLOR4 = "#228C1Bdd";
 const fetchURL = "https://oceans777.herokuapp.com";
 
-// This will be removed once we get the real data
-const dummyValue = 350;
-const dummyData = [
-  {
-    time: "1346",
-    value: 300,
-    text: "bubonic plague caused by the Black Death bacillus Yersinia pestis kills a third of the human population",
-  },
-  {
-    time: "1542",
-    value: 300,
-    text: "global population of humans passes 500 million; annual energy use per person averages 9800 kWh",
-  },
-  {
-    time: "1886",
-    value: 300,
-    text: "first car with gasoline-powered internal combustion engine (Karl Benz, Germany, 1886)",
-  },
-  {
-    time: "1900",
-    value: 300,
-    text: "global average life expectancy equals 32 years by 1900",
-  },
-  {
-    time: "1918",
-    value: 300,
-    text: "Spanish flu pandemic (1918-20): infects a third and kills 50-100 million",
-  },
-  {
-    time: "1973",
-    value: 300,
-    text: "global average life expectancy exceeds 60 years by 1973",
-  },
-  {
-    time: "1986",
-    value: 300,
-    text: "global population of humans passes 5 billion; annual energy use per person averages 18300 kWh",
-  },
-  {
-    time: "2017",
-    value: 300,
-    text: "first national legislation for a mid-century target of net-zero emissions (Sweden, 2017)",
-  },
-];
-
 const buildDataset = (label, data, color, x, y, hidden) => ({
   label,
   data: data.map((d) => ({
@@ -114,43 +69,13 @@ const VisualizationV4 = () => {
             "year",
             "mean"
           ),
-          // DUMMY DATASET, will be replaced by the actual V10 data
           {
             label: "Human Evolution and Activities",
-            data: [
-              {
-                time: "1346",
-                value: 280,
-              },
-              {
-                time: "1542",
-                value: 280,
-              },
-              {
-                time: "1886",
-                value: 290,
-              },
-              {
-                time: "1900",
-                value: 300,
-              },
-              {
-                time: "1918",
-                value: 300,
-              },
-              {
-                time: "1973",
-                value: 330,
-              },
-              {
-                time: "1986",
-                value: dummyValue,
-              },
-              {
-                time: "2017",
-                value: 394,
-              },
-            ],
+            data: json.v10_v4.map((d) => ({
+              time: d["Time"],
+              value: 300,
+              event: d["Event"],
+            })),
             borderColor: "#a89d1b",
             backgroundColor: "#c74714",
             parsing: {
@@ -185,10 +110,9 @@ const VisualizationV4 = () => {
           },
           label: (tooltipItem) => {
             //console.log(tooltipItem)
-            //console.log(data.datasets[3].data[tooltipItem.dataIndex].value)
+            //console.log(data.datasets[tooltipItem.datasetIndex].data[tooltipItem.dataIndex])
             if (tooltipItem.datasetIndex === 4) {
-              //return data.datasets[3].data[tooltipItem.dataIndex].value;
-              return dummyData[tooltipItem.dataIndex].text;
+              return data.datasets[4].data[tooltipItem.dataIndex]["event"];
             } else {
               return tooltipItem.raw.value + " ppm";
             }
