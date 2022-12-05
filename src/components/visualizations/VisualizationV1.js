@@ -4,8 +4,6 @@
 import React from "react";
 import "chartjs-adapter-luxon";
 import { Line } from "react-chartjs-2";
-// eslint-disable-next-line
-import { Chart } from "chart.js/auto"; // We need this unless/until we do some bundle optimization
 import { useState, useEffect } from "react";
 
 const BORDERWIDTH = 2;
@@ -35,7 +33,7 @@ const buildDataset = (label, data, color, x, y, hidden) => ({
 
 const VisualizationV1 = () => {
   const [data, setData] = useState();
-  const fonts = 'Arial, "Times New Roman", Times, serif'
+  const fonts = 'Arial, "Times New Roman", Times, serif';
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v1-2");
