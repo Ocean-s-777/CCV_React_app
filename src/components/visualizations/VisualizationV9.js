@@ -8,10 +8,10 @@ import { Doughnut } from "react-chartjs-2";
 import { Chart } from "chart.js/auto"; // We need this unless/until we do some bundle optimization
 import { useState, useEffect } from "react";
 
-const COLOR1 = "#0054E6dd";
-const COLOR2 = "#dd8282dd";
-const COLOR4 = "#228C1Bdd";
-const COLOR3 = "#FFC05B";
+const COLOR1 = [0, 84, 230];    //"#0054E6dd";
+const COLOR2 = [221, 130, 130]; //"#dd8282dd";
+const COLOR3 = [255, 192, 91];  //"#FFC05B";
+const COLOR4 = [34, 140, 27];   //"#228C1Bdd";
 let dataVersion = 1; // Used by toggleData()
 let newData = {}; // Used by toggleData()
 let json = {};
@@ -19,6 +19,31 @@ const fetchURL = "https://oceans777.herokuapp.com";
 
 const VisualizationV9 = () => {
   const [data, setData] = useState();
+
+  let createColors = (set) => {
+    let colorArray = [];
+    let colorPush = (colorRGBValues, count) => {
+      for (let i = 0; i < count; i++) {
+        let red = colorRGBValues[0] + i * 10;
+        let green = colorRGBValues[1] + i * 10;
+        let blue = colorRGBValues[2] + i * 10;
+        let color = "rgb(" + red + ", " + green + ", " + blue + ")";
+        colorArray.push(color);
+      }
+    };
+    if (set === "main") {
+      colorPush(COLOR1, 1);
+      colorPush(COLOR2, 1);
+      colorPush(COLOR3, 1);
+      colorPush(COLOR4, 1);
+    } else {
+      colorPush(COLOR1, 18);
+      colorPush(COLOR2, 2);
+      colorPush(COLOR3, 2);
+      colorPush(COLOR4, 7);
+    }
+    return colorArray;
+  };
 
   // Function to change the displayed data
   let toggleData = () => {
@@ -89,37 +114,7 @@ const VisualizationV9 = () => {
               json.v9_b[0]["Cropland"],
               json.v9_b[0]["Grassland"],
             ],
-            backgroundColor: [
-              COLOR1,
-              COLOR1,
-              COLOR1,
-              COLOR1,
-              COLOR1,
-              COLOR1,
-              COLOR1,
-              COLOR1,
-              COLOR1,
-              COLOR1,
-              COLOR1,
-              COLOR1,
-              COLOR1,
-              COLOR1,
-              COLOR1,
-              COLOR1,
-              COLOR1,
-              COLOR1,
-              COLOR2,
-              COLOR2,
-              COLOR3,
-              COLOR3,
-              COLOR4,
-              COLOR4,
-              COLOR4,
-              COLOR4,
-              COLOR4,
-              COLOR4,
-              COLOR4,
-            ],
+            backgroundColor: createColors("sub"),
             hoverOffset: 4,
           },
         ],
@@ -141,7 +136,7 @@ const VisualizationV9 = () => {
               json.v9_f[0]["Waste"],
               json.v9_f[0]["Agriculture, Forestry & Land Use (AFOLU)"],
             ],
-            backgroundColor: [COLOR1, COLOR2, COLOR3, COLOR4],
+            backgroundColor: createColors("main"),
             hoverOffset: 4,
           },
         ],
@@ -159,11 +154,15 @@ const VisualizationV9 = () => {
     if (!data) {
       fetchData();
     }
+    // eslint-disable-next-line
   }, [data]);
 
   if (!data) return null;
 
   const options = {
+    animation: {
+      duration: 800,
+    },
     responsive: true,
     plugins: {
       legend: {
