@@ -164,6 +164,7 @@ const VisualizationV9 = () => {
       duration: 800,
     },
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         onClick: null,

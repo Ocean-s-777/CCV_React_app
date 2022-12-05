@@ -18,7 +18,11 @@ hr{
 }
 
 .doughnut-box {
-  width: 50%;
+  min-width: 600px;
+  min-height: 700px;
+  max-width: 1000px;
+  max-height: 1000px;
+  margin: 0 auto;
 }
 
 .graph-box {
