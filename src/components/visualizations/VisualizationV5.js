@@ -111,13 +111,9 @@ const VisualizationV5 = () => {
   return (
     <div className="graph-box">
       <br />
-<<<<<<< HEAD
-      <Line options={options} data={data} /* width={600} height={200} */ />
-=======
       <div className="line-box">
         <Line options={options} data={data} />
       </div>
->>>>>>> 2f329a813a1b4ade272bd613dddfdf80f2f85015
 
       <div className="graph-text-box">
         <p>Historical Carbon Dioxide Record from the Vostok Ice Core</p>
