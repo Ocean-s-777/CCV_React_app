@@ -54,7 +54,7 @@ export default function SignupView() {
   }
 
   return (
-    <>
+    <div className="login_container">
     <img src={require('../images/placeholder.png')} alt="signupimage"></img>
     <div className="loginBox loginRight">
        <div>
@@ -74,6 +74,6 @@ export default function SignupView() {
        </form>
     </div>
     </div>
-    </>
+    </div>
   )
 }
