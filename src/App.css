@@ -5,7 +5,7 @@
 body {
   background-color:rgb(228, 220, 220);
   margin: 0;
-  font-family: Verdana, "Geneva", Tahoma, sans-serif;
+  font-family: Arial, Verdana, "Geneva", Tahoma, sans-serif;
 }
 hr{
   color: #003798;
@@ -119,15 +119,21 @@ canvas{
 
 
 .login_container{
-  font-family: sans-serif;
-  color: white;
+  background-color: white;
+  color: black/*#0054E6dd#dd8282dd*/;
   height: 43vw;
   width: auto;
   background-color: white;
-  position: relative;
-
+  display: flex;
 }
-.login_container img{
+.loginRight{
+  padding-top: 4rem;
+}
+.loginCtrl>button{
+  position: relative;
+  bottom: -0.5rem;
+}
+/* .login_container img{
   width: 336px;
   height: 350px;
   border: 2px solid black;
@@ -180,18 +186,10 @@ canvas{
   padding: 5px;
 }
 
-.login_container .login_form input:hover{
- border: 3px solid #00ACD1;
-}
-
-.login_container .login_form a p:hover {
-  color: #39D9AB;
-}
 .login_container .login_form a p{
-     /* #7CFC00; */
      color: gold;
      padding: 14px 0px 0px 78px;
-    width: 100%;
+    width: 100%; 
  }
 
 #loginbutton{
@@ -244,7 +242,7 @@ canvas{
   display: inline-block;
   left: 385px;
   top: 60px;
-  /* margin: -1px 0px 0px 0px; */
+  margin: -1px 0px 0px 0px; 
   padding: 35px 0px 0px 68px;
 
 }
@@ -284,4 +282,4 @@ canvas{
 .container, .container-lg, .container-md, .container-sm {
     max-width: 100vw;
 }
-}
+} */

@@ -61,11 +61,33 @@ export default function LoginView(props) {
   return (
     <div className="login_container">
     <img src={require('../images/placeholder.png')} alt="signupimage"></img>
-    <h1>LOG IN</h1>
+    <div className="loginBox loginRight">
+       <div>
+       <h1>Login</h1>
+       <form onSubmit={ onSubmit }>
+         <div>
+         <label>Username</label><br/>
+         <input type="text" name="username"/><br/>
+         </div>
+         <div>
+         <label>Password</label><br/>
+         <input type="password" name="password"/>
+         </div>
+         <div className="loginCtrl">
+           { loginUIControls }
+         </div>
+       </form>
+    </div>
+    </div>
+</div>
+  )
+}
+
+/* h1>LOG IN</h1>
     <div className="login_form">
         <form action="#" method="post">
             <div className='login_username_label'>
-                {/* need to insert icon */}
+                {/* need to insert icon }
                 <label>Username</label><br/>
                 <input type="text" name="user" placeholder="Username" className="input-username" required />
             </div>
@@ -73,13 +95,10 @@ export default function LoginView(props) {
                 <label>Password</label><br/>
                 <input type="password" name="password" id="" placeholder="Password" className="input-password" required/>
             </div>
-            {/* <a href="./">
-                <p>Forgot Password?</p>
-            </a> */}
             <button id="loginbutton" type="submit">Log In</button>
         </form>
-    </div>
-</div>
+    </div> */
+
     // <div>
     //   <h1>Login</h1>
     //   <form onSubmit={ onSubmit }>
@@ -94,5 +113,3 @@ export default function LoginView(props) {
     //     </div>
     //   </form>
     // </div>
-  )
-}

@@ -14,7 +14,7 @@ export default function SignupView() {
     event.preventDefault();
     setSignupProcessState("processing");
     try {
-      const result = await axios.post(2000 + '/registerBasic', {
+      const result = await axios.post(2000 + '/signup', {
         username: event.target.username.value,
         password: event.target.password.value
       })
@@ -54,27 +54,26 @@ export default function SignupView() {
   }
 
   return (
-    <div className='signup_container'>
-      <div className="signup_container_image">
-        <img src={require('../images/signup.jpg')} alt="signupimage"></img>
-      </div>
-      <h1>SIGN UP</h1>
-
-      <form onSubmit={handleSignupSubmit}>
-        <div>
-          <div className="signup_label">
-            <label>Username</label><br/>
-            <input type="text" placeholder="User Name" required/>
-          </div>
-          <div className='signup_password'>
-            <label>Password</label><br/>
-            <input type="password" placeholder="Password"  required/>
-          </div>
-          <div>
-            {signupUIControls}
-          </div>
-        </div>
-      </form>
+    <>
+    <img src={require('../images/placeholder.png')} alt="signupimage"></img>
+    <div className="loginBox loginRight">
+       <div>
+       <h1>Login</h1>
+       <form onSubmit={ handleSignupSubmit }>
+         <div>
+         <label>Username</label><br/>
+         <input type="text" name="username"/><br/>
+         </div>
+         <div>
+         <label>Password</label><br/>
+         <input type="password" name="password"/>
+         </div>
+         <div className="loginCtrl">
+           { signupUIControls }
+         </div>
+       </form>
     </div>
+    </div>
+    </>
   )
 }
