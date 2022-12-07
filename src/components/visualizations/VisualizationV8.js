@@ -11,7 +11,7 @@ const fetchURL = "https://oceans777.herokuapp.com";
 
 const VisualizationV8 = () => {
   const [data, setData] = useState();
-  const fonts = 'Arial, "Times New Roman", Times, serif'
+  const fonts = 'Arial, "Times New Roman", Times, serif';
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v8_1");
@@ -70,6 +70,11 @@ const VisualizationV8 = () => {
   if (!data) return loadingMessage();
 
   const options = {
+    layout: {
+      padding: {
+        right: 20,
+      },
+    },
     responsive: true,
     maintainAspectRatio: false,
     aspectRatio: 1.6,

@@ -85,6 +85,11 @@ const VisualizationV1 = () => {
   if (!data) return loadingMessage();
 
   const options = {
+    layout: {
+      padding: {
+          right: 20
+      }
+  },
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
