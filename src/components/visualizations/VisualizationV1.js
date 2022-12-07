@@ -5,31 +5,13 @@ import React from "react";
 import "chartjs-adapter-luxon";
 import { Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
+import buildDataset from "./modules/buildDataset";
 
-const BORDERWIDTH = 2;
-const POINTRADIUS = 0;
 const COLOR1 = "#0054E6dd";
 const COLOR2 = "#dd8282dd";
 const COLOR3 = "#228C1Bdd";
 const COLOR4 = "#FFC05B";
 const fetchURL = "https://oceans777.herokuapp.com";
-
-const buildDataset = (label, data, color, x, y, hidden) => ({
-  label,
-  data: data.map((d) => ({
-    time: d[x],
-    value: d[y],
-  })),
-  borderColor: color,
-  backgroundColor: color,
-  parsing: {
-    xAxisKey: "time",
-    yAxisKey: "value",
-  },
-  borderWidth: BORDERWIDTH,
-  pointRadius: POINTRADIUS,
-  hidden,
-});
 
 const VisualizationV1 = () => {
   const [data, setData] = useState();
