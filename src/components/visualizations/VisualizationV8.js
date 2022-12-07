@@ -6,8 +6,7 @@ import "chartjs-adapter-luxon";
 import { Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 import loadingMessage from "./modules/loadingMessage";
-
-const fetchURL = "https://oceans777.herokuapp.com";
+import { fetchURL } from "./modules/fetchURL";
 
 const VisualizationV8 = () => {
   const [data, setData] = useState();

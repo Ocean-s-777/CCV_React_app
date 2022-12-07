@@ -6,11 +6,11 @@ import "chartjs-adapter-luxon";
 import { Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 import loadingMessage from "./modules/loadingMessage";
+import { fetchURL } from "./modules/fetchURL";
 
 const BORDERWIDTH = 2;
 const POINTRADIUS = 0;
 const COLOR1 = "#228C1Bdd";
-const fetchURL = "https://oceans777.herokuapp.com";
 
 const buildDataset = (label, data, color, x, y, hidden) => ({
   label,

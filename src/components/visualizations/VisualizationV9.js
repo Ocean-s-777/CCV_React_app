@@ -6,6 +6,7 @@ import "chartjs-adapter-luxon";
 import { Doughnut } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 import loadingMessage from "./modules/loadingMessage";
+import { fetchURL } from "./modules/fetchURL";
 
 const COLOR1 = [0, 84, 230]; //"#0054E6dd";
 const COLOR2 = [221, 130, 130]; //"#dd8282dd";
@@ -14,7 +15,6 @@ const COLOR4 = [34, 140, 27]; //"#228C1Bdd";
 let dataVersion = 1; // Used by toggleData()
 let newData = {}; // Used by toggleData()
 let json = {};
-const fetchURL = "https://oceans777.herokuapp.com";
 
 const VisualizationV9 = () => {
   const [data, setData] = useState();

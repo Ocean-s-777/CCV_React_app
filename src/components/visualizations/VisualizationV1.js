@@ -7,12 +7,12 @@ import { Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 import buildDataset from "./modules/buildDataset";
 import loadingMessage from "./modules/loadingMessage";
+import { fetchURL } from "./modules/fetchURL";
 
 const COLOR1 = "#0054E6dd";
 const COLOR2 = "#dd8282dd";
 const COLOR3 = "#228C1Bdd";
 const COLOR4 = "#FFC05B";
-const fetchURL = "https://oceans777.herokuapp.com";
 
 const VisualizationV1 = () => {
   const [data, setData] = useState();
