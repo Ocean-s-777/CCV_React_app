@@ -5,6 +5,7 @@ import React from "react";
 import "chartjs-adapter-luxon";
 import { Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
+import loadingMessage from "./modules/loadingMessage";
 
 const BORDERWIDTH = 2;
 const POINTRADIUS = 0;
@@ -84,7 +85,7 @@ const VisualizationV7 = () => {
     }
   }, [data]);
 
-  if (!data) return null;
+  if (!data) return loadingMessage();
 
   const options = {
     responsive: true,

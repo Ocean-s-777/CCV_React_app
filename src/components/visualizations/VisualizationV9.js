@@ -5,6 +5,7 @@ import React from "react";
 import "chartjs-adapter-luxon";
 import { Doughnut } from "react-chartjs-2";
 import { useState, useEffect } from "react";
+import loadingMessage from "./modules/loadingMessage";
 
 const COLOR1 = [0, 84, 230]; //"#0054E6dd";
 const COLOR2 = [221, 130, 130]; //"#dd8282dd";
@@ -17,7 +18,7 @@ const fetchURL = "https://oceans777.herokuapp.com";
 
 const VisualizationV9 = () => {
   const [data, setData] = useState();
-  const fonts = 'Arial, "Times New Roman", Times, serif'
+  const fonts = 'Arial, "Times New Roman", Times, serif';
 
   let createColors = (set) => {
     let colorArray = [];
@@ -156,7 +157,7 @@ const VisualizationV9 = () => {
     // eslint-disable-next-line
   }, [data]);
 
-  if (!data) return null;
+  if (!data) return loadingMessage();
 
   const options = {
     animation: {

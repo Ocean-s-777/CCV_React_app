@@ -6,6 +6,7 @@ import "chartjs-adapter-luxon";
 import { Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 import buildDataset from "./modules/buildDataset";
+import loadingMessage from "./modules/loadingMessage";
 
 const COLOR1 = "#dd8282dd";
 const fetchURL = "https://oceans777.herokuapp.com";
@@ -29,7 +30,7 @@ const VisualizationV6 = () => {
     }
   }, [data]);
 
-  if (!data) return null;
+  if (!data) return loadingMessage();
 
   const options = {
     responsive: true,

@@ -18,7 +18,7 @@ let customViewDummyData = {
   title: "My very own custom view", // String
   columns: 2, // 1 or 2
   vis: ["V3", "V9", "V1", "V4"], // List of strings. This could be changed to be just numbers (without the letter V).
-  descrip: ["V1 custom text", null, "V9 custom text", null], // Array of strings/null values. Length must match the vis length.
+  descrip: ["custom text...", null, "custom text...", "custom text..."], // Array of strings/null values. Length must match the vis length.
 };
 
 function VisToGraph({ visValue }) {
