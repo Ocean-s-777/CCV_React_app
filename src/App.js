@@ -12,6 +12,7 @@ import LoginView from "./components/pages/Login";
 import Sources from "./components/pages/Sources";
 import CO2 from "./components/pages/CO2";
 import Welcome from "./components/pages/Welcome";
+import Custom from "./components/pages/Custom";
 
 import {
   Chart as ChartJS,
@@ -91,6 +92,7 @@ function App() {
             <Route path="*" element={<Home />} />
             <Route path="/sources" element={<Sources />} />
             <Route path="/CO2" element={<CO2 />} />
+            <Route path="/custom" element={<Custom />} />
           </Routes>
         </BrowserRouter>
         <hr />
