@@ -80,7 +80,7 @@ export default class Custom extends Component {
     return (
       <>
         <div>
-          <h1>{json.title}</h1>
+          <h1 className="page_title">{json.title}</h1>
         </div>
         <br />
         <div style={style} className="visualizations">

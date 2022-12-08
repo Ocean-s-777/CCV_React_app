@@ -51,6 +51,11 @@ hr{
   display: block;
 }
 
+.page_title {
+  padding-left: 30px;
+  margin-bottom: 0px;
+}
+
 .graph-text-box-sources {
   margin-top: 12px;
 }
