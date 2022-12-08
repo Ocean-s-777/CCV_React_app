@@ -16,7 +16,7 @@ let dataVersion = 1; // Used by toggleData()
 let newData = {}; // Used by toggleData()
 let json = {};
 
-const VisualizationV9 = () => {
+const VisualizationV9 = ({ customDescription }) => {
   const [data, setData] = useState();
   const fonts = 'Arial, "Times New Roman", Times, serif';
 
@@ -195,6 +195,9 @@ const VisualizationV9 = () => {
     },
   };
 
+  let strandardDescription = "V9 standard description";
+  if (!customDescription) customDescription = strandardDescription;
+
   return (
     <div className="graph-box">
       <br />
@@ -202,25 +205,26 @@ const VisualizationV9 = () => {
         <Doughnut options={options} data={data} />
       </div>
       <div className="graph-text-box">
-        <p>Here should be some text</p>
-
-        <p>
-          <a
-            href="https://ourworldindata.org/emissions-by-sector#co2-emissions-by-sector"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Detailed description
-          </a>
-          &nbsp; & &nbsp;
-          <a
-            href="https://ourworldindata.org/uploads/2020/09/Global-GHG-Emissions-by-sector-based-on-WRI-2020.xlsx"
-            target="_blank"
-            rel="noreferrer"
-          >
-            the data used (download)
-          </a>
-        </p>
+        {customDescription}
+        <div className="graph-text-box-sources">
+          <p>
+            <a
+              href="https://ourworldindata.org/emissions-by-sector#co2-emissions-by-sector"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Detailed description
+            </a>
+            &nbsp; & &nbsp;
+            <a
+              href="https://ourworldindata.org/uploads/2020/09/Global-GHG-Emissions-by-sector-based-on-WRI-2020.xlsx"
+              target="_blank"
+              rel="noreferrer"
+            >
+              the data used (download)
+            </a>
+          </p>
+        </div>
       </div>
       <hr />
     </div>

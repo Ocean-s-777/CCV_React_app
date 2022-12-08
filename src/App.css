@@ -50,6 +50,14 @@ hr{
 .graph-text-box>a{
   display: block;
 }
+
+.graph-text-box-sources {
+  margin-top: 12px;
+}
+.graph-text-box-sources > p {
+  margin-bottom: 0px;
+}
+
 .title-cont>img{
   height: 35px;
 }

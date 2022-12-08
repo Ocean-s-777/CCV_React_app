@@ -14,7 +14,7 @@ const COLOR2 = "#dd8282dd";
 const COLOR3 = "#228C1Bdd";
 const COLOR4 = "#FFC05B";
 
-const VisualizationV1 = () => {
+const VisualizationV1 = ({ customDescription }) => {
   const [data, setData] = useState();
   const fonts = 'Arial, "Times New Roman", Times, serif';
   useEffect(() => {
@@ -87,9 +87,9 @@ const VisualizationV1 = () => {
   const options = {
     layout: {
       padding: {
-          right: 20
-      }
-  },
+        right: 20,
+      },
+    },
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
@@ -135,6 +135,9 @@ const VisualizationV1 = () => {
     },
   };
 
+  let strandardDescription = "V1 standard description.";
+  if (!customDescription) customDescription = strandardDescription;
+
   return (
     <div className="graph-box">
       <br />
@@ -143,29 +146,27 @@ const VisualizationV1 = () => {
       </div>
 
       <div className="graph-text-box">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a orci
-          nec nisi egestas vestibulum. Curabitur ut eros elit. Aenean fermentum
-          neque odio, scelerisque efficitur justo egestas at. Etiam vulputate
-          risus eget faucibus porttitor. Cras blandit, ex quis molestie
-          ultrices, elit augue dapibus tortor, eget gravida magna metus quis
-          erat. Duis fringilla luctus orci, sit amet rhoncus ipsum commodo et.
-          Aenean eget laoreet nunc. Aenean vel libero magna.
-        </p>
-        <a
-          href="https://www.metoffice.gov.uk/hadobs/hadcrut5/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Surface temperature anomalies
-        </a>
-        <a
-          href="https://www.nature.com/articles/nature03265"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Northern Hemisphere 2,000-year temperature reconstruction
-        </a>
+        {customDescription}
+        <div className="graph-text-box-sources">
+          <p>
+            <a
+              href="https://www.metoffice.gov.uk/hadobs/hadcrut5/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Surface temperature anomalies
+            </a>
+          </p>
+          <p>
+            <a
+              href="https://www.nature.com/articles/nature03265"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Northern Hemisphere 2,000-year temperature reconstruction
+            </a>
+          </p>
+        </div>
       </div>
       <hr />
     </div>

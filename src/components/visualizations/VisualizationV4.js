@@ -14,7 +14,7 @@ const COLOR2 = "#0054E6dd";
 const COLOR1 = "#dd8282dd";
 const COLOR4 = "#228C1Bdd";
 
-const VisualizationV4 = () => {
+const VisualizationV4 = ({ customDescription }) => {
   const [data, setData] = useState();
   const fonts = 'Arial, "Times New Roman", Times, serif';
   useEffect(() => {
@@ -148,6 +148,10 @@ const VisualizationV4 = () => {
     },
   };
 
+  let strandardDescription =
+    "V4 standard description. (It will be something like: This chart combines the Ice core measurements DE08, DE08-02 and DSS to Mauna Loa CO2 annual mean data.)";
+  if (!customDescription) customDescription = strandardDescription;
+
   return (
     <div className="graph-box">
       <br />
@@ -156,57 +160,55 @@ const VisualizationV4 = () => {
       </div>
 
       <div className="graph-text-box">
-        <p>
-          This chart combines the Ice core measurements DE08, DE08-02 and DSS to
-          Mauna Loa CO2 annual mean data.
-        </p>
+        {customDescription}
+        <div className="graph-text-box-sources">
+          <p>
+            <a
+              href="https://cdiac.ess-dive.lbl.gov/trends/co2/lawdome.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Historical CO2 Records from the Law Dome DE08, DE08-2, and DSS Ice
+              Cores description
+            </a>
+            &nbsp; & &nbsp;
+            <a
+              href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/lawdome.combined.dat"
+              target="_blank"
+              rel="noreferrer"
+            >
+              data source
+            </a>
+          </p>
 
-        <p>
-          <a
-            href="https://cdiac.ess-dive.lbl.gov/trends/co2/lawdome.html"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Historical CO2 Records from the Law Dome DE08, DE08-2, and DSS Ice
-            Cores description
-          </a>
-          &nbsp; & &nbsp;
-          <a
-            href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/lawdome.combined.dat"
-            target="_blank"
-            rel="noreferrer"
-          >
-            the data used
-          </a>
-        </p>
+          <p>
+            <a
+              href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Mauna Loa CO2 measurements description
+            </a>
+            &nbsp; & &nbsp;
+            <a
+              href="https://gml.noaa.gov/ccgg/trends/data.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              data source
+            </a>
+          </p>
 
-        <p>
-          <a
-            href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Mauna Loa CO2 measurements description
-          </a>
-          &nbsp; & &nbsp;
-          <a
-            href="https://gml.noaa.gov/ccgg/trends/data.html"
-            target="_blank"
-            rel="noreferrer"
-          >
-            the data used
-          </a>
-        </p>
-
-        <p>
-          <a
-            href="https://www.southampton.ac.uk/~cpd/history.html"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Human Evolution and Activities description & data
-          </a>
-        </p>
+          <p>
+            <a
+              href="https://www.southampton.ac.uk/~cpd/history.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Human Evolution and Activities description/source
+            </a>
+          </p>
+        </div>
       </div>
       <hr />
     </div>

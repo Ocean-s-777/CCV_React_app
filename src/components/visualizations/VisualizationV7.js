@@ -31,7 +31,7 @@ const buildDataset = (label, data, color, x, y, hidden, yAxis) => ({
   yAxisID: yAxis,
 });
 
-const VisualizationV7 = () => {
+const VisualizationV7 = ({ customDescription }) => {
   const [data, setData] = useState();
   const fonts = 'Arial, "Times New Roman", Times, serif';
   useEffect(() => {
@@ -185,6 +185,9 @@ const VisualizationV7 = () => {
     },
   };
 
+  let strandardDescription = "V7 standard description";
+  if (!customDescription) customDescription = strandardDescription;
+
   return (
     <div className="graph-box">
       <br />
@@ -193,27 +196,26 @@ const VisualizationV7 = () => {
       </div>
 
       <div className="graph-text-box">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
-          libero quis magna vehicula consequat vel in enim. Maecenas condimentum
-          justo magna, vel iaculis elit scelerisque a.
-        </p>
+        {customDescription}
+        <div className="graph-text-box-sources">
+          <p>
+            <a
+              href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Detailed description
+            </a>
 
-        <a
-          href="https://climate.fas.harvard.edu/files/climate/files/snyder_2016.pdf"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Detailed description
-        </a>
-
-        <a
-          href="http://carolynsnyder.com/publications.php"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Data source
-        </a>
+            <a
+              href="http://carolynsnyder.com/publications.php"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Data source
+            </a>
+          </p>
+        </div>
       </div>
       <hr />
     </div>
