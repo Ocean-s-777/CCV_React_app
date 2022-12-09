@@ -111,7 +111,7 @@ const VisualizationV4 = ({ customDescription }) => {
       },
       title: {
         display: true,
-        text: "\nAntarctic Ice Core records of atmospheric CO2 ratios combined with Mauna Loa measurement",
+        text: "Antarctic Ice Core records of atmospheric CO2 ratios combined with Mauna Loa measurement",
         font: {
           size: 20,
           family: fonts,

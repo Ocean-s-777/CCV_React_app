@@ -79,7 +79,7 @@ export default class Custom extends Component {
     };
     return (
       <>
-        <div>
+        <div className="page_title_container">
           <h1 className="page_title">{json.title}</h1>
         </div>
         <br />

@@ -51,6 +51,9 @@ hr{
   display: block;
 }
 
+.page_title_container {
+  height: 30px;
+}
 .page_title {
   padding-left: 30px;
   margin-bottom: 0px;
@@ -130,6 +133,12 @@ canvas{
   width: auto;
 }
 
+.CustomOptionsBox {
+  background-color: rgb(102, 200, 212);
+  padding: 10px;
+  margin: 15px;
+  border-radius: 20px;
+}
 
 .login_container{
   background-color: white;
