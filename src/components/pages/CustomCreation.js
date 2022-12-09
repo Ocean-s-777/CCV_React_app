@@ -261,8 +261,8 @@ export default function CustomCreation() {
           <br />
         </div>
 
-        <div>
-          <button type="button" onClick={null}>
+        <div className="Create_Custom_View_Button_Container">
+          <button className="Create_Custom_View_Button" type="button" onClick={null}>
             Save
           </button>
         </div>

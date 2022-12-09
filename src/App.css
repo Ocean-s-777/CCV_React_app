@@ -133,13 +133,6 @@ canvas{
   width: auto;
 }
 
-.CustomOptionsBox {
-  background-color: rgb(102, 200, 212);
-  padding: 10px;
-  margin: 15px;
-  border-radius: 20px;
-}
-
 .login_container{
   background-color: white;
   color: black/*#0054E6dd#dd8282dd*/;
@@ -155,6 +148,35 @@ canvas{
   position: relative;
   bottom: -0.5rem;
 }
+
+.CustomOptionsBox {
+  background-color: rgb(102, 200, 212);
+  padding: 10px;
+  margin: 15px;
+  border-radius: 20px;
+}
+.Create_Custom_View_Button_Container {
+  display: flex;
+  justify-content: center;
+}
+.Create_Custom_View_Button {
+  margin: 20px 5px 3px 5px;
+  border: 5px;
+  padding: 10px 20px;
+  border: 3px solid rgba(27, 31, 35, 0.15);
+  background-color: rgb(77, 183, 41);
+  border-radius: 16px;
+  border-color: rgb(69, 103, 15);
+  color: rgb(48, 7, 7);
+  font-size: 18px;
+  font-weight: 600;
+  
+}
+.Create_Custom_View_Button:hover {
+  background-color: rgb(8, 250, 56);
+  transform: scale(1.01);
+}
+
 /* .login_container img{
   width: 336px;
   height: 350px;
