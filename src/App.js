@@ -14,6 +14,7 @@ import CO2 from "./components/pages/CO2";
 import Welcome from "./components/pages/Welcome";
 import Custom from "./components/pages/Custom";
 import CustomCreation from "./components/pages/CustomCreation";
+import Interceptor from "./components/pages/Interceptor";
 
 import {
   Chart as ChartJS,
@@ -95,6 +96,7 @@ function App() {
             <Route path="/sources" element={<Sources />} />
             <Route path="/CO2" element={<CO2 />} />
             <Route path="/custom" element={<Custom />} />
+            <Route path="/custom/*" element={<Interceptor />} />
           </Routes>
         </BrowserRouter>
         <hr />
