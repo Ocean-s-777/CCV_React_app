@@ -5,12 +5,12 @@ import React from "react";
 import "chartjs-adapter-luxon";
 import { Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
+import loadingMessage from "./modules/loadingMessage";
+import { fetchURL } from "./modules/fetchURL";
 
-const fetchURL = "https://oceans777.herokuapp.com";
-
-const VisualizationV8 = () => {
+const VisualizationV8 = ({ customDescription }) => {
   const [data, setData] = useState();
-  const fonts = 'Arial, "Times New Roman", Times, serif'
+  const fonts = 'Arial, "Times New Roman", Times, serif';
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v8_1");
@@ -66,9 +66,14 @@ const VisualizationV8 = () => {
     }
   }, [data]);
 
-  if (!data) return null;
+  if (!data) return loadingMessage();
 
   const options = {
+    layout: {
+      padding: {
+        right: 20,
+      },
+    },
     responsive: true,
     maintainAspectRatio: false,
     aspectRatio: 1.6,
@@ -122,6 +127,9 @@ const VisualizationV8 = () => {
     },
   };
 
+  let strandardDescription = "V8 standard description";
+  if (!customDescription) customDescription = strandardDescription;
+
   return (
     <div className="graph-box">
       <br />
@@ -130,25 +138,26 @@ const VisualizationV8 = () => {
       </div>
 
       <div className="graph-text-box">
-        <p>Here should be some text</p>
-
-        <p>
-          <a
-            href="https://www.icos-cp.eu/science-and-impact/global-carbon-budget/2021"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Detailed description
-          </a>
-          &nbsp; & &nbsp;
-          <a
-            href="https://data.icos-cp.eu/licence_accept?ids=%5B%22lApekzcmd4DRC34oGXQqOxbJ%22%5D"
-            target="_blank"
-            rel="noreferrer"
-          >
-            the data used (download)
-          </a>
-        </p>
+        {customDescription}
+        <div className="graph-text-box-sources">
+          <p>
+            <a
+              href="https://www.icos-cp.eu/science-and-impact/global-carbon-budget/2021"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Detailed description
+            </a>
+            &nbsp; & &nbsp;
+            <a
+              href="https://data.icos-cp.eu/licence_accept?ids=%5B%22lApekzcmd4DRC34oGXQqOxbJ%22%5D"
+              target="_blank"
+              rel="noreferrer"
+            >
+              the data used (download)
+            </a>
+          </p>
+        </div>
       </div>
       <hr />
     </div>

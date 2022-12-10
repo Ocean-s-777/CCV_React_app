@@ -5,11 +5,12 @@ import React from "react";
 import "chartjs-adapter-luxon";
 import { Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
+import loadingMessage from "./modules/loadingMessage";
+import { fetchURL } from "./modules/fetchURL";
 
 const BORDERWIDTH = 2;
 const POINTRADIUS = 0;
 const COLOR1 = "#228C1Bdd";
-const fetchURL = "https://oceans777.herokuapp.com";
 
 const buildDataset = (label, data, color, x, y, hidden) => ({
   label,
@@ -28,9 +29,9 @@ const buildDataset = (label, data, color, x, y, hidden) => ({
   hidden,
 });
 
-const VisualizationV5 = () => {
+const VisualizationV5 = ({ customDescription }) => {
   const [data, setData] = useState();
-  const fonts = 'Arial, "Times New Roman", Times, serif'
+  const fonts = 'Arial, "Times New Roman", Times, serif';
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v5");
@@ -53,7 +54,7 @@ const VisualizationV5 = () => {
     }
   }, [data]);
 
-  if (!data) return null;
+  if (!data) return loadingMessage();
 
   const options = {
     responsive: true,
@@ -106,6 +107,9 @@ const VisualizationV5 = () => {
     },
   };
 
+  let strandardDescription = "V5 standard description.";
+  if (!customDescription) customDescription = strandardDescription;
+
   return (
     <div className="graph-box">
       <br />
@@ -114,23 +118,26 @@ const VisualizationV5 = () => {
       </div>
 
       <div className="graph-text-box">
-        <p>Historical Carbon Dioxide Record from the Vostok Ice Core</p>
+        {customDescription}
+        <div className="graph-text-box-sources">
+          <p>
+            <a
+              href="https://cdiac.ess-dive.lbl.gov/trends/co2/vostok.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Detailed description
+            </a>
 
-        <a
-          href="https://cdiac.ess-dive.lbl.gov/trends/co2/vostok.html"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Detailed description
-        </a>
-
-        <a
-          href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/vostok.icecore.co2"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Data source
-        </a>
+            <a
+              href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/vostok.icecore.co2"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Data source
+            </a>
+          </p>
+        </div>
       </div>
       <hr />
     </div>

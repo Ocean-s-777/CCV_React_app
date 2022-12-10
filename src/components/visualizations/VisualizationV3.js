@@ -5,33 +5,16 @@ import React from "react";
 import "chartjs-adapter-luxon";
 import { Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
+import buildDataset from "./modules/buildDataset";
+import loadingMessage from "./modules/loadingMessage";
+import { fetchURL } from "./modules/fetchURL";
 
-const BORDERWIDTH = 2;
-const POINTRADIUS = 0;
 const COLOR1 = "#dd8282dd";
 const COLOR2 = "#0054E6dd";
-const fetchURL = "https://oceans777.herokuapp.com";
 
-const buildDataset = (label, data, color, x, y, hidden) => ({
-  label,
-  data: data.map((d) => ({
-    time: d[x],
-    value: d[y],
-  })),
-  borderColor: color,
-  backgroundColor: color,
-  parsing: {
-    xAxisKey: "time",
-    yAxisKey: "value",
-  },
-  borderWidth: BORDERWIDTH,
-  pointRadius: POINTRADIUS,
-  hidden,
-});
-
-const VisualizationV3 = () => {
+const VisualizationV3 = ({ customDescription }) => {
   const [data, setData] = useState();
-  const fonts = 'Arial, "Times New Roman", Times, serif'
+  const fonts = 'Arial, "Times New Roman", Times, serif';
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v3");
@@ -61,9 +44,14 @@ const VisualizationV3 = () => {
     }
   }, [data]);
 
-  if (!data) return null;
+  if (!data) return loadingMessage();
 
   const options = {
+    layout: {
+      padding: {
+        right: 20,
+      },
+    },
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
@@ -109,6 +97,9 @@ const VisualizationV3 = () => {
     },
   };
 
+  let strandardDescription = "V3 standard description.";
+  if (!customDescription) customDescription = strandardDescription;
+
   return (
     <div className="graph-box">
       <br />
@@ -117,28 +108,26 @@ const VisualizationV3 = () => {
       </div>
 
       <div className="graph-text-box">
-        <p>
-          Monthly and annual mean carbon dioxide measured at Mauna Loa
-          Observatory, Hawaii.
-        </p>
-
-        <p>
-          <a
-            href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Detailed description
-          </a>
-          &nbsp; & &nbsp;
-          <a
-            href="https://gml.noaa.gov/ccgg/trends/data.html"
-            target="_blank"
-            rel="noreferrer"
-          >
-            the data used
-          </a>
-        </p>
+        {customDescription}
+        <div className="graph-text-box-sources">
+          <p>
+            <a
+              href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Detailed description
+            </a>
+            &nbsp; & &nbsp;
+            <a
+              href="https://gml.noaa.gov/ccgg/trends/data.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              the data used
+            </a>
+          </p>
+        </div>
       </div>
       <hr />
     </div>

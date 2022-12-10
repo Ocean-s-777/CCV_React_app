@@ -5,6 +5,8 @@ import React from "react";
 import "chartjs-adapter-luxon";
 import { Doughnut } from "react-chartjs-2";
 import { useState, useEffect } from "react";
+import loadingMessage from "./modules/loadingMessage";
+import { fetchURL } from "./modules/fetchURL";
 
 const COLOR1 = [0, 84, 230]; //"#0054E6dd";
 const COLOR2 = [221, 130, 130]; //"#dd8282dd";
@@ -13,11 +15,10 @@ const COLOR4 = [34, 140, 27]; //"#228C1Bdd";
 let dataVersion = 1; // Used by toggleData()
 let newData = {}; // Used by toggleData()
 let json = {};
-const fetchURL = "https://oceans777.herokuapp.com";
 
-const VisualizationV9 = () => {
+const VisualizationV9 = ({ customDescription }) => {
   const [data, setData] = useState();
-  const fonts = 'Arial, "Times New Roman", Times, serif'
+  const fonts = 'Arial, "Times New Roman", Times, serif';
 
   let createColors = (set) => {
     let colorArray = [];
@@ -156,7 +157,7 @@ const VisualizationV9 = () => {
     // eslint-disable-next-line
   }, [data]);
 
-  if (!data) return null;
+  if (!data) return loadingMessage();
 
   const options = {
     animation: {
@@ -194,6 +195,9 @@ const VisualizationV9 = () => {
     },
   };
 
+  let strandardDescription = "V9 standard description";
+  if (!customDescription) customDescription = strandardDescription;
+
   return (
     <div className="graph-box">
       <br />
@@ -201,25 +205,26 @@ const VisualizationV9 = () => {
         <Doughnut options={options} data={data} />
       </div>
       <div className="graph-text-box">
-        <p>Here should be some text</p>
-
-        <p>
-          <a
-            href="https://ourworldindata.org/emissions-by-sector#co2-emissions-by-sector"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Detailed description
-          </a>
-          &nbsp; & &nbsp;
-          <a
-            href="https://ourworldindata.org/uploads/2020/09/Global-GHG-Emissions-by-sector-based-on-WRI-2020.xlsx"
-            target="_blank"
-            rel="noreferrer"
-          >
-            the data used (download)
-          </a>
-        </p>
+        {customDescription}
+        <div className="graph-text-box-sources">
+          <p>
+            <a
+              href="https://ourworldindata.org/emissions-by-sector#co2-emissions-by-sector"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Detailed description
+            </a>
+            &nbsp; & &nbsp;
+            <a
+              href="https://ourworldindata.org/uploads/2020/09/Global-GHG-Emissions-by-sector-based-on-WRI-2020.xlsx"
+              target="_blank"
+              rel="noreferrer"
+            >
+              the data used (download)
+            </a>
+          </p>
+        </div>
       </div>
       <hr />
     </div>
