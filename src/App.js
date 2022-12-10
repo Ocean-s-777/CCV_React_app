@@ -13,6 +13,7 @@ import Sources from "./components/pages/Sources";
 import CO2 from "./components/pages/CO2";
 import Welcome from "./components/pages/Welcome";
 import Custom from "./components/pages/Custom";
+import CustomCreation from "./components/pages/CustomCreation";
 
 import {
   Chart as ChartJS,
@@ -64,6 +65,7 @@ function App() {
     <>
       <Route path="/login" element={<LoginView />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/create" element={<CustomCreation />} />
     </>
   );
 

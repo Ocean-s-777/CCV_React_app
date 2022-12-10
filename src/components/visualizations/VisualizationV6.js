@@ -7,13 +7,13 @@ import { Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 import buildDataset from "./modules/buildDataset";
 import loadingMessage from "./modules/loadingMessage";
+import { fetchURL } from "./modules/fetchURL";
 
 const COLOR1 = "#dd8282dd";
-const fetchURL = "https://oceans777.herokuapp.com";
 
-const VisualizationV6 = () => {
+const VisualizationV6 = ({ customDescription }) => {
   const [data, setData] = useState();
-  const fonts = 'Arial, "Times New Roman", Times, serif'
+  const fonts = 'Arial, "Times New Roman", Times, serif';
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(fetchURL + "/v6");
@@ -87,6 +87,9 @@ const VisualizationV6 = () => {
     },
   };
 
+  let strandardDescription = "V6 standard description";
+  if (!customDescription) customDescription = strandardDescription;
+
   return (
     <div className="graph-box">
       <br />
@@ -95,28 +98,26 @@ const VisualizationV6 = () => {
       </div>
 
       <div className="graph-text-box">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a orci
-          nec nisi egestas vestibulum. Curabitur ut eros elit. Aenean fermentum
-          neque odio, scelerisque efficitur justo egestas at. Etiam vulputate
-          risus eget faucibus porttitor.
-        </p>
+        {customDescription}
+        <div className="graph-text-box-sources">
+          <p>
+            <a
+              href="https://www.ncei.noaa.gov/access/paleo-search/study/17975"
+              target="_blank"
+              rel="noreferrer"
+            >
+              data description
+            </a>
 
-        <a
-          href="https://www.ncei.noaa.gov/access/paleo-search/study/17975"
-          target="_blank"
-          rel="noreferrer"
-        >
-          data description
-        </a>
-
-        <a
-          href="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/antarctica2015co2composite.txt"
-          target="_blank"
-          rel="noreferrer"
-        >
-          data source
-        </a>
+            <a
+              href="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/antarctica2015co2composite.txt"
+              target="_blank"
+              rel="noreferrer"
+            >
+              data source
+            </a>
+          </p>
+        </div>
       </div>
       <hr />
     </div>

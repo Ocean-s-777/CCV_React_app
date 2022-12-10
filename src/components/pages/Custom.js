@@ -18,35 +18,35 @@ let customViewDummyData = {
   title: "My very own custom view", // String
   columns: 2, // 1 or 2
   vis: ["V3", "V9", "V1", "V4"], // List of strings. This could be changed to be just numbers (without the letter V).
-  descrip: ["custom text...", null, "custom text...", "custom text..."], // Array of strings/null values. Length must match the vis length.
+  descrip: ["This is a custom text for the FIRST graph shown on the custom view", null, "This is a custom text for the THIRD graph shown on the custom view", "This is a custom text for the FOURTH graph shown on the custom view"], // Array of strings/null values. Length must match the vis length.
 };
 
-function VisToGraph({ visValue }) {
+function VisToGraph({ visValue, descText }) {
   let result;
   switch (visValue) {
     case "V1":
-      result = <VisualizationV1 />;
+      result = <VisualizationV1 customDescription={descText}/>;
       break;
     case "V3":
-      result = <VisualizationV3 />;
+      result = <VisualizationV3 customDescription={descText}/>;
       break;
     case "V4":
-      result = <VisualizationV4 />;
+      result = <VisualizationV4 customDescription={descText}/>;
       break;
     case "V5":
-      result = <VisualizationV5 />;
+      result = <VisualizationV5 customDescription={descText}/>;
       break;
     case "V6":
-      result = <VisualizationV6 />;
+      result = <VisualizationV6 customDescription={descText}/>;
       break;
     case "V7":
-      result = <VisualizationV7 />;
+      result = <VisualizationV7 customDescription={descText}/>;
       break;
     case "V8":
-      result = <VisualizationV8 />;
+      result = <VisualizationV8 customDescription={descText}/>;
       break;
     case "V9":
-      result = <VisualizationV9 />;
+      result = <VisualizationV9 customDescription={descText}/>;
       break;
     default:
       result = (
@@ -62,8 +62,8 @@ function VisToGraph({ visValue }) {
 
 function ChosenGraphs({ data }) {
   let graphs = [];
-  for (let i = 0; i < data.length; i++) {
-    graphs.push(<VisToGraph visValue={data[i]} key={data[i]}></VisToGraph>);
+  for (let i = 0; i < data.vis.length; i++) {
+    graphs.push(<VisToGraph visValue={data.vis[i]} descText={data.descrip[i]} key={data.vis[i]}></VisToGraph>);
   }
   return graphs;
 }
@@ -79,12 +79,12 @@ export default class Custom extends Component {
     };
     return (
       <>
-        <div>
-          <h1>{json.title}</h1>
+        <div className="page_title_container">
+          <h1 className="page_title">{json.title}</h1>
         </div>
         <br />
         <div style={style} className="visualizations">
-          <ChosenGraphs data={json.vis} />
+          <ChosenGraphs data={json} />
         </div>
       </>
     );

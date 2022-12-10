@@ -7,12 +7,12 @@ import { Line } from "react-chartjs-2";
 import { useState, useEffect } from "react";
 import buildDataset from "./modules/buildDataset";
 import loadingMessage from "./modules/loadingMessage";
+import { fetchURL } from "./modules/fetchURL";
 
 const COLOR1 = "#dd8282dd";
 const COLOR2 = "#0054E6dd";
-const fetchURL = "https://oceans777.herokuapp.com";
 
-const VisualizationV3 = () => {
+const VisualizationV3 = ({ customDescription }) => {
   const [data, setData] = useState();
   const fonts = 'Arial, "Times New Roman", Times, serif';
   useEffect(() => {
@@ -97,6 +97,9 @@ const VisualizationV3 = () => {
     },
   };
 
+  let strandardDescription = "V3 standard description.";
+  if (!customDescription) customDescription = strandardDescription;
+
   return (
     <div className="graph-box">
       <br />
@@ -105,28 +108,26 @@ const VisualizationV3 = () => {
       </div>
 
       <div className="graph-text-box">
-        <p>
-          Monthly and annual mean carbon dioxide measured at Mauna Loa
-          Observatory, Hawaii.
-        </p>
-
-        <p>
-          <a
-            href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Detailed description
-          </a>
-          &nbsp; & &nbsp;
-          <a
-            href="https://gml.noaa.gov/ccgg/trends/data.html"
-            target="_blank"
-            rel="noreferrer"
-          >
-            the data used
-          </a>
-        </p>
+        {customDescription}
+        <div className="graph-text-box-sources">
+          <p>
+            <a
+              href="https://gml.noaa.gov/ccgg/about/co2_measurements.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Detailed description
+            </a>
+            &nbsp; & &nbsp;
+            <a
+              href="https://gml.noaa.gov/ccgg/trends/data.html"
+              target="_blank"
+              rel="noreferrer"
+            >
+              the data used
+            </a>
+          </p>
+        </div>
       </div>
       <hr />
     </div>
