@@ -8,6 +8,7 @@ import Header from "./components/Header";
 import PageSelect from "./components/PageSelect";
 import Home from "./components/pages/Welcome";
 import Signup from "./components/pages/Signup";
+import UserView from "./components/pages/User";
 import LoginView from "./components/pages/Login";
 import Sources from "./components/pages/Sources";
 import CO2 from "./components/pages/CO2";
@@ -72,6 +73,7 @@ function App() {
 
   if (userAuthData.jwt) {
     authRoutes = <Route path="/protected" element={<Welcome />} />;
+    authRoutes = <Route path="/user" element={<UserView/>} />;
   }
 
   return (
