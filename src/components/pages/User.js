@@ -51,7 +51,7 @@ export default function UserView(props) {
           <div className="custom-views">
               {/* oskari please input code here for custom view removal/adding */}
           </div>
-          <button onClick={() => /* remove account */ fakeFunction() } className="remove-acc">Remove account</button>
+          {/*<button onClick={() => /* remove account */ fakeFunction() } className="remove-acc">Remove account</button> */}
       </div>
     </div>
     </div>
