@@ -155,6 +155,28 @@ canvas{
   margin: 15px;
   border-radius: 20px;
 }
+.text_input_field {
+  width: 100%;
+  padding: 2px 15px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: bold;
+}
+.custom_creation_instuction_text_box {
+  margin: 0 0 20px 10px;
+}
+.custom_creation_instuction_text_box > p {
+  margin: 0;
+}
+.custom_creation_graphs_to_include_box {
+  font-weight: bold;
+}
 .Create_Custom_View_Button_Container {
   display: flex;
   justify-content: center;
@@ -170,7 +192,6 @@ canvas{
   color: rgb(48, 7, 7);
   font-size: 18px;
   font-weight: 600;
-  
 }
 .Create_Custom_View_Button:hover {
   background-color: rgb(8, 250, 56);
