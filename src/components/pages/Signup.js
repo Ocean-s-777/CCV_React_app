@@ -58,7 +58,7 @@ export default function SignupView() {
     <img src={require('../images/placeholder.png')} alt="signupimage"></img>
     <div className="loginBox loginRight">
        <div>
-       <h1>Login</h1>
+       <h1>Sign up</h1>
        <form onSubmit={ handleSignupSubmit }>
          <div>
          <label>Username</label><br/>

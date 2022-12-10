@@ -64,8 +64,8 @@ const VisualizationV7 = () => {
               value: 175,
               event: d["Event"],
             })),
-            borderColor: "#a89d1b",
-            backgroundColor: "#c74714",
+            borderColor: "#011b4a",
+            backgroundColor: "#011b4a88",
             parsing: {
               xAxisKey: "time",
               yAxisKey: "value",
