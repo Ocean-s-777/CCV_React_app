@@ -135,8 +135,8 @@ const VisualizationV1 = ({ customDescription }) => {
     },
   };
 
-  let strandardDescription = "V1 standard description.";
-  if (!customDescription) customDescription = strandardDescription;
+  let standardDescription = "V1 standard description.";
+  if (!customDescription) customDescription = standardDescription;
 
   return (
     <div className="graph-box">
