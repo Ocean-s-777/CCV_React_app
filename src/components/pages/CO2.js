@@ -14,7 +14,7 @@ export default class Sources extends Component {
     return (
       <>
         <div>
-          current site is CO2 bla bla and should show v1, v2, v3 bla bla(/CO2)
+          current site is CO2 and should show v1, v2, v3 bla bla(/CO2)
         </div>
         <br/>
         <div className="visualizations">

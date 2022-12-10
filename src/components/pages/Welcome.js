@@ -26,8 +26,8 @@ export default function GetName(props) {
   return (
     <div className="protected">
         
-        <div>current site is protected Home (/welcome)</div>
-        <h2> Hello {name}!</h2> {/* this should only show if user logged in  */}
+        <div>current site is Home (/welcome)</div>
+        <h2> Hello{name}!</h2> {/* this should only show if user logged in  */}
         <h3>This website was created to shed light on the effects of industrialization on the Earth. It contains information on climate change and environmental factors.</h3>
         <h3>You can continue your journey here by viewing our <a href="?">'about us'-page</a> or moving onto the graphs by clicking a link in the top bar. You can also move to view the user-specific graphs linked to this user.</h3>
         

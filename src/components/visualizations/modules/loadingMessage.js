@@ -15,7 +15,7 @@ function loadingMessage() {
       >
         <p
           style={{
-            color: "#c757cf",
+            color: "#011b4a",
             fontSize: "30px",
             position: "absolute",
             top: "50%",
