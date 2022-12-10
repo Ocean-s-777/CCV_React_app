@@ -19,7 +19,7 @@ function loadingMessage() {
             fontSize: "30px",
             position: "absolute",
             top: "50%",
-            left: "50%",
+            left: "40%",
           }}
         >
           Loading...
