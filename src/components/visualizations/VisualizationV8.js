@@ -127,8 +127,8 @@ const VisualizationV8 = ({ customDescription }) => {
     },
   };
 
-  let strandardDescription = "V8 standard description";
-  if (!customDescription) customDescription = strandardDescription;
+  let standardDescription = "The stacked line chart sheds light on the CO2 emissions of individual countries. The countries are presented in alphabetical order in the legend and can be toggled on or off. Concern is brought especially by the emissions of China and USA. A steady rise can be seen from the total of the countries doubling from the 1990s. ";
+  if (!customDescription) customDescription = standardDescription;
 
   return (
     <div className="graph-box">

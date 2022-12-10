@@ -87,8 +87,8 @@ const VisualizationV6 = ({ customDescription }) => {
     },
   };
 
-  let strandardDescription = "V6 standard description";
-  if (!customDescription) customDescription = strandardDescription;
+  let standardDescription = "This visualization displays CO2 measurements from over three quarters of the latest millenium. The air found inside the ice cores from Antartica was used in research to study the changes of atmospheric carbon dioxide concentration. As in also previous graphs, this shows the alarming rise in CO2 levels starting from the 1850s.";
+  if (!customDescription) customDescription = standardDescription;
 
   return (
     <div className="graph-box">

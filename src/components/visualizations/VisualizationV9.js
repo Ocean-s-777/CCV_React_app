@@ -195,7 +195,7 @@ const VisualizationV9 = ({ customDescription }) => {
     },
   };
 
-  let strandardDescription = "V9 standard description";
+  let strandardDescription = "The doughnut chart is about CO2 emission by the various sectors where the each sector is represented by the different colors in chart. The energy sector plays a vital role to emit the CO2 by contributing 73.2% of all the emission, which followed by the agriculture, Forestry & Land use that is 18.4% of all emission. Looking into the sub-sector transportation likeroad, aviation, rails etc. along with energy in industry and building like residential, iron & steel, chemical & petrochemical etc. majorly release CO2.";
   if (!customDescription) customDescription = strandardDescription;
 
   return (

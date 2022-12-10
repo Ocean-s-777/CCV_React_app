@@ -148,9 +148,9 @@ const VisualizationV4 = ({ customDescription }) => {
     },
   };
 
-  let strandardDescription =
-    "V4 standard description. (It will be something like: This chart combines the Ice core measurements DE08, DE08-02 and DSS to Mauna Loa CO2 annual mean data.)";
-  if (!customDescription) customDescription = strandardDescription;
+  let standardDescription =
+    "This graph is a combination of Ice core measurements DE08, DE08-02, DSS with Mauna Loa CO2 annual mean data along with selected points in human evolution and major activities. It displays acceleration in rise of CO2 levels already from the mid 1800s and shows the severity of the acceleration starting in the 1950s.";
+  if (!customDescription) customDescription = standardDescription;
 
   return (
     <div className="graph-box">

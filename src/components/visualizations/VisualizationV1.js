@@ -135,7 +135,7 @@ const VisualizationV1 = ({ customDescription }) => {
     },
   };
 
-  let standardDescription = "V1 standard description.";
+  let standardDescription = "Surface air temperature anomaly graph from January 1850 onwards depicting how both the temperature on the Northern – more populated – hemisphere begins rising from the average due to human interference. Also shows how rapidly the temperature is escalating with industrialization. Adding the 2000 year temperature shows the rapid incline starting from the 1970s. Data provided by Hadley centre and the Climatic Research Unit at the University of East Anglia.";
   if (!customDescription) customDescription = standardDescription;
 
   return (

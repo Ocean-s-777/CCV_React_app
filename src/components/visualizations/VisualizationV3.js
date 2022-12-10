@@ -97,8 +97,8 @@ const VisualizationV3 = ({ customDescription }) => {
     },
   };
 
-  let strandardDescription = "V3 standard description.";
-  if (!customDescription) customDescription = strandardDescription;
+  let standardDescription = "Measurements done in the rural Mauna Loa Observatory in Hawaii demonstrate the atmospheric carbon dioxide concentration rising steadily from the sixties. Yearly peaks can be seen mid-summer and lows late autumn. The vertical axis shows atmospheric CO2 mole fraction in parts per million (PPM).";
+  if (!customDescription) customDescription = standardDescription;
 
   return (
     <div className="graph-box">
