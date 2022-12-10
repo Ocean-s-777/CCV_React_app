@@ -97,7 +97,7 @@ function App() {
             <Route path="*" element={<Home />} />
             <Route path="/sources" element={<Sources />} />
             <Route path="/CO2" element={<CO2 />} />
-            <Route path="/custom" element={<Custom />} />
+            {/* <Route path="/custom" element={<Custom />} /> */}
             <Route path="/custom/*" element={<Interceptor />} />
           </Routes>
         </BrowserRouter>
