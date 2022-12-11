@@ -99,13 +99,13 @@ function App() {
     <>
       <Route path="/login" element={<LoginView />} />
       <Route path="/signup" element={<Signup />} />
-      <Route path="/create" element={<CustomCreation />} />
     </>
   );
 
   if (userAuthData.jwt) {
     authRoutes = <Route path="/protected" element={<Welcome />} />;
     authRoutes = <Route path="/user" element={<UserView />} />;
+    authRoutes = <Route path="/create" element={<CustomCreation />} />
   }
 
   return (
