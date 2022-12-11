@@ -126,7 +126,7 @@ canvas{
 .icons{
   width: 150px;
 }
-.icons>img{
+.icons>a>img{
   padding: 10px;
   height: 54px;
 }
