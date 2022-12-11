@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useEffect } from "react";
-import { BrowserRouter, Routes, Route, Navigate, /* Link */ } from "react-router-dom";
-import { useState, /* useEffect */ } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useState } from "react";
 
 import { UserAuthContext } from "./Context";
 import Header from "./components/Header";
@@ -73,11 +73,12 @@ function App() {
       const config = {
         headers: {
           Authorization: `Bearer ${userAuthData.jwt}`,
-        }
-      }
+        },
+      };
       console.log(userAuthData.jwt);
-      let data = null
-      axios.post(`${fetchURL}/user/verify`, data, config)
+      let data = null;
+      axios
+        .post(`${fetchURL}/user/verify`, data, config)
         .then((res) => {
           if (res.status === 200) {
             setIsLoggedIn(true);
@@ -120,7 +121,6 @@ function App() {
               </div>
             )}
           </UserAuthContext.Consumer>
-
 
           <Routes>
             {/* <Route path="/" element={<Home />} /> */}
