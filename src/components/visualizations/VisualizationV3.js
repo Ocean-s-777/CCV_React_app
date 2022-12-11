@@ -129,7 +129,6 @@ const VisualizationV3 = ({ customDescription }) => {
           </p>
         </div>
       </div>
-      <hr />
     </div>
   );
 };

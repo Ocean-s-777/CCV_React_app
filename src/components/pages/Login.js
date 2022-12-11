@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import { fetchURL } from '../visualizations/modules/fetchURL';
 import { UserAuthContext } from '../../Context';
 
 
@@ -14,11 +14,9 @@ export default function LoginView(props) {
     event.preventDefault();
     setLoginProcessState("processing");
     try {
-      const result = await axios.post(2000 + '/loginForJWT', null, {
-        auth: {
-          username: event.target.username.value,
-          password: event.target.password.value
-        }
+      const result = await axios.post(fetchURL + '/user/login', {
+        username: event.target.username.value,
+        password: event.target.password.value
       })
       console.log(result);
       console.log(result.data);
@@ -29,9 +27,11 @@ export default function LoginView(props) {
         navigate("/", { replace: true });
       }, 1500);
     } catch (error) {
-      console.error(error.message);
-      setLoginProcessState("error");
-      setTimeout(() => setLoginProcessState("idle"), 1500);
+      console.log(error.response);
+      if (error.response.status !== 200) {
+        setLoginProcessState("Unauthorized");
+        setTimeout(() => setLoginProcessState("idle"), 1500);
+      }
     }
   }
 
@@ -49,8 +49,8 @@ export default function LoginView(props) {
       loginUIControls = <span style={{ color: 'green' }}>Login successful</span>
       break;
 
-    case "error":
-      loginUIControls = <span style={{ color: 'red' }}>Error</span>
+    case "Unauthorized":
+      loginUIControls = <span style={{ color: 'red' }}>Inncorrect username or password</span>
       break;
 
     default:
