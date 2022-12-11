@@ -106,20 +106,19 @@ const VisualizationV6 = ({ customDescription }) => {
               target="_blank"
               rel="noreferrer"
             >
-              data description
+              Data description
             </a>
-
+            &nbsp; & &nbsp;
             <a
               href="https://www.ncei.noaa.gov/pub/data/paleo/icecore/antarctica/antarctica2015co2composite.txt"
               target="_blank"
               rel="noreferrer"
             >
-              data source
+              source
             </a>
           </p>
         </div>
       </div>
-      <hr />
     </div>
   );
 };

@@ -13,10 +13,6 @@ export default class Sources extends Component {
   render() {
     return (
       <>
-        <div>
-          current site is CO2 and should show v1, v2, v3 bla bla(/CO2)
-        </div>
-        <br/>
         <div className="visualizations">
           <VisualizationV1 />
           <VisualizationV3 />
