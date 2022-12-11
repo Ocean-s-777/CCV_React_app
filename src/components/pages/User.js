@@ -38,7 +38,7 @@ export default function UserView(props) {
 
 
   return (
-    <div className="user_container">
+    <div className="login_container user_container">
     <img src={require('../images/placeholder.png')} alt="forestimage"></img>
     <div className="loginBox loginRight">
        <div>
