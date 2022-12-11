@@ -126,15 +126,15 @@ const VisualizationV5 = ({ customDescription }) => {
               target="_blank"
               rel="noreferrer"
             >
-              Detailed description
+              Data description
             </a>
-
+            &nbsp; & &nbsp;
             <a
               href="https://cdiac.ess-dive.lbl.gov/ftp/trends/co2/vostok.icecore.co2"
               target="_blank"
               rel="noreferrer"
             >
-              Data source
+              source
             </a>
           </p>
         </div>

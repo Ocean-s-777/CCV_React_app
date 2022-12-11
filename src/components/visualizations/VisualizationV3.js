@@ -116,7 +116,7 @@ const VisualizationV3 = ({ customDescription }) => {
               target="_blank"
               rel="noreferrer"
             >
-              Detailed description
+              Data description
             </a>
             &nbsp; & &nbsp;
             <a
@@ -124,7 +124,7 @@ const VisualizationV3 = ({ customDescription }) => {
               target="_blank"
               rel="noreferrer"
             >
-              the data used
+              source
             </a>
           </p>
         </div>

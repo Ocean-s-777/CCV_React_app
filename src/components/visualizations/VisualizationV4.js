@@ -177,7 +177,7 @@ const VisualizationV4 = ({ customDescription }) => {
               target="_blank"
               rel="noreferrer"
             >
-              data source
+              data
             </a>
           </p>
 
@@ -195,7 +195,7 @@ const VisualizationV4 = ({ customDescription }) => {
               target="_blank"
               rel="noreferrer"
             >
-              data source
+              data
             </a>
           </p>
 

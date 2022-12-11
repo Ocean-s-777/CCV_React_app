@@ -185,7 +185,8 @@ const VisualizationV7 = ({ customDescription }) => {
     },
   };
 
-  let standardDescription = "This multi-axis graph combines representation of the global average surface temperature over the past two million years and CO2 measurements from the last 800k years. It displays also how the peaks and troughs of both the CO2 and the air temperature levels occur at around the same times, bringing focus to the alarming rise in the latest century.";
+  let standardDescription =
+    "This multi-axis graph combines representation of the global average surface temperature over the past two million years and CO2 measurements from the last 800k years. It displays also how the peaks and troughs of both the CO2 and the air temperature levels occur at around the same times, bringing focus to the alarming rise in the latest century.";
   if (!customDescription) customDescription = standardDescription;
 
   return (
@@ -204,15 +205,15 @@ const VisualizationV7 = ({ customDescription }) => {
               target="_blank"
               rel="noreferrer"
             >
-              Detailed description
+              Data description
             </a>
-
+            &nbsp; & &nbsp;
             <a
               href="http://carolynsnyder.com/publications.php"
               target="_blank"
               rel="noreferrer"
             >
-              Data source
+              source
             </a>
           </p>
         </div>
