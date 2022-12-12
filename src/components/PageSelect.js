@@ -7,36 +7,40 @@ import EmissionSources from './images/EmissionSources.png'
 export default function PageSelect() {
   return (
     //my implementation
-    <nav>
-      <div className='selector'>
-        <NavLink className={'linkBox'} to="/CO2">
-          <div className='linkText'>Atmospheric CO2 and Temperatures</div>
-          <img src={CO2} alt="" />
-        </NavLink>
-        <NavLink className={'linkBox'} to="/Sources">
-          <div className='linkText'>Emission Sources</div>
-          <img src={EmissionSources} alt="" />
-        </NavLink>
-      </div>
-    </nav>
-  //   //bootstrap implementation
+    // <nav>
+    //   <div className='navbar container-fluid'>
+    //     <NavLink className={'plink'} to="/CO2">
+    //       <div className='linkText'>Atmospheric CO2 and Temperatures</div>
+    //       {/* <img src={CO2} alt="" /> */}
+    //     </NavLink>
+    //     <NavLink className={'plink'} to="/Sources">
+    //       <div className='linkText'>Emission Sources</div>
+    //       {/* <img src={EmissionSources} alt="" /> */}
+    //     </NavLink>
+    //   </div>
+    // </nav> 
+     //bootstrap implementation
   
-  //   <nav className="navbar navbar-expand-lg nav-light">
-  //   <div className="container-fluid">
-  //     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-  //       <span className="navbar-toggler-icon"></span>
-  //     </button>
-  //     <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-  //       <ul className="navbar-nav me-auto mb-2 mb-lg-0 page-nav">
-  //         <li className="nav-item">
-  //           <a className="nav-link active plink" aria-current="page" href="/CO2">Atmospheric CO2 and Temperatures</a>
-  //         </li>
-  //         <li className="nav-item">
-  //           <a className="nav-link active plink" href="/Sources">Emission Sources</a>
-  //         </li>
-  //       </ul>
-  //     </div>
-  //   </div>
-  // </nav>
+   <nav className="navbar navbar-expand-lg nav-light">
+    <div className="container-fluid">
+      <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0 page-nav">
+          <li className="nav-item">
+          <NavLink className={'plink'} to="/CO2">
+           <div className='linkText'>Atmospheric CO2 and Temperatures</div>
+          </NavLink>
+          </li>
+          <li className="nav-item">
+          <NavLink className={'plink'} to="/sources">
+           <div className='linkText'>Emission Sources</div>
+         </NavLink>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
   )
 }
