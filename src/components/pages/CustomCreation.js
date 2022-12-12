@@ -1,6 +1,8 @@
 import { useState, useContext } from "react";
 import axios from "axios";
 import { UserAuthContext } from "../../Context";
+import { fetchURL } from "../visualizations/modules/fetchURL";
+import { useNavigate } from "react-router-dom";
 
 export default function CustomCreation() {
   const [customTitle, setCustomTitle] = useState("");
@@ -16,6 +18,7 @@ export default function CustomCreation() {
   const [chosenVis, setChosenVis] = useState([]);
   const [chosenDesc, setChosenDesc] = useState([]);
   const UserAuthContextValue = useContext(UserAuthContext);
+  const navigate = useNavigate()
 
   // Add/remove visualization identifiers in the chosenVis array when checkboxes are checked/unchecked
   let checkboxChange = (value) => {
@@ -88,21 +91,22 @@ export default function CustomCreation() {
 
       console.log(viewStats);
 
-      // Try to send the data:
-      //
-      // try {
-      //   await axios.post(JSON.stringify(viewStats), {
-      //     headers: {
-      //       "Content-Type": "application/json",
-      //       Authorization: "Bearer " + UserAuthContextValue.jwt,
-      //     },
-      //   });
-      //
-      //   // Redirected user to the new view
-      //
-      // } catch (error) {
-      //   console.error(error);
-      // }
+      try {
+        let config = {
+          headers: {
+            Authorization: "Bearer " + UserAuthContextValue.jwt
+          }
+        }
+        await axios.post(fetchURL + "/custom/create",viewStats, config)
+        .then((res) => {
+          navigate(`/custom/${res.data.id}`)
+        })
+      
+        // Redirected user to the new view
+      
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 

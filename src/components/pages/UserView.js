@@ -8,6 +8,7 @@ import { UserAuthContext } from '../../Context';
 
 
 export default function UserView(props) {
+    const navigate = useNavigate();
     const UserAuthContextValue = useContext(UserAuthContext);
     const [name, setName] = useState("");
     const [cViews, setCViews] = useState([]);
@@ -46,7 +47,7 @@ export default function UserView(props) {
        <h1>Profile view</h1>
        
           <h2 className="user-title username">{name}</h2> {/* this should only show if user logged in  */}
-          <button onClick={() => UserAuthContextValue.logout()} >Logout</button>
+          <button onClick={() => {UserAuthContextValue.logout(); navigate("/", { replace: true })}} >Logout</button>
           <h2 className="user-title">Custom views</h2>
           <div className="custom-views">
               {/* oskari please input code here for custom view removal/adding */}

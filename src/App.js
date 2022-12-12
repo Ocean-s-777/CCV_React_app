@@ -77,8 +77,7 @@ function App() {
       };
       console.log(userAuthData.jwt);
       let data = null;
-      axios
-        .post(`${fetchURL}/user/verify`, data, config)
+      axios.post(`${fetchURL}/user/verify`, data, config)
         .then((res) => {
           if (res.status === 200) {
             setIsLoggedIn(true);
@@ -99,13 +98,19 @@ function App() {
     <>
       <Route path="/login" element={<LoginView />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/protected" element={<LoginView />}/>;
+      <Route path="/user" element={<LoginView />} />;
+      <Route path="/create" element={<LoginView />} />
     </>
   );
 
   if (userAuthData.jwt) {
-    authRoutes = <Route path="/protected" element={<Welcome />} />;
-    authRoutes = <Route path="/user" element={<UserView />} />;
-    authRoutes = <Route path="/create" element={<CustomCreation />} />
+    authRoutes = 
+    <>
+      <Route path="/protected" element={<Welcome />} />;
+      <Route path="/user" element={<UserView />} />;
+      <Route path="/create" element={<CustomCreation />} />
+    </>
   }
 
   return (

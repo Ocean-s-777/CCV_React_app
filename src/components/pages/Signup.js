@@ -26,7 +26,7 @@ export default function SignupView() {
       setTimeout(() => {
         setSignupProcessState("idle")
         UserAuthContextValue.login(result.data.token);
-        navigate("/", { replace: true });
+        navigate("/user", { replace: true });
       }, 1500);
     } catch (error) {
       console.error(error);
