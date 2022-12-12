@@ -22,13 +22,13 @@ canvas {
 }
 
 .line-box {
-  min-height: 600px;
-  max-height: 600px;
-  margin: 0 auto;
+  /* position: relative; */
+  height: 600px;
+  margin: auto;
   max-width: 100%;
 }
 .line-box-V8{
-  min-height: 800px;
+  height: 800px;
   /* max-height: 1200px; */
   margin: 0 auto;
   max-width: 100%;
@@ -344,13 +344,14 @@ a.linkBox{
 
 @media (max-width: 1400px){
   .line-box {
-    min-height: 500px;
+    height: 500px;
   }
+
 }
 
 @media (max-width: 1000px){
   .line-box {
-    min-height: 400px;
+    height: 400px;
   }
 }
 
@@ -360,7 +361,7 @@ a.linkBox{
     gap: "16px";
   }
   .line-box {
-    min-height: 350px;
+    height: 350px;
   }
 }
 
