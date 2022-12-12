@@ -120,7 +120,7 @@ export default function CustomCreation() {
         <div>
           <h3>Title of your view</h3>
           <input
-            className="text_input_field"
+            className="text_input_field bigFont"
             type="string"
             value={customTitle}
             onChange={(e) => setCustomTitle(e.target.value)}
@@ -138,9 +138,9 @@ export default function CustomCreation() {
             value={1}
             defaultChecked
           ></input>
-          <label htmlFor="1Columns">&nbsp;&nbsp;1</label> &nbsp; &nbsp;
+          <label htmlFor="1Columns" className="noPadding">&nbsp;&nbsp;1</label> &nbsp; &nbsp;
           <input type="radio" id="2Columns" name="columns" value={2}></input>
-          <label htmlFor="1Columns">&nbsp;&nbsp;2</label>
+          <label htmlFor="1Columns" className="noPadding">&nbsp;&nbsp;2</label>
           <p>
             Only one column will be shown on narrow screens regardless of this
             setting.
@@ -151,11 +151,10 @@ export default function CustomCreation() {
           <h3>Graphs</h3>
           <div className="custom_creation_instuction_text_box">
             <p>
-              Choose graphs to include and write custom descriptions for them if
-              you want.
+              Choose graphs to include and write custom descriptions.
             </p>
             <p>
-              If description box is left empty, the standard description of the
+              If the description box is left empty, the standard description for the
               graph will be used.
             </p>
           </div>
