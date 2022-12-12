@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color:rgb(228, 220, 220);
+  background-color: white;
   margin: 0;
   font-family: Arial, Verdana, "Geneva", Tahoma, sans-serif;
 }
@@ -110,6 +110,9 @@ canvas{
 .nav-light{
   color: #c7d39e;
 }
+nav{
+  background-color:rgb(228, 220, 220);
+}
 .title{
   vertical-align: middle;
   left: 140px;
@@ -124,9 +127,62 @@ canvas{
 .head{
   margin: 0;
 }
+a.plink.active{
+  background-image: none;
+  background-color: #228C1B;
+  color:#228C1B,
+}
 .plink{
   font-size: x-large;
+  background-image: linear-gradient(
+    to right,
+    #0054E6,
+    #0054E6 50%,
+    #000 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
 }
+
+
+.plink:before{
+  content: '';
+  background: #0054E6;
+  color: black;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+.plink.active:before{
+  content: '';
+  background: #0054E6;
+  color: black;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+.plink:hover {
+ background-position: 0;
+}
+
+.plink:hover::before{
+  width: 100%;
+}
+
 .title-cont{
   width: 1000px;
 }
@@ -232,7 +288,7 @@ a.linkBox{
   justify-content: center;
   align-items: center;
 }
-
+/* 
 .linkText {
   display: flex;
   position: relative;
