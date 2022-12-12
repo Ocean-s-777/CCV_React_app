@@ -326,7 +326,7 @@ a.linkBox{
   transition: .3s ease-in-out;
   filter: blur(4px) sepia(1) saturate(0.8);
   opacity: 0.5;
-}
+}*/
 
 .OneColumnView .TwoColumnView {
   max-width: 100%;
@@ -434,7 +434,7 @@ a.linkBox{
      padding: 14px 0px 0px 78px;
     width: 100%; 
  }
-
+ 
 #loginbutton{
   height: 57px;
   width: 673px;
