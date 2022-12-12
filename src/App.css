@@ -17,24 +17,29 @@ hr{
   margin-bottom: 16px; */
 }
 
+canvas {
+  max-width: 100%;
+}
+
 .line-box {
   min-height: 600px;
   max-height: 600px;
   margin: 0 auto;
+  max-width: 100%;
 }
-
 .line-box-V8{
   min-height: 800px;
   /* max-height: 1200px; */
   margin: 0 auto;
+  max-width: 100%;
 }
-
 .doughnut-box {
   min-width: 600px;
   min-height: 700px;
   max-width: 1000px;
   max-height: 1000px;
   margin: 0 auto;
+  max-width: 100%;
 }
 
 .graph-box {
@@ -44,6 +49,7 @@ hr{
   border-radius: 10px;
   margin: 10px 2px 0 2px;
   background-color:rgb(255, 255, 255);
+  max-width: 100%;
 }
 
 .graph-text-box {
@@ -190,6 +196,7 @@ a.plink.active{
   margin: 0;
   /* background-color: white; */
   width: auto;
+  max-width: 100%;
 }
 
 .login_container{
@@ -318,8 +325,27 @@ a.linkBox{
   transition: .3s ease-in-out;
   filter: blur(4px) sepia(1) saturate(0.8);
   opacity: 0.5;
-} */
+}
 
+.OneColumnView .TwoColumnView {
+  max-width: 100%;
+}
+.OneColumnView {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.TwoColumnView {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: "16px";
+}
+
+@media (max-width: 800px){
+  .TwoColumnView{
+    grid-template-columns: 1fr;
+    gap: "16px";
+  }
+}
 
 /* .linkBgPic{
   background-color: black;
