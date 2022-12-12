@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import axios from "axios";
+import { UserAuthContext } from "../../Context";
 
 export default function CustomCreation() {
   const [customTitle, setCustomTitle] = useState("");
@@ -11,6 +13,98 @@ export default function CustomCreation() {
   const [desc7, setDesc7] = useState("");
   const [desc8, setDesc8] = useState("");
   const [desc9, setDesc9] = useState("");
+  const [chosenVis, setChosenVis] = useState([]);
+  const [chosenDesc, setChosenDesc] = useState([]);
+  const UserAuthContextValue = useContext(UserAuthContext);
+
+  // Add/remove visualization identifiers in the chosenVis array when checkboxes are checked/unchecked
+  let checkboxChange = (value) => {
+    if (chosenVis.includes(value)) {
+      let index = chosenVis.indexOf(value);
+      if (index > -1) {
+        chosenVis.splice(index, 1);
+      }
+    } else {
+      chosenVis.push(value);
+    }
+    console.log(chosenVis);
+  };
+
+  // Function for the "Create View" button
+  const createView = async () => {
+    // This will be sent to the server:
+    let viewStats = {
+      title: customTitle,
+      columns: columns,
+      visualizations: chosenVis,
+      descriptions: chosenDesc,
+    };
+
+    // Make sure the a title of at least 4 letters is written:
+    if (viewStats.title.length < 4) {
+      alert("You must include a TITLE of at least 4 characters!");
+      return;
+    }
+    // Make sure at least 1 graph is selected:
+    else if (viewStats.visualizations < 1) {
+      alert("You must choose at lest one GRAPH!");
+      return;
+    }
+    // Add descriptions to the viewStats object:
+    else {
+      viewStats.visualizations.forEach((value) => {
+        let descToBePushed;
+        switch (value) {
+          case "V1":
+            descToBePushed = desc1;
+            break;
+          case "V3":
+            descToBePushed = desc3;
+            break;
+          case "V4":
+            descToBePushed = desc4;
+            break;
+          case "V5":
+            descToBePushed = desc5;
+            break;
+          case "V6":
+            descToBePushed = desc6;
+            break;
+          case "V7":
+            descToBePushed = desc7;
+            break;
+          case "V8":
+            descToBePushed = desc8;
+            break;
+          case "V9":
+            descToBePushed = desc9;
+            break;
+        }
+        if (descToBePushed.length < 1) {
+          descToBePushed = null;
+        }
+        viewStats.descriptions.push(descToBePushed);
+      });
+
+      console.log(viewStats);
+
+      // Try to send the data:
+      //
+      // try {
+      //   await axios.post(JSON.stringify(viewStats), {
+      //     headers: {
+      //       "Content-Type": "application/json",
+      //       Authorization: "Bearer " + UserAuthContextValue.jwt,
+      //     },
+      //   });
+      //
+      //   // Redirected user to the new view
+      //
+      // } catch (error) {
+      //   console.error(error);
+      // }
+    }
+  };
 
   return (
     <>
@@ -20,7 +114,7 @@ export default function CustomCreation() {
 
       <div className="CustomOptionsBox">
         <div>
-          <h3>Write Title for your view</h3>
+          <h3>Title of your view</h3>
           <input
             className="text_input_field"
             type="string"
@@ -28,27 +122,46 @@ export default function CustomCreation() {
             onChange={(e) => setCustomTitle(e.target.value)}
             placeholder="Enter Title"
           ></input>
+          <p>The title must be at least four letters long.</p>
         </div>
 
         <div onChange={(e) => setColumns(e.target.value)}>
-          <h3>Choose number of columns</h3>
-          <input type="radio" id="1Columns" name="columns" value={1}></input>
+          <h3>Columns</h3>
+          <input
+            type="radio"
+            id="1Columns"
+            name="columns"
+            value={1}
+            defaultChecked
+          ></input>
           <label htmlFor="1Columns">&nbsp;&nbsp;1</label> &nbsp; &nbsp;
           <input type="radio" id="2Columns" name="columns" value={2}></input>
           <label htmlFor="1Columns">&nbsp;&nbsp;2</label>
+          <p>
+            Only one column will be shown on narrow screens regardless of this
+            setting.
+          </p>
         </div>
 
         <div>
-          <h3>Choose graphs to include</h3>
+          <h3>Graphs</h3>
           <div className="custom_creation_instuction_text_box">
-            <p>And write custom descriptions for them if you want</p>
             <p>
-              (If description box is left empty, the standard description of the
-              graph is used.)
+              Choose graphs to include and write custom descriptions for them if
+              you want.
+            </p>
+            <p>
+              If description box is left empty, the standard description of the
+              graph will be used.
             </p>
           </div>
           <div className="custom_creation_graphs_to_include_box">
-            <input type="checkbox" id="graph_1" />
+            <input
+              type="checkbox"
+              id="graph_1"
+              value="V1"
+              onChange={(e) => checkboxChange(e.target.value)}
+            />
             <label htmlFor="graph_1">
               Global historical surface temperature anomalies from January 1850
               onwards
@@ -62,7 +175,12 @@ export default function CustomCreation() {
               placeholder="Enter Description"
             ></input>{" "}
             <br />
-            <input type="checkbox" id="graph_3" />
+            <input
+              type="checkbox"
+              id="graph_3"
+              value="V3"
+              onChange={(e) => checkboxChange(e.target.value)}
+            />
             <label htmlFor="graph_3">
               Atmospheric CO2 concentrations from Mauna Loa measurements
               starting 1958
@@ -76,7 +194,12 @@ export default function CustomCreation() {
               placeholder="Enter Description"
             ></input>{" "}
             <br />
-            <input type="checkbox" id="graph_4" />
+            <input
+              type="checkbox"
+              id="graph_4"
+              value="V4"
+              onChange={(e) => checkboxChange(e.target.value)}
+            />
             <label htmlFor="graph_4">
               Antarctic Ice Core records of atmospheric CO2 ratios combined with
               Mauna Loa measurement
@@ -90,7 +213,12 @@ export default function CustomCreation() {
               placeholder="Enter Description"
             ></input>{" "}
             <br />
-            <input type="checkbox" id="graph_5" />
+            <input
+              type="checkbox"
+              id="graph_5"
+              value="V5"
+              onChange={(e) => checkboxChange(e.target.value)}
+            />
             <label htmlFor="graph_5">
               Vostok Ice Core CO2 measurements, 417160 - 2342 years
             </label>{" "}
@@ -103,7 +231,12 @@ export default function CustomCreation() {
               placeholder="Enter Description"
             ></input>{" "}
             <br />
-            <input type="checkbox" id="graph_6" />
+            <input
+              type="checkbox"
+              id="graph_6"
+              value="V6"
+              onChange={(e) => checkboxChange(e.target.value)}
+            />
             <label htmlFor="graph_6">
               Ice core 800k year composite study CO2 measurements
             </label>{" "}
@@ -116,7 +249,12 @@ export default function CustomCreation() {
               placeholder="Enter Description"
             ></input>{" "}
             <br />
-            <input type="checkbox" id="graph_7" />
+            <input
+              type="checkbox"
+              id="graph_7"
+              value="V7"
+              onChange={(e) => checkboxChange(e.target.value)}
+            />
             <label htmlFor="graph_7">
               Evolution of global temperature over the past two million years
             </label>{" "}
@@ -129,7 +267,12 @@ export default function CustomCreation() {
               placeholder="Enter Description"
             ></input>{" "}
             <br />
-            <input type="checkbox" id="graph_8" />
+            <input
+              type="checkbox"
+              id="graph_8"
+              value="V8"
+              onChange={(e) => checkboxChange(e.target.value)}
+            />
             <label htmlFor="graph_8">CO2 emissions by country</label> <br />
             <input
               className="text_input_field"
@@ -139,7 +282,12 @@ export default function CustomCreation() {
               placeholder="Enter Description"
             ></input>{" "}
             <br />
-            <input type="checkbox" id="graph_9" />
+            <input
+              type="checkbox"
+              id="graph_9"
+              value="V9"
+              onChange={(e) => checkboxChange(e.target.value)}
+            />
             <label htmlFor="graph_9">CO2 emissions by sectors</label> <br />
             <input
               className="text_input_field"
@@ -156,7 +304,7 @@ export default function CustomCreation() {
           <button
             className="Create_Custom_View_Button"
             type="button"
-            onClick={null}
+            onClick={createView}
           >
             Create View
           </button>
