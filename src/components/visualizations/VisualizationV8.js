@@ -131,7 +131,7 @@ const VisualizationV8 = ({ customDescription }) => {
   if (!customDescription) customDescription = standardDescription;
 
   return (
-    <div className="graph-box">
+    <div className="graph-box graph-box-v8">
       <br />
       <div className="line-box-V8">
         <Line options={options} data={data} />
