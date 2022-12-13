@@ -229,26 +229,52 @@ a.plink.active{
 }
 
 .CustomOptionsBox {
-  background-color: rgb(102, 200, 212);
-  padding: 10px;
-  margin: 15px;
-  border-radius: 20px;
+  background-color: #003798af;
+  padding: 17px;
+  margin: 10px;
+  margin-top: 29px;
+  border-radius: 8px;
+  color: #000;
 }
+/* .text_input_field_container {
+  height: min-content;
+} */
 .text_input_field {
   width: 100%;
   padding: 2px 15px;
-  margin: 8px 0;
+  margin: 8px 0 0;
   display: inline-block;
   border: 1px solid #ccc;
-  border-radius: 8px;
+  border-radius: 5px;
   box-sizing: border-box;
   background-color: white;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: Arial, 'Courier New', Courier, monospace;
+  font-size: 14px;
+  font-weight: 400;
+}
+.text_input_field.bigFont{
   font-size: 18px;
-  font-weight: bold;
+}
+.checkbox_div {
+  display: inline;
+}
+.checkbox_div label {
+  display: inline;
+}
+.checkbox_div > input {
+  width: 17px;
+  height: 17px;
+  accent-color: #228C1B;
+}
+label{
+  padding-top: 11px;
+  padding-left: 6px;
+}
+label.noPadding{
+  padding-top: 0;
 }
 .custom_creation_instuction_text_box {
-  margin: 0 0 20px 10px;
+  margin: 2px 0 15px 5px;
 }
 .custom_creation_instuction_text_box > p {
   margin: 0;
@@ -263,18 +289,46 @@ a.plink.active{
 .Create_Custom_View_Button {
   margin: 20px 5px 3px 5px;
   border: 5px;
-  padding: 10px 20px;
-  border: 3px solid rgba(27, 31, 35, 0.15);
-  background-color: rgb(77, 183, 41);
   border-radius: 16px;
-  border-color: rgb(69, 103, 15);
-  color: rgb(48, 7, 7);
   font-size: 18px;
   font-weight: 600;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #003798;
+    border: 1px solid #fff;
+    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+  background-color: #f8f9fa;
+  border: 2px solid #f8f9fa;
+  border-radius: 4px;
+  color: #3c4043;
+  cursor: pointer;
+  font-family: arial,sans-serif;
+  height: 47px;
+  line-height: 27px;
+  min-width: 54px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
 }
-.Create_Custom_View_Button:hover {
-  background-color: rgb(8, 250, 56);
-  transform: scale(1.01);
+
+.button-16:hover {
+  border-color: #228C1B;
+  box-shadow: rgba(0, 0, 0, .1) 0 1px 1px;
+  color: #202124;
+}
+
+.Create_Custom_View_Button:focus {
+  border-color: #003798;
+  outline: none;
 }
 .selector{
   display: grid;
@@ -430,7 +484,7 @@ a.linkBox{
   }
 }
 
-@media (max-width: 800px){
+@media (max-width: 1100px){
   .TwoColumnView{
     grid-template-columns: 1fr;
     gap: "16px";

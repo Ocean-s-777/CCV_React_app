@@ -107,7 +107,7 @@ const VisualizationV5 = ({ customDescription }) => {
     },
   };
 
-  let standardDescription = 'The data in this graph is a result of the Russian Vostok station where Russia, US and France all collaborated in an ice-drilling project. The chart provides information on the flactuation of carbon dioxide concentration showing the CO2 levels spiking at an interval of around 100000 years for nearly half a million years and that a spike was beginning to happen according to the previous ryhthm from -15 kyr BC to -1 kyr BC as could have been expected looking at the previous occasions.';
+  let standardDescription = 'The data in this graph is a result of the Russian Vostok station measurements where Russia, US and France all collaborated in an ice-drilling project. The chart provides information on the fluctuation of carbon dioxide concentration showing the CO2 levels spiking at an interval of around 100000 years for nearly half a million years. A spike was beginning to happen according to the previous ryhthm.';
   if (!customDescription) customDescription = standardDescription;
 
   return (
