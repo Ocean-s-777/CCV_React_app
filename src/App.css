@@ -250,6 +250,10 @@ a.plink.active{
 .checkbox_div label {
   display: inline;
 }
+.checkbox_div > input {
+  width: 17px;
+  height: 17px;
+}
 label{
   padding-top: 11px;
   padding-left: 6px;

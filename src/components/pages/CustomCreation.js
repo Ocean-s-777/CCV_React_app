@@ -309,6 +309,7 @@ export default function CustomCreation() {
                 onChange={(e) => checkboxChange(e.target.value)}
               />
               <label htmlFor="graph_8">CO2 emissions by country</label> <br />
+              </div>
               <div className="text_input_field_container">
                 <input
                   className="text_input_field"
@@ -318,7 +319,7 @@ export default function CustomCreation() {
                   placeholder="Enter Description"
                 ></input>
               </div>
-            </div>
+            
             <br />
             <div className="checkbox_div">
               <input
@@ -328,6 +329,7 @@ export default function CustomCreation() {
                 onChange={(e) => checkboxChange(e.target.value)}
               />
               <label htmlFor="graph_9">CO2 emissions by sectors</label> <br />
+              </div>
               <input
                 className="text_input_field"
                 type="string"
@@ -335,7 +337,7 @@ export default function CustomCreation() {
                 onChange={(e) => setDesc9(e.target.value)}
                 placeholder="Enter Description"
               ></input>
-            </div>
+            
           </div>
           <br />
         </div>
