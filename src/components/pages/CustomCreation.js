@@ -126,7 +126,9 @@ export default function CustomCreation() {
             onChange={(e) => setCustomTitle(e.target.value)}
             placeholder="Enter Title"
           ></input>
+          <div className="custom_creation_instuction_text_box">
           <p>The title must be at least four letters long.</p>
+          </div>
         </div>
 
         <div onChange={(e) => setColumns(e.target.value)}>
@@ -146,10 +148,12 @@ export default function CustomCreation() {
           <label htmlFor="1Columns" className="noPadding">
             &nbsp;&nbsp;2
           </label>
+          <div className="custom_creation_instuction_text_box">
           <p>
             Only one column will be shown on narrow screens regardless of this
             setting.
           </p>
+          </div>
         </div>
 
         <div>
