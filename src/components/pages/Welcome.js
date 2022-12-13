@@ -14,7 +14,7 @@ export default function Welcome(props) {
   return (
     <>
       <div className="protected">
-        <h1>Hello{name} and welcome to the Climate Change Visualiser</h1>
+        <h1>Hello{name} and welcome to the Climate Change Visualizer</h1>
         <h3>This website was created to shed light on the effects of industrialization on the Earth. It contains information on climate change and environmental factors.</h3>
         <h3>You can continue your journey here by the graphs by clicking a link in the top bar. You can also move to view the user-specific graphs linked to this user.</h3>
       </div>
