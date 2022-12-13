@@ -15,7 +15,7 @@ const COLOR1 = "#228C1Bdd";
 const buildDataset = (label, data, color, x, y, hidden) => ({
   label,
   data: data.map((d) => ({
-    time: d[x] - 2001, // yr BP = years before present, !!!
+    time: d[x] - 2001,
     value: d[y],
   })),
   borderColor: color,

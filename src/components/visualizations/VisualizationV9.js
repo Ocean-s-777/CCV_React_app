@@ -12,8 +12,8 @@ const COLOR1 = [0, 84, 230]; //"#0054E6dd";
 const COLOR2 = [221, 130, 130]; //"#dd8282dd";
 const COLOR3 = [255, 192, 91]; //"#FFC05B";
 const COLOR4 = [34, 140, 27]; //"#228C1Bdd";
-let dataVersion = 1; // Used by toggleData()
-let newData = {}; // Used by toggleData()
+let dataVersion = 1; 
+let newData = {}; 
 let json = {};
 
 const VisualizationV9 = ({ customDescription }) => {
@@ -170,7 +170,6 @@ const VisualizationV9 = ({ customDescription }) => {
         onClick: null,
         display: true,
         position: "right",
-        // align: "start",
         labels: {
           boxWidth: 12,
           generateLabels: (chart) => {

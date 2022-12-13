@@ -42,7 +42,6 @@ const VisualizationV8 = ({ customDescription }) => {
         for (let i = 0; i < Object.keys(dataSource[0]).length - 2; i++) {
           let country = Object.keys(dataSource[0])[i + 2];
 
-          // Generate color for each country
           let red = 0 + i * 11;
           let green = 0 + i * 33;
           let blue = 100 + i * 22;

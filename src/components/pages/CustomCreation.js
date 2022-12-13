@@ -102,8 +102,6 @@ export default function CustomCreation() {
           .then((res) => {
             navigate(`/custom/${res.data.id}`);
           });
-
-        // Redirected user to the new view
       } catch (error) {
         console.error(error);
       }

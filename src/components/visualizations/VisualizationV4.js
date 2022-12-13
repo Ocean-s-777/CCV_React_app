@@ -92,12 +92,9 @@ const VisualizationV4 = ({ customDescription }) => {
       tooltip: {
         callbacks: {
           title: (contex) => {
-            //console.log(contex);
             return contex[0].raw.time;
           },
           label: (tooltipItem) => {
-            //console.log(tooltipItem)
-            //console.log(data.datasets[tooltipItem.datasetIndex].data[tooltipItem.dataIndex])
             if (tooltipItem.datasetIndex === 4) {
               return data.datasets[4].data[tooltipItem.dataIndex]["event"];
             } else {

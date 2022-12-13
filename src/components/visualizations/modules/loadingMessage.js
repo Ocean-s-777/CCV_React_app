@@ -32,5 +32,4 @@ function loadingMessage() {
     </div>
   );
 }
-//  color: "red", textAlign: "center"
 export default loadingMessage;

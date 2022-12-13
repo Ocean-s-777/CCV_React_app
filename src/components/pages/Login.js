@@ -84,34 +84,3 @@ export default function LoginView() {
     </div>
   )
 }
-
-/* h1>LOG IN</h1>
-    <div className="login_form">
-        <form action="#" method="post">
-            <div className='login_username_label'>
-                {/* need to insert icon }
-                <label>Username</label><br/>
-                <input type="text" name="user" placeholder="Username" className="input-username" required />
-            </div>
-            <div className='login_password'>
-                <label>Password</label><br/>
-                <input type="password" name="password" id="" placeholder="Password" className="input-password" required/>
-            </div>
-            <button id="loginbutton" type="submit">Log In</button>
-        </form>
-    </div> */
-
-    // <div>
-    //   <h1>Login</h1>
-    //   <form onSubmit={ onSubmit }>
-    //     <div>
-    //       Username <input type="text" name="username"/>
-    //     </div>
-    //     <div>
-    //       Password <input type="password" name="password"/>
-    //     </div>
-    //     <div>
-    //       { loginUIControls }
-    //     </div>
-    //   </form>
-    // </div>

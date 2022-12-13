@@ -1,8 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { json } from 'react-router-dom'
 import Custom from './Custom'
-import userAuthData from '../../App'
 
 export default function Interceptor() {
   const [viewData, setviewData] = useState()
@@ -16,7 +14,6 @@ export default function Interceptor() {
       .catch(err => {
       })
   }, [])
-
 
   return (
     <div>

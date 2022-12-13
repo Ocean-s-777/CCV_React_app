@@ -1,12 +1,9 @@
-import React, { Component, useContext } from 'react';
+import React, { useContext } from 'react';
 import axios from 'axios';
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import { fetchURL } from '../visualizations/modules/fetchURL';
 import { UserAuthContext } from '../../Context';
-//import VisualizationV1 from '../visualizations/VisualizationV1'
-//#479042
-//#003798
 
 export default function SignupView() {
   const UserAuthContextValue = useContext(UserAuthContext);
