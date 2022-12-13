@@ -253,6 +253,7 @@ a.plink.active{
 .checkbox_div > input {
   width: 17px;
   height: 17px;
+  accent-color: #228C1B;
 }
 label{
   padding-top: 11px;
