@@ -170,7 +170,9 @@ const VisualizationV9 = ({ customDescription }) => {
         onClick: null,
         display: true,
         position: "right",
+        // align: "start",
         labels: {
+          boxWidth: 12,
           generateLabels: (chart) => {
             return chart.data.datasets[0].data.map((data, i) => ({
               text: `${chart.data.labels[i]}: ${data}%`,

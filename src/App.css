@@ -409,7 +409,7 @@ a.linkBox{
   }
 }
 
-@media (max-width: 800px){
+@media (max-width: 1100px){
   .TwoColumnView{
     grid-template-columns: 1fr;
     gap: "16px";
