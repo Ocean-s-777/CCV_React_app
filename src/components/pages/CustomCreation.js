@@ -127,32 +127,34 @@ export default function CustomCreation() {
             placeholder="Enter Title"
           ></input>
           <div className="custom_creation_instuction_text_box">
-          <p>The title must be at least four letters long.</p>
+            <p>The title must be at least four letters long.</p>
           </div>
         </div>
 
         <div onChange={(e) => setColumns(e.target.value)}>
           <h3>Columns</h3>
-          <input
-            type="radio"
-            id="1Columns"
-            name="columns"
-            value={1}
-            defaultChecked
-          ></input>
-          <label htmlFor="1Columns" className="noPadding">
-            &nbsp;&nbsp;1
-          </label>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <input type="radio" id="2Columns" name="columns" value={2}></input>
-          <label htmlFor="1Columns" className="noPadding">
-            &nbsp;&nbsp;2
-          </label>
+          <div className="checkbox_div">
+            <input
+              type="radio"
+              id="1Columns"
+              name="columns"
+              value={1}
+              defaultChecked
+            ></input>
+            <label htmlFor="1Columns" className="noPadding">
+              &nbsp;&nbsp;1
+            </label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" id="2Columns" name="columns" value={2}></input>
+            <label htmlFor="1Columns" className="noPadding">
+              &nbsp;&nbsp;2
+            </label>
+          </div>
           <div className="custom_creation_instuction_text_box">
-          <p>
-            Only one column will be shown on narrow screens regardless of this
-            setting.
-          </p>
+            <p>
+              Only one column will be shown on narrow screens regardless of this
+              setting.
+            </p>
           </div>
         </div>
 
@@ -309,17 +311,17 @@ export default function CustomCreation() {
                 onChange={(e) => checkboxChange(e.target.value)}
               />
               <label htmlFor="graph_8">CO2 emissions by country</label> <br />
-              </div>
-              <div className="text_input_field_container">
-                <input
-                  className="text_input_field"
-                  type="string"
-                  value={desc8}
-                  onChange={(e) => setDesc8(e.target.value)}
-                  placeholder="Enter Description"
-                ></input>
-              </div>
-            
+            </div>
+            <div className="text_input_field_container">
+              <input
+                className="text_input_field"
+                type="string"
+                value={desc8}
+                onChange={(e) => setDesc8(e.target.value)}
+                placeholder="Enter Description"
+              ></input>
+            </div>
+
             <br />
             <div className="checkbox_div">
               <input
@@ -329,15 +331,14 @@ export default function CustomCreation() {
                 onChange={(e) => checkboxChange(e.target.value)}
               />
               <label htmlFor="graph_9">CO2 emissions by sectors</label> <br />
-              </div>
-              <input
-                className="text_input_field"
-                type="string"
-                value={desc9}
-                onChange={(e) => setDesc9(e.target.value)}
-                placeholder="Enter Description"
-              ></input>
-            
+            </div>
+            <input
+              className="text_input_field"
+              type="string"
+              value={desc9}
+              onChange={(e) => setDesc9(e.target.value)}
+              placeholder="Enter Description"
+            ></input>
           </div>
           <br />
         </div>
