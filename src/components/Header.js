@@ -19,7 +19,7 @@ export default function Header() {
       <div className="container-fluid head">
         <div className="title-cont">
           <img src={logo} alt={"logo"} />
-          <NavLink className="navbar-brand title" to="/">Climate Change Visualiser</NavLink>
+          <NavLink className="navbar-brand title" to="/">Climate Change Visualizer</NavLink>
         </div>
         <div className="icons">
           <NavLink to={"/create"}> <img src={createGrn} alt={"add"} /></NavLink>
