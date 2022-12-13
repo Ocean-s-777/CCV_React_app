@@ -225,10 +225,13 @@ a.plink.active{
   border-radius: 8px;
   color: #000;
 }
+/* .text_input_field_container {
+  height: min-content;
+} */
 .text_input_field {
   width: 100%;
   padding: 2px 15px;
-  margin: 8px 0;
+  margin: 8px 0 0;
   display: inline-block;
   border: 1px solid #ccc;
   border-radius: 5px;

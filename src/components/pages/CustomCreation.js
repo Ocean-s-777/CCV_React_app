@@ -175,13 +175,15 @@ export default function CustomCreation() {
               </label>
             </div>
             <br />
-            <input
-              className="text_input_field"
-              type="string"
-              value={desc1}
-              onChange={(e) => setDesc1(e.target.value)}
-              placeholder="Enter Description"
-            ></input>
+            <div className="text_input_field_container">
+              <input
+                className="text_input_field"
+                type="string"
+                value={desc1}
+                onChange={(e) => setDesc1(e.target.value)}
+                placeholder="Enter Description"
+              ></input>
+            </div>
             <br />
             <div className="checkbox_div">
               <input
@@ -196,13 +198,15 @@ export default function CustomCreation() {
               </label>
             </div>
             <br />
-            <input
-              className="text_input_field"
-              type="string"
-              value={desc3}
-              onChange={(e) => setDesc3(e.target.value)}
-              placeholder="Enter Description"
-            ></input>
+            <div className="text_input_field_container">
+              <input
+                className="text_input_field"
+                type="string"
+                value={desc3}
+                onChange={(e) => setDesc3(e.target.value)}
+                placeholder="Enter Description"
+              ></input>
+            </div>
             <br />
             <div className="checkbox_div">
               <input
@@ -217,13 +221,15 @@ export default function CustomCreation() {
               </label>
             </div>
             <br />
-            <input
-              className="text_input_field"
-              type="string"
-              value={desc4}
-              onChange={(e) => setDesc4(e.target.value)}
-              placeholder="Enter Description"
-            ></input>
+            <div className="text_input_field_container">
+              <input
+                className="text_input_field"
+                type="string"
+                value={desc4}
+                onChange={(e) => setDesc4(e.target.value)}
+                placeholder="Enter Description"
+              ></input>
+            </div>
             <br />
             <div className="checkbox_div">
               <input
@@ -237,13 +243,15 @@ export default function CustomCreation() {
               </label>
             </div>
             <br />
-            <input
-              className="text_input_field"
-              type="string"
-              value={desc5}
-              onChange={(e) => setDesc5(e.target.value)}
-              placeholder="Enter Description"
-            ></input>
+            <div className="text_input_field_container">
+              <input
+                className="text_input_field"
+                type="string"
+                value={desc5}
+                onChange={(e) => setDesc5(e.target.value)}
+                placeholder="Enter Description"
+              ></input>
+            </div>
             <br />
             <div className="checkbox_div">
               <input
@@ -257,13 +265,15 @@ export default function CustomCreation() {
               </label>
             </div>
             <br />
-            <input
-              className="text_input_field"
-              type="string"
-              value={desc6}
-              onChange={(e) => setDesc6(e.target.value)}
-              placeholder="Enter Description"
-            ></input>
+            <div className="text_input_field_container">
+              <input
+                className="text_input_field"
+                type="string"
+                value={desc6}
+                onChange={(e) => setDesc6(e.target.value)}
+                placeholder="Enter Description"
+              ></input>
+            </div>
             <br />
             <div className="checkbox_div">
               <input
@@ -277,13 +287,15 @@ export default function CustomCreation() {
               </label>
             </div>
             <br />
-            <input
-              className="text_input_field"
-              type="string"
-              value={desc7}
-              onChange={(e) => setDesc7(e.target.value)}
-              placeholder="Enter Description"
-            ></input>
+            <div className="text_input_field_container">
+              <input
+                className="text_input_field"
+                type="string"
+                value={desc7}
+                onChange={(e) => setDesc7(e.target.value)}
+                placeholder="Enter Description"
+              ></input>
+            </div>
             <br />
             <div className="checkbox_div">
               <input
@@ -293,13 +305,15 @@ export default function CustomCreation() {
                 onChange={(e) => checkboxChange(e.target.value)}
               />
               <label htmlFor="graph_8">CO2 emissions by country</label> <br />
-              <input
-                className="text_input_field"
-                type="string"
-                value={desc8}
-                onChange={(e) => setDesc8(e.target.value)}
-                placeholder="Enter Description"
-              ></input>
+              <div className="text_input_field_container">
+                <input
+                  className="text_input_field"
+                  type="string"
+                  value={desc8}
+                  onChange={(e) => setDesc8(e.target.value)}
+                  placeholder="Enter Description"
+                ></input>
+              </div>
             </div>
             <br />
             <div className="checkbox_div">
