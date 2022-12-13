@@ -1,5 +1,5 @@
 import React, { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { fetchURL } from '../visualizations/modules/fetchURL';
 import { UserAuthContext } from '../../Context';
@@ -56,7 +56,7 @@ export default function LoginView() {
       break;
 
     default:
-      loginUIControls = <button type="submit">Login</button>
+      loginUIControls = <button type="submit" >Login</button>
   }
 
 
@@ -79,6 +79,10 @@ export default function LoginView() {
               {loginUIControls}
             </div>
           </form>
+        </div>
+        <div className='signupLink'>
+          <p>Don't have an account?</p>
+          <NavLink to="/signup" className="welcome-links items account">Sign up here</NavLink>
         </div>
       </div>
     </div>

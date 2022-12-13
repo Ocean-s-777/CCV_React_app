@@ -469,6 +469,20 @@ a.linkBox{
   grid-template-columns: 1fr 1fr;
   gap: "16px";
 }
+.signupLink{
+  display: flex;
+  width: 100%;
+  margin-top: 20px;
+  align-items: center;
+}
+.signupLink p {
+  margin: 0;
+  margin-right: 15px;
+}
+.welcome-links.items.account{
+  margin-top: 0;
+  font-size: 17px;
+}
 
 @media (max-width: 1400px){
   .line-box {

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import axios from 'axios';
 import { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { fetchURL } from '../visualizations/modules/fetchURL';
 import { UserAuthContext } from '../../Context';
 
@@ -86,6 +86,10 @@ export default function SignupView() {
               {signupUIControls}
             </div>
           </form>
+        </div>
+        <div className='signupLink'>
+          <p>Already have an account?</p>
+          <NavLink to="/login" className="welcome-links items account">Login here</NavLink>
         </div>
       </div>
     </div>
