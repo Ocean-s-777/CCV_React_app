@@ -357,8 +357,7 @@ a.linkBox{
 .acc-actions{
   display: flex;
   flex-direction: row;
-  align-items: center;
-  width: 105%;
+  width: 100%;
   margin: 0 50px 0 0 ;
   justify-content: space-between;
 
@@ -414,6 +413,58 @@ a.linkBox{
   background-color: #0054E6;
   color: white;
   transition: .2s ease-in-out;
+}
+.gridViews{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-around;
+  min-height: 200px;
+  gap: 10px;
+  width: 100%;
+  margin: 10px 0;
+}
+.viewElements{
+  display: flex;
+  flex-direction: row;
+}
+.customViewElement{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 165px;
+  padding: 20px;
+  border: 2px solid #011b4a;
+  background-color: rgb(243, 250, 212);
+  border-radius: 4px;
+  position: relative;
+  justify-content: space-around;
+}
+.viewId{
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.copybutton img{
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.deleteButton{
+  position: relative;
+  font-size: 17px;
+}
+.viewTitle{
+  text-decoration: none;
+  color: #011b4a;
+  font-size: 18px;
+}
+.profile *{
+  margin-bottom: 20px;
+}
+.profile h1{
+  text-align: center;
 }
 /* 
 .linkText {
@@ -475,15 +526,6 @@ a.linkBox{
 
 }
 
-@media (max-width: 1000px){
-  .line-box {
-    height: 400px;
-  }
-  .acc-buttons{
-    font-size: 15px;
-  }
-}
-
 @media (max-width: 1100px){
   .TwoColumnView{
     grid-template-columns: 1fr;
@@ -496,6 +538,22 @@ a.linkBox{
     font-size: 25px;
   }
 }
+
+@media (max-width: 1000px){
+  .line-box {
+    height: 400px;
+  }
+  .acc-buttons{
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 860px){
+  .gridViews{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 
 /* .linkBgPic{
   background-color: black;

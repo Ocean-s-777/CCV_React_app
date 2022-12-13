@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { UserAuthContext } from '../../Context';
 import { fetchURL } from '../visualizations/modules/fetchURL';
+import MapUserViews from './modules/MapUserViews';
 require("../images/placeholder.png")
 
 
@@ -10,9 +11,6 @@ export default function UserView(props) {
   const navigate = useNavigate();
   const UserAuthContextValue = useContext(UserAuthContext);
   const [name, setName] = useState("");
-  const [showAlert, setShowAlert] = useState(false);
-  const [cViews, setCViews] = useState([]);
-
 
   useEffect(() => {
     setName(UserAuthContextValue.username);
@@ -26,13 +24,11 @@ export default function UserView(props) {
           Authorization: `Bearer ${UserAuthContextValue.jwt}`
         }
       }
-
       try {
         console.log(UserAuthContextValue.jwt);
         const results = await axios.delete(`${fetchURL}/user/delete`, config);
         if (results.status === 200) {
           UserAuthContextValue.logout();
-          setShowAlert(false);
           navigate("/", { replace: true });
         }
       } catch (error) {
@@ -46,7 +42,7 @@ export default function UserView(props) {
     <div className="login_container user_container">
       <img src={require('../images/placeholder.png')} alt="forestimage"></img>
       <div className="loginBox loginRight">
-        <div>
+        <div className='profile'>
           <h1>Profile view</h1>
           <div className='acc-actions'>
             <h2 className="user-title username">{name}</h2>
@@ -55,7 +51,7 @@ export default function UserView(props) {
           </div>
           <h2 className="user-title">Custom views</h2>
           <div className="custom-views">
-            {/* oskari please input code here for custom view removal/adding */}
+            <MapUserViews />
           </div>
         </div>
       </div>
