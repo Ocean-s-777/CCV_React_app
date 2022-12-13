@@ -241,6 +241,12 @@ a.plink.active{
 .text_input_field.bigFont{
   font-size: 18px;
 }
+.checkbox_div {
+  display: inline;
+}
+.checkbox_div label {
+  display: inline;
+}
 label{
   padding-top: 11px;
   padding-left: 6px;

@@ -18,7 +18,7 @@ export default function CustomCreation() {
   const [chosenVis, setChosenVis] = useState([]);
   const [chosenDesc, setChosenDesc] = useState([]);
   const UserAuthContextValue = useContext(UserAuthContext);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   // Add/remove visualization identifiers in the chosenVis array when checkboxes are checked/unchecked
   let checkboxChange = (value) => {
@@ -94,16 +94,16 @@ export default function CustomCreation() {
       try {
         let config = {
           headers: {
-            Authorization: "Bearer " + UserAuthContextValue.jwt
-          }
-        }
-        await axios.post(fetchURL + "/custom/create",viewStats, config)
-        .then((res) => {
-          navigate(`/custom/${res.data.id}`)
-        })
-      
+            Authorization: "Bearer " + UserAuthContextValue.jwt,
+          },
+        };
+        await axios
+          .post(fetchURL + "/custom/create", viewStats, config)
+          .then((res) => {
+            navigate(`/custom/${res.data.id}`);
+          });
+
         // Redirected user to the new view
-      
       } catch (error) {
         console.error(error);
       }
@@ -138,9 +138,14 @@ export default function CustomCreation() {
             value={1}
             defaultChecked
           ></input>
-          <label htmlFor="1Columns" className="noPadding">&nbsp;&nbsp;1</label> &nbsp; &nbsp;
+          <label htmlFor="1Columns" className="noPadding">
+            &nbsp;&nbsp;1
+          </label>
+          &nbsp;&nbsp;&nbsp;&nbsp;
           <input type="radio" id="2Columns" name="columns" value={2}></input>
-          <label htmlFor="1Columns" className="noPadding">&nbsp;&nbsp;2</label>
+          <label htmlFor="1Columns" className="noPadding">
+            &nbsp;&nbsp;2
+          </label>
           <p>
             Only one column will be shown on narrow screens regardless of this
             setting.
@@ -150,25 +155,25 @@ export default function CustomCreation() {
         <div>
           <h3>Graphs</h3>
           <div className="custom_creation_instuction_text_box">
+            <p>Choose graphs to include and write custom descriptions.</p>
             <p>
-              Choose graphs to include and write custom descriptions.
-            </p>
-            <p>
-              If the description box is left empty, the standard description for the
-              graph will be used.
+              If the description box is left empty, the standard description for
+              the graph will be used.
             </p>
           </div>
           <div className="custom_creation_graphs_to_include_box">
-            <input
-              type="checkbox"
-              id="graph_1"
-              value="V1"
-              onChange={(e) => checkboxChange(e.target.value)}
-            />
-            <label htmlFor="graph_1">
-              Global historical surface temperature anomalies from January 1850
-              onwards
-            </label>{" "}
+            <div className="checkbox_div">
+              <input
+                type="checkbox"
+                id="graph_1"
+                value="V1"
+                onChange={(e) => checkboxChange(e.target.value)}
+              />
+              <label htmlFor="graph_1">
+                Global historical surface temperature anomalies from January
+                1850 onwards
+              </label>
+            </div>
             <br />
             <input
               className="text_input_field"
@@ -176,18 +181,20 @@ export default function CustomCreation() {
               value={desc1}
               onChange={(e) => setDesc1(e.target.value)}
               placeholder="Enter Description"
-            ></input>{" "}
+            ></input>
             <br />
-            <input
-              type="checkbox"
-              id="graph_3"
-              value="V3"
-              onChange={(e) => checkboxChange(e.target.value)}
-            />
-            <label htmlFor="graph_3">
-              Atmospheric CO2 concentrations from Mauna Loa measurements
-              starting 1958
-            </label>{" "}
+            <div className="checkbox_div">
+              <input
+                type="checkbox"
+                id="graph_3"
+                value="V3"
+                onChange={(e) => checkboxChange(e.target.value)}
+              />
+              <label htmlFor="graph_3">
+                Atmospheric CO2 concentrations from Mauna Loa measurements
+                starting 1958
+              </label>
+            </div>
             <br />
             <input
               className="text_input_field"
@@ -195,18 +202,20 @@ export default function CustomCreation() {
               value={desc3}
               onChange={(e) => setDesc3(e.target.value)}
               placeholder="Enter Description"
-            ></input>{" "}
+            ></input>
             <br />
-            <input
-              type="checkbox"
-              id="graph_4"
-              value="V4"
-              onChange={(e) => checkboxChange(e.target.value)}
-            />
-            <label htmlFor="graph_4">
-              Antarctic Ice Core records of atmospheric CO2 ratios combined with
-              Mauna Loa measurement
-            </label>{" "}
+            <div className="checkbox_div">
+              <input
+                type="checkbox"
+                id="graph_4"
+                value="V4"
+                onChange={(e) => checkboxChange(e.target.value)}
+              />
+              <label htmlFor="graph_4">
+                Antarctic Ice Core records of atmospheric CO2 ratios combined
+                with Mauna Loa measurement
+              </label>
+            </div>
             <br />
             <input
               className="text_input_field"
@@ -214,17 +223,19 @@ export default function CustomCreation() {
               value={desc4}
               onChange={(e) => setDesc4(e.target.value)}
               placeholder="Enter Description"
-            ></input>{" "}
+            ></input>
             <br />
-            <input
-              type="checkbox"
-              id="graph_5"
-              value="V5"
-              onChange={(e) => checkboxChange(e.target.value)}
-            />
-            <label htmlFor="graph_5">
-              Vostok Ice Core CO2 measurements, 417160 - 2342 years
-            </label>{" "}
+            <div className="checkbox_div">
+              <input
+                type="checkbox"
+                id="graph_5"
+                value="V5"
+                onChange={(e) => checkboxChange(e.target.value)}
+              />
+              <label htmlFor="graph_5">
+                Vostok Ice Core CO2 measurements, 417160 - 2342 years
+              </label>
+            </div>
             <br />
             <input
               className="text_input_field"
@@ -232,17 +243,19 @@ export default function CustomCreation() {
               value={desc5}
               onChange={(e) => setDesc5(e.target.value)}
               placeholder="Enter Description"
-            ></input>{" "}
+            ></input>
             <br />
-            <input
-              type="checkbox"
-              id="graph_6"
-              value="V6"
-              onChange={(e) => checkboxChange(e.target.value)}
-            />
-            <label htmlFor="graph_6">
-              Ice core 800k year composite study CO2 measurements
-            </label>{" "}
+            <div className="checkbox_div">
+              <input
+                type="checkbox"
+                id="graph_6"
+                value="V6"
+                onChange={(e) => checkboxChange(e.target.value)}
+              />
+              <label htmlFor="graph_6">
+                Ice core 800k year composite study CO2 measurements
+              </label>
+            </div>
             <br />
             <input
               className="text_input_field"
@@ -250,17 +263,19 @@ export default function CustomCreation() {
               value={desc6}
               onChange={(e) => setDesc6(e.target.value)}
               placeholder="Enter Description"
-            ></input>{" "}
+            ></input>
             <br />
-            <input
-              type="checkbox"
-              id="graph_7"
-              value="V7"
-              onChange={(e) => checkboxChange(e.target.value)}
-            />
-            <label htmlFor="graph_7">
-              Evolution of global temperature over the past two million years
-            </label>{" "}
+            <div className="checkbox_div">
+              <input
+                type="checkbox"
+                id="graph_7"
+                value="V7"
+                onChange={(e) => checkboxChange(e.target.value)}
+              />
+              <label htmlFor="graph_7">
+                Evolution of global temperature over the past two million years
+              </label>
+            </div>
             <br />
             <input
               className="text_input_field"
@@ -268,37 +283,41 @@ export default function CustomCreation() {
               value={desc7}
               onChange={(e) => setDesc7(e.target.value)}
               placeholder="Enter Description"
-            ></input>{" "}
+            ></input>
             <br />
-            <input
-              type="checkbox"
-              id="graph_8"
-              value="V8"
-              onChange={(e) => checkboxChange(e.target.value)}
-            />
-            <label htmlFor="graph_8">CO2 emissions by country</label> <br />
-            <input
-              className="text_input_field"
-              type="string"
-              value={desc8}
-              onChange={(e) => setDesc8(e.target.value)}
-              placeholder="Enter Description"
-            ></input>{" "}
+            <div className="checkbox_div">
+              <input
+                type="checkbox"
+                id="graph_8"
+                value="V8"
+                onChange={(e) => checkboxChange(e.target.value)}
+              />
+              <label htmlFor="graph_8">CO2 emissions by country</label> <br />
+              <input
+                className="text_input_field"
+                type="string"
+                value={desc8}
+                onChange={(e) => setDesc8(e.target.value)}
+                placeholder="Enter Description"
+              ></input>
+            </div>
             <br />
-            <input
-              type="checkbox"
-              id="graph_9"
-              value="V9"
-              onChange={(e) => checkboxChange(e.target.value)}
-            />
-            <label htmlFor="graph_9">CO2 emissions by sectors</label> <br />
-            <input
-              className="text_input_field"
-              type="string"
-              value={desc9}
-              onChange={(e) => setDesc9(e.target.value)}
-              placeholder="Enter Description"
-            ></input>{" "}
+            <div className="checkbox_div">
+              <input
+                type="checkbox"
+                id="graph_9"
+                value="V9"
+                onChange={(e) => checkboxChange(e.target.value)}
+              />
+              <label htmlFor="graph_9">CO2 emissions by sectors</label> <br />
+              <input
+                className="text_input_field"
+                type="string"
+                value={desc9}
+                onChange={(e) => setDesc9(e.target.value)}
+                placeholder="Enter Description"
+              ></input>
+            </div>
           </div>
           <br />
         </div>
