@@ -5,7 +5,9 @@ import { fetchURL } from '../visualizations/modules/fetchURL';
 import { UserAuthContext } from '../../Context';
 
 
-export default function LoginView(props) {
+
+
+export default function LoginView() {
   const UserAuthContextValue = useContext(UserAuthContext);
   let navigate = useNavigate();
   const [loginProcessState, setLoginProcessState] = useState("idle");
@@ -18,12 +20,12 @@ export default function LoginView(props) {
         username: event.target.username.value,
         password: event.target.password.value
       })
-      console.log(result);
-      console.log(result.data);
       setLoginProcessState("success");
       setTimeout(() => {
         setLoginProcessState("idle")
+        UserAuthContextValue.username = " " + result.data.username
         UserAuthContextValue.login(result.data.token);
+        console.log(UserAuthContextValue);
         navigate("/user", { replace: true });
       }, 1500);
     } catch (error) {
@@ -60,26 +62,26 @@ export default function LoginView(props) {
 
   return (
     <div className="login_container">
-    <img src={require('../images/placeholder.png')} alt="signupimage"></img>
-    <div className="loginBox loginRight">
-       <div>
-       <h1>Login</h1>
-       <form onSubmit={ onSubmit }>
-         <div>
-         <label>Username</label><br/>
-         <input type="text" name="username"/><br/>
-         </div>
-         <div>
-         <label>Password</label><br/>
-         <input type="password" name="password"/>
-         </div>
-         <div className="loginCtrl">
-           { loginUIControls }
-         </div>
-       </form>
+      <img src={require('../images/placeholder.png')} alt="signupimage"></img>
+      <div className="loginBox loginRight">
+        <div>
+          <h1>Login</h1>
+          <form onSubmit={onSubmit}>
+            <div>
+              <label>Username</label><br />
+              <input type="text" name="username" /><br />
+            </div>
+            <div>
+              <label>Password</label><br />
+              <input type="password" name="password" />
+            </div>
+            <div className="loginCtrl">
+              {loginUIControls}
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
-    </div>
-</div>
   )
 }
 

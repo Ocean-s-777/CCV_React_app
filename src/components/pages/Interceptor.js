@@ -5,18 +5,18 @@ import Custom from './Custom'
 import userAuthData from '../../App'
 
 export default function Interceptor() {
-    const [viewData, setviewData] = useState()
+  const [viewData, setviewData] = useState()
 
-    useEffect(() => {
-        const viewId = window.location.href.replace(/.*\/custom\//, "")
-        axios.post(`https://oceans777.herokuapp.com/custom/getView`, { id : viewId })
-            .then(res => {
-                console.log(userAuthData.jwt) //for testing
-                console.log(res.data) //for testing
-                setviewData(res.data)
-            })
-    }, [])
-    
+  useEffect(() => {
+    const viewId = window.location.href.replace(/.*\/custom\//, "")
+    axios.post(`https://oceans777.herokuapp.com/custom/getView`, { id: viewId })
+      .then(res => {
+        setviewData(res.data)
+      })
+      .catch(err => {
+      })
+  }, [])
+
 
   return (
     <div>

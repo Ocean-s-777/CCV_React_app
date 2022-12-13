@@ -25,6 +25,7 @@ export default function SignupView() {
       setSignupProcessState("success");
       setTimeout(() => {
         setSignupProcessState("idle")
+        UserAuthContextValue.username = " " + result.data.username
         UserAuthContextValue.login(result.data.token);
         navigate("/user", { replace: true });
       }, 1500);
