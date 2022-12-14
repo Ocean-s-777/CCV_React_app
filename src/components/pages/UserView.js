@@ -25,7 +25,6 @@ export default function UserView(props) {
         }
       }
       try {
-        console.log(UserAuthContextValue.jwt);
         const results = await axios.delete(`${fetchURL}/user/delete`, config);
         if (results.status === 200) {
           UserAuthContextValue.logout();
