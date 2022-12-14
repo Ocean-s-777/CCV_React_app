@@ -25,7 +25,6 @@ export default function LoginView() {
         setLoginProcessState("idle")
         UserAuthContextValue.username = " " + result.data.username
         UserAuthContextValue.login(result.data.token);
-        console.log(UserAuthContextValue);
         navigate("/user", { replace: true });
       }, 1500);
     } catch (error) {
