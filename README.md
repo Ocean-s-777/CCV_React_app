@@ -1,3 +1,4 @@
+# [Link to the documentation](https://oamk-my.sharepoint.com/:b:/g/personal/t1raos00_students_oamk_fi/ESL1w0l0ENNMgYdMs0MLxRoBCrX4iKST5jJlKlOnjDX4HA?e=4UsDfE)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
