@@ -30,7 +30,6 @@ export default function CustomCreation() {
     } else {
       chosenVis.push(value);
     }
-    console.log(chosenVis);
   };
 
   // Function for the "Create View" button
@@ -88,8 +87,6 @@ export default function CustomCreation() {
         }
         viewStats.descriptions.push(descToBePushed);
       });
-
-      console.log(viewStats);
 
       try {
         let config = {
